@@ -29,6 +29,9 @@ def extract_frames(clip_path: str, n_frames: int = N_FRAMES) -> list[np.ndarray]
     for idx in indices:
         cap.set(cv2.CAP_PROP_POS_FRAMES, int(idx))
         ret, frame = cap.read()
+        if not ret and idx > 0:
+            cap.set(cv2.CAP_PROP_POS_FRAMES, int(idx) - 1)
+            ret, frame = cap.read()
         if not ret:
             raise RuntimeError(f"Could not read frame {idx} from {clip_path}")
         frames.append(frame)
@@ -79,8 +82,12 @@ def add_frames_column(
 
     for i, row in enumerate(dataset):
         clip_id = row["clip_id"]
-        frames = extract_frames(row["clip_path"], n_frames)
-        paths = save_frames(frames, clip_id, frames_dir)
+        expected = [str(frames_dir / f"{clip_id}{j + 1:02d}.jpg") for j in range(n_frames)]
+        if all(Path(p).exists() for p in expected):
+            paths = expected
+        else:
+            frames = extract_frames(row["clip_path"], n_frames)
+            paths = save_frames(frames, clip_id, frames_dir)
         all_frame_paths.append(paths)
         all_frame_names.append([Path(p).stem for p in paths])
         mlflow.log_metric("frames_saved_cumulative", (i + 1) * n_frames, step=i)

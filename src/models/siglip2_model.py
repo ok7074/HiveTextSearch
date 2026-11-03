@@ -1,5 +1,4 @@
 import torch
-from PIL import Image
 from transformers import AutoModel, AutoProcessor
 
 DEFAULT_MODEL_ID = "google/siglip2-base-patch16-224"

@@ -15,7 +15,12 @@ CLIP_DURATION_S = 2.0
 def video_bytes_to_temp_file(raw_bytes: bytes, suffix: str = ".mp4") -> str:
     """Write video bytes to a temporary file and return its path. Caller must delete it."""
     tf = tempfile.NamedTemporaryFile(suffix=suffix, delete=False)
-    tf.write(raw_bytes)
+    try:
+        tf.write(raw_bytes)
+    except:
+        tf.close()
+        os.unlink(tf.name)
+        raise
     tf.close()
     return tf.name
 

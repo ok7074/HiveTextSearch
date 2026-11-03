@@ -15,6 +15,8 @@ def get_video_data(row: dict) -> tuple[bytes, str]:
     else:
         raw = bytes(video)
         orig_path = ""
+    if not raw:
+        raise ValueError(f"No video bytes for row {row.get('sequence_id', '?')}")
     return raw, orig_path
 
 
