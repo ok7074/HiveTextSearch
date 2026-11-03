@@ -1,8 +1,12 @@
 import functools
 import mlflow
+from pathlib import Path
 
 EXPERIMENT_NAME = "HiveTextSearch"
+# Fixed location, so runs land in one database whichever folder they start from.
+TRACKING_DB = Path(__file__).resolve().parent.parent / "mlflow.db"
 
+mlflow.set_tracking_uri(f"sqlite:///{TRACKING_DB.as_posix()}")
 mlflow.set_experiment(EXPERIMENT_NAME)
 mlflow.autolog(log_model_signatures=True, log_input_examples=False, silent=True)
 

@@ -19,6 +19,7 @@ venv/
 .venv/
 
 # MLflow
+mlflow.db
 mlruns/
 mlartifacts/
 
