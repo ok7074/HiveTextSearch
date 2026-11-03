@@ -4,7 +4,7 @@ For a 2 s clip at 60 fps the four frames fall at t = 0, 0.5, 1.0, 1.5 s.
 Frame naming: <clip_id><NN>.jpg  e.g. hive_a_0010101.jpg … hive_a_0010104.jpg
 
 Output:
-  data/frames/<clip_id><NN>.jpg      — one JPG per frame (4 per clip, ~5 760 total)
+  data/frames/<clip_id><NN>.jpg      — one JPG per frame (4 per clip)
   data/clips_frames_dataset/         — new dataset: all clips_dataset columns plus
                                        frame_paths and frame_names
 

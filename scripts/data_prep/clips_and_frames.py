@@ -1,4 +1,6 @@
-"""Cut each of the 96 source videos into 15 two-second clips and save a clips_dataset.
+"""Cut each of the 96 source videos into two-second clips and save a clips_dataset.
+
+Leftover frames at the end of a video become a shorter final clip.
 
 Output:
   data/clips/<clip_id>.mp4          — one MP4 per clip
