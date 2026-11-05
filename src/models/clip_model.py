@@ -23,7 +23,7 @@ def get_image_features(model, processor, images) -> torch.Tensor:
     """Returns L2-normalised image embeddings."""
     inputs = processor(images=images, return_tensors="pt").to(model.device)
     with torch.no_grad():
-        features = model.get_image_features(**inputs)
+        features = model.get_image_features(**inputs).pooler_output
     return features / features.norm(dim=-1, keepdim=True)
 
 
@@ -31,5 +31,5 @@ def get_text_features(model, processor, texts: list[str]) -> torch.Tensor:
     """Returns L2-normalised text embeddings."""
     inputs = processor(text=texts, return_tensors="pt", padding=True).to(model.device)
     with torch.no_grad():
-        features = model.get_text_features(**inputs)
+        features = model.get_text_features(**inputs).pooler_output
     return features / features.norm(dim=-1, keepdim=True)
