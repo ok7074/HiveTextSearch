@@ -26,7 +26,7 @@ def _hive(path: Path) -> str:
 
 def test_split_puts_each_hive_in_exactly_one_split(tmp_path):
     _make_dataset(tmp_path, {"h1": ["a", "b"], "h2": ["a"], "h3": ["a", "b"], "h4": ["a"]})
-    data_yaml = split_by_hive(tmp_path, _hive, test_hives=["h4"], val_hives=["h3"])
+    data_yaml = split_by_hive(tmp_path, tmp_path, _hive, test_hives=["h4"], val_hives=["h3"])
 
     hives_in = {
         split: {_hive(p) for p in (tmp_path / split / "images").glob("*.jpg")}
@@ -44,9 +44,18 @@ def test_split_puts_each_hive_in_exactly_one_split(tmp_path):
 
 def test_split_keeps_unlabelled_frames_as_background(tmp_path):
     _make_dataset(tmp_path, {"h1": ["a", "b"], "h2": ["a"], "h3": ["a"]}, unlabelled=("h1_b",))
-    split_by_hive(tmp_path, _hive, test_hives=["h3"], val_hives=["h2"])
+    split_by_hive(tmp_path, tmp_path, _hive, test_hives=["h3"], val_hives=["h2"])
     assert (tmp_path / "dev/train/images/h1_b.jpg").exists()
     assert not (tmp_path / "dev/train/labels/h1_b.txt").exists()
+
+
+def test_split_reads_only_the_source_folder(tmp_path):
+    """The bee download also holds pose/ and segmentation/ images, which must not end up in the splits."""
+    _make_dataset(tmp_path / "detection", {"h1": ["a"], "h2": ["a"], "h3": ["a"]})
+    _make_dataset(tmp_path / "pose", {"h1": ["pose"]})
+    split_by_hive(tmp_path / "detection", tmp_path, _hive, test_hives=["h3"], val_hives=["h2"])
+    copied = {p.stem for p in tmp_path.glob("dev/*/images/*.jpg")} | {p.stem for p in tmp_path.glob("test/images/*.jpg")}
+    assert copied == {"h1_a", "h2_a", "h3_a"}
 
 
 @pytest.mark.parametrize("test_hives, val_hives, error", [
@@ -57,15 +66,15 @@ def test_split_keeps_unlabelled_frames_as_background(tmp_path):
 def test_split_rejects_bad_hive_lists(tmp_path, test_hives, val_hives, error):
     _make_dataset(tmp_path, {"h1": ["a"], "h2": ["a"], "h3": ["a"]})
     with pytest.raises(error):
-        split_by_hive(tmp_path, _hive, test_hives=test_hives, val_hives=val_hives)
+        split_by_hive(tmp_path, tmp_path, _hive, test_hives=test_hives, val_hives=val_hives)
     assert not (tmp_path / "dev").exists() and not (tmp_path / "test").exists()
 
 
 def test_split_refuses_to_overwrite_an_existing_split(tmp_path):
     _make_dataset(tmp_path, {"h1": ["a"], "h2": ["a"], "h3": ["a"]})
-    split_by_hive(tmp_path, _hive, test_hives=["h3"], val_hives=["h2"])
+    split_by_hive(tmp_path, tmp_path, _hive, test_hives=["h3"], val_hives=["h2"])
     with pytest.raises(FileExistsError):
-        split_by_hive(tmp_path, _hive, test_hives=["h3"], val_hives=["h2"])
+        split_by_hive(tmp_path, tmp_path, _hive, test_hives=["h3"], val_hives=["h2"])
 
 
 def test_split_rejects_duplicate_file_names(tmp_path):
@@ -76,7 +85,7 @@ def test_split_rejects_duplicate_file_names(tmp_path):
         Image.new("RGB", (8, 8)).save(tmp_path / hive / "images" / "frame.jpg")
         (tmp_path / hive / "labels" / "frame.txt").write_text("0 0.5 0.5 0.1 0.1\n")
     with pytest.raises(FileExistsError):
-        split_by_hive(tmp_path, lambda p: p.parent.parent.name, test_hives=["h3"], val_hives=[])
+        split_by_hive(tmp_path, tmp_path, lambda p: p.parent.parent.name, test_hives=["h3"], val_hives=[])
 
 
 def test_tune_returns_the_best_trial(monkeypatch):

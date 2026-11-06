@@ -5,7 +5,7 @@ Steps:
   2. Train with the best hyperparameters on dev/train
   3. Evaluate that model once on test
 
-Needs data/BeeDataset/data.yaml from split_by_hive (src/models/yolo_model.py).
+Needs data/BeeDataset/data.yaml from scripts/yolo/split_bee_dataset.py.
 Ultralytics outputs go to experiments/yolo/. Intended for a GPU runtime.
 
 Each run is tracked in MLflow under the experiment "HiveTextSearch",
@@ -29,18 +29,19 @@ from src.optuna_tuning import tune
 # Ultralytics sets its own MLflow experiment before each training; keep it on ours.
 os.environ["MLFLOW_EXPERIMENT_NAME"] = EXPERIMENT_NAME
 
-N_TRIALS = 20
-TUNE_EPOCHS = 20
-FINAL_EPOCHS = 100
+N_TRIALS = 10
+TUNE_EPOCHS = 10
+FINAL_EPOCHS = 60
 # optimizer must not be "auto": Ultralytics then ignores the tuned lr0 and momentum.
-TRAIN_ARGS = {"imgsz": 640, "batch": 16, "optimizer": "SGD"}
+# cache="disk" decodes each 1920x1080 frame once for all trials instead of every epoch.
+TRAIN_ARGS = {"imgsz": 640, "batch": 16, "optimizer": "SGD", "cache": "disk"}
 
 
 @track_run(run_name="train_yolo")
 def main() -> None:
     data_yaml = BEE_DATASET_DIR / "data.yaml"
     if not data_yaml.exists():
-        raise FileNotFoundError(f"{data_yaml} not found; split the dataset with split_by_hive first")
+        raise FileNotFoundError(f"{data_yaml} not found; run scripts/yolo/split_bee_dataset.py first")
     mlflow.log_params({"n_trials": N_TRIALS, "tune_epochs": TUNE_EPOCHS, "final_epochs": FINAL_EPOCHS, **TRAIN_ARGS})
 
     study = tune(

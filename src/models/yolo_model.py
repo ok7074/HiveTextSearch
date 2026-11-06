@@ -13,27 +13,29 @@ DEFAULT_MODEL = "yolo26n.pt"
 
 
 def split_by_hive(
-    dataset_dir: str | Path,
+    source_dir: str | Path,
+    output_dir: str | Path,
     hive_of: Callable[[Path], str],
     test_hives: list[str],
     val_hives: list[str],
 ) -> Path:
     """
-    Copy a YOLO-format dataset into dev/train, dev/val and test so that every hive lands in exactly one split.
+    Copy the YOLO-format images under source_dir into output_dir/dev/train, dev/val and test,
+    so that every hive lands in exactly one split.
     Hives in test_hives go to test, hives in val_hives to dev/val, and all other hives to dev/train.
     dev/val is the held-out part of the devset used for tuning; test is only for the final evaluation.
-    The original files are left untouched. Writes and returns dataset_dir/data.yaml.
+    The original files are left untouched. Writes and returns output_dir/data.yaml.
     """
-    dataset_dir = Path(dataset_dir)
+    source_dir, output_dir = Path(source_dir), Path(output_dir)
     for output in ("dev", "test", "data.yaml"):
-        if (dataset_dir / output).exists():
-            raise FileExistsError(f"{dataset_dir / output} already exists; delete dev/, test/ and data.yaml to re-split")
+        if (output_dir / output).exists():
+            raise FileExistsError(f"{output_dir / output} already exists; delete dev/, test/ and data.yaml to re-split")
     if set(test_hives) & set(val_hives):
         raise ValueError(f"Hives in both test and val: {sorted(set(test_hives) & set(val_hives))}")
 
-    images = sorted(p for p in dataset_dir.rglob("*") if p.suffix[1:].lower() in IMG_FORMATS)
+    images = sorted(p for p in source_dir.rglob("*") if p.suffix[1:].lower() in IMG_FORMATS)
     if not images:
-        raise FileNotFoundError(f"No images found under {dataset_dir}")
+        raise FileNotFoundError(f"No images found under {source_dir}")
     hives = {image: hive_of(image) for image in images}
     found = set(hives.values())
     if set(test_hives + val_hives) - found:
@@ -53,14 +55,14 @@ def split_by_hive(
         for source, kind in ((image, "images"), (label, "labels")):
             if not source.exists():
                 continue
-            target = dataset_dir / split / kind / source.name
+            target = output_dir / split / kind / source.name
             if target.exists():
                 raise FileExistsError(f"Two {kind} named {source.name} would land in {split}; file names must be unique")
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, target)
         counts[split] = counts.get(split, 0) + 1
 
-    data_yaml = dataset_dir / "data.yaml"
+    data_yaml = output_dir / "data.yaml"
     # No "path" key: Ultralytics then resolves the splits relative to this file, so it works on any machine.
     data_yaml.write_text(yaml.safe_dump({
         "train": "dev/train/images",
