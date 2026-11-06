@@ -36,7 +36,7 @@ HiveTextSearch/
 │       ├── __init__.py
 │       ├── clip_model.py    # load_clip, get_similarity_scores, get_image/text_features
 │       └── siglip2_model.py # load_siglip2, get_similarity_scores, get_image/text_features
-├── script/                  # one-off processing scripts (frame extraction, embedding, etc.)
+├── scripts/                 # one-off processing scripts (frame extraction, embedding, etc.)
 ├── notebooks/               # exploratory notebooks
 ├── experiments/
 │   └── logs/                # experiment outputs
@@ -56,7 +56,7 @@ HiveTextSearch\Scripts\Activate.ps1        # Windows PowerShell
 # source HiveTextSearch/bin/activate       # macOS / Linux
 
 # 2. Install dependencies
-pip install numpy opencv-python datasets transformers torch Pillow mlflow hf_xet
+pip install numpy opencv-python datasets transformers torch Pillow mlflow hf_xet accelerate pytest
 ```
 
 **Dataset** — download once from Hugging Face (gated, requires an access token):
@@ -72,17 +72,20 @@ ds.save_to_disk("data/thehiveisreal")
 ## Usage
 
 ```python
-from src.models import load_clip, clip_similarity
-from src.tracking import track_run
+import numpy as np
+from src.models import load_clip, clip_text_features
 
 model, processor = load_clip()
+embeddings = np.load("data/embeddings/clip.npz")
 
-@track_run(run_name="clip_search")
 def search(query: str, top_k: int = 10):
-    # embeddings loaded from data/embeddings/clip_embeddings.npy
-    scores = clip_similarity(model, processor, all_frames, [query])
-    return scores.topk(top_k)
+    query_embedding = clip_text_features(model, processor, [query]).cpu().numpy()[0]
+    scores = embeddings["clip_embeddings"] @ query_embedding  # cosine similarity: all vectors have length 1
+    best = np.argsort(-scores)[:top_k]
+    return [(str(embeddings["clip_ids"][i]), float(scores[i])) for i in best]
 ```
+
+For SigLIP 2, use `load_siglip2`, `siglip2_text_features` and `data/embeddings/siglip2.npz`.
 
 View MLflow experiment runs:
 ```bash
@@ -96,8 +99,9 @@ mlflow ui          # open http://127.0.0.1:5000
 ### CLIP and SigLIP 2
 Both models embed images and text into the same vector space. Cosine similarity between the query embedding and each clip embedding gives a relevance score.
 
-- CLIP uses **softmax** across candidates (single best match)
-- SigLIP 2 uses **sigmoid** per candidate (independent multi-label scoring), with text formatted as `"This is a photo of {label}."`
+- CLIP is trained with a **softmax** contrastive loss: each image is pushed towards its own caption and away from every other caption in the batch
+- SigLIP 2 is trained with a **sigmoid** loss: each image–text pair is scored on its own as a match or not, with text formatted as `"This is a photo of {label}."`
+- For search, both rank clips by cosine similarity between embeddings; the loss only shapes training
 
 ### Bee detector
 YOLO fine-tuned on the [Sledevič et al. (2025)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11856287/) public bee dataset. Counts bees per frame region (left / middle / right third), then maps query keywords to count signals via simple rules.

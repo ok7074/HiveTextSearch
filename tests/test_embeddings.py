@@ -7,7 +7,7 @@ from datasets import Dataset
 from PIL import Image
 
 from src.embeddings import average_frames, embed_frames, save_embeddings
-from src.models import clip_image_features, siglip2_image_features
+from src.models import clip_image_features, clip_text_features, siglip2_image_features, siglip2_text_features
 
 
 def _write_frames(tmp_path, clips: dict[str, int]) -> Dataset:
@@ -60,15 +60,42 @@ def test_save_embeddings_round_trips_without_pickle(tmp_path):
         assert str(saved["model_id"]) == "some/model"
 
 
-@pytest.mark.parametrize("image_features", [clip_image_features, siglip2_image_features])
-def test_image_features_normalises_pooler_output(image_features):
-    """transformers 5 returns an output object from get_image_features, not a tensor."""
+@pytest.mark.parametrize("features, method", [
+    (clip_image_features, "get_image_features"),
+    (siglip2_image_features, "get_image_features"),
+    (clip_text_features, "get_text_features"),
+    (siglip2_text_features, "get_text_features"),
+])
+def test_features_normalise_pooler_output(features, method):
+    """transformers 5 returns an output object from get_*_features, not a tensor."""
     model = MagicMock(device="cpu")
-    model.get_image_features.return_value = SimpleNamespace(pooler_output=torch.tensor([[3.0, 4.0]]))
+    getattr(model, method).return_value = SimpleNamespace(pooler_output=torch.tensor([[3.0, 4.0]]))
     processor = MagicMock()
     processor.return_value.to.return_value = {}
 
-    assert torch.allclose(image_features(model, processor, ["x"]), torch.tensor([[0.6, 0.8]]))
+    assert torch.allclose(features(model, processor, ["x"]), torch.tensor([[0.6, 0.8]]))
+
+
+@pytest.mark.parametrize("text_features", [clip_text_features, siglip2_text_features])
+def test_text_features_truncate_long_queries(text_features):
+    """Without truncation, a query longer than the model's text limit crashes."""
+    model = MagicMock(device="cpu")
+    model.get_text_features.return_value = SimpleNamespace(pooler_output=torch.tensor([[3.0, 4.0]]))
+    processor = MagicMock()
+    processor.return_value.to.return_value = {}
+
+    text_features(model, processor, ["x"])
+    assert processor.call_args.kwargs["truncation"] is True
+
+
+def test_siglip2_text_features_wraps_queries_in_training_prompt():
+    model = MagicMock(device="cpu")
+    model.get_text_features.return_value = SimpleNamespace(pooler_output=torch.tensor([[3.0, 4.0]]))
+    processor = MagicMock()
+    processor.return_value.to.return_value = {}
+
+    siglip2_text_features(model, processor, ["many bees"])
+    assert processor.call_args.kwargs["text"] == ["This is a photo of many bees."]
 
 
 def test_siglip2_center_crops_images():
