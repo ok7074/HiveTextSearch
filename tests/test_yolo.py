@@ -94,3 +94,10 @@ def test_tune_returns_the_best_trial(monkeypatch):
     assert len(study.trials) == 10
     assert study.best_value == max(t.value for t in study.trials)
     assert set(study.best_params) == {"lr0", "lrf", "momentum", "weight_decay"}
+
+
+def test_tune_tries_start_params_first(monkeypatch):
+    monkeypatch.setattr(optuna_tuning, "mlflow", MagicMock())
+    start = {"lr0": 0.01, "lrf": 0.1, "momentum": 0.9, "weight_decay": 0.001}
+    study = optuna_tuning.tune(lambda params: 0.0, n_trials=2, start_params=start)
+    assert study.trials[0].params == start

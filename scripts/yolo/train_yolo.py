@@ -23,7 +23,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from src import track_run
 from src.tracking import EXPERIMENT_NAME
-from src.models.yolo_model import BEE_DATASET_DIR, evaluate, train
+from src.models.yolo_model import BEE_DATASET_DIR, DEFAULT_MODEL, evaluate, train
 from src.optuna_tuning import tune
 
 # Ultralytics sets its own MLflow experiment before each training; keep it on ours.
@@ -37,22 +37,36 @@ FINAL_EPOCHS = 60
 TRAIN_ARGS = {"imgsz": 640, "batch": 16, "optimizer": "SGD", "cache": "disk"}
 
 
-@track_run(run_name="train_yolo")
-def main() -> None:
+def run(
+    model_name: str = DEFAULT_MODEL,
+    train_args: dict = TRAIN_ARGS,
+    tune_hours: float | None = None,
+    final_hours: float | None = None,
+    start_params: dict | None = None,
+) -> None:
+    """Tune, train and test one model. tune_hours and final_hours cap the time of each stage (None = no cap)."""
     data_yaml = BEE_DATASET_DIR / "data.yaml"
     if not data_yaml.exists():
         raise FileNotFoundError(f"{data_yaml} not found; run scripts/yolo/split_bee_dataset.py first")
-    mlflow.log_params({"n_trials": N_TRIALS, "tune_epochs": TUNE_EPOCHS, "final_epochs": FINAL_EPOCHS, **TRAIN_ARGS})
+    mlflow.log_params({
+        "model_name": model_name, "n_trials": N_TRIALS, "tune_epochs": TUNE_EPOCHS, "final_epochs": FINAL_EPOCHS,
+        "tune_hours": tune_hours, "final_hours": final_hours, **train_args,
+    })
 
     study = tune(
-        lambda params: train(data_yaml, epochs=TUNE_EPOCHS, **TRAIN_ARGS, **params).metrics.box.map,
+        lambda params: train(data_yaml, model_name, epochs=TUNE_EPOCHS, **train_args, **params).metrics.box.map,
         N_TRIALS,
+        timeout_hours=tune_hours,
+        start_params=start_params,
     )
     mlflow.log_params({f"best_{k}": v for k, v in study.best_params.items()})
     mlflow.log_metric("best_dev_val_map50_95", study.best_value)
+    mlflow.log_metric("trials_run", len(study.trials))
 
     with mlflow.start_run(run_name="final", nested=True):
-        model = train(data_yaml, epochs=FINAL_EPOCHS, **TRAIN_ARGS, **study.best_params)
+        # Ultralytics' time (hours) overrides epochs and fits the learning-rate schedule into that time.
+        model = train(data_yaml, model_name, epochs=FINAL_EPOCHS, time=final_hours, **train_args, **study.best_params)
+        mlflow.log_metric("dev_val_map50_95", model.metrics.box.map)
         metrics = evaluate(model, data_yaml, split="test")
         mlflow.log_metrics({
             "test_map50_95": metrics.box.map,
@@ -60,6 +74,11 @@ def main() -> None:
             "test_precision": metrics.box.mp,
             "test_recall": metrics.box.mr,
         })
+
+
+@track_run(run_name="train_yolo")
+def main() -> None:
+    run()
 
 
 if __name__ == "__main__":

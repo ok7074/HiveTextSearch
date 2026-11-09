@@ -14,10 +14,18 @@ def suggest_hyperparameters(trial: optuna.Trial) -> dict:
     }
 
 
-def tune(score: Callable[[dict], float], n_trials: int, seed: int = 0) -> optuna.Study:
+def tune(
+    score: Callable[[dict], float],
+    n_trials: int,
+    seed: int = 0,
+    timeout_hours: float | None = None,
+    start_params: dict | None = None,
+) -> optuna.Study:
     """
     Find the hyperparameters that maximise score(params) over n_trials.
     Each trial runs in its own nested MLflow run, so its logs stay separate from the other trials.
+    timeout_hours stops starting new trials after that time; the running trial still finishes.
+    start_params, if given, is tried first, e.g. the best settings of an earlier run.
     """
     def objective(trial: optuna.Trial) -> float:
         params = suggest_hyperparameters(trial)
@@ -27,5 +35,7 @@ def tune(score: Callable[[dict], float], n_trials: int, seed: int = 0) -> optuna
         return value
 
     study = optuna.create_study(direction="maximize", sampler=optuna.samplers.TPESampler(seed=seed))
-    study.optimize(objective, n_trials=n_trials)
+    if start_params:
+        study.enqueue_trial(start_params)
+    study.optimize(objective, n_trials=n_trials, timeout=timeout_hours * 3600 if timeout_hours else None)
     return study
