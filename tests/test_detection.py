@@ -1,6 +1,8 @@
 import numpy as np
+import pytest
+from datasets import Dataset
 
-from src.detection import clip_label, detector_scores, query_position, third_counts
+from src.detection import clip_label, detector_scores, load_detections, query_position, third_counts
 
 DETECTIONS = {
     "left": np.array([4, 0, 1]),
@@ -20,6 +22,15 @@ def test_clip_label_picks_the_busiest_third_or_overall_or_empty():
     assert clip_label([1, 5, 2]) == "center"
     assert clip_label([3, 0, 3]) == "overall"
     assert clip_label([0, 0, 0]) == "empty"
+
+
+def test_load_detections_reorders_rows_to_match_clip_ids(tmp_path):
+    rows = [{"clip_id": c, "left": n, "center": 0, "right": 0, "count": n / 4, "label": "left"} for c, n in (("b", 2), ("a", 1))]
+    Dataset.from_list(rows).save_to_disk(str(tmp_path))
+    detections = load_detections(np.array(["a", "b"]), tmp_path)
+    assert detections["left"].tolist() == [1, 2]
+    with pytest.raises(ValueError):
+        load_detections(np.array(["a", "c"]), tmp_path)
 
 
 def test_query_position_maps_synonyms():

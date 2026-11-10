@@ -32,7 +32,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from datasets import Dataset, load_from_disk
 from src import track_run
-from src.detection import DETECTIONS_DIR, detector_scores
+from src.detection import DETECTIONS_DIR, detector_scores, load_detections
 from src.embeddings import EMBEDDINGS_DIR
 from src.frame_selection import CLIPS_FRAMES_DATASET_DIR, FRAMES_DIR
 from src.models import clip_text_features, load_clip, load_siglip2, siglip2_text_features
@@ -67,15 +67,6 @@ def text_method(load_model, text_features, clip_embeddings: np.ndarray):
     # device_map=None keeps the model on CPU, which is fast enough for one query at a time.
     model, processor = load_model(device_map=None)
     return lambda q: (text_scores(q["query"], clip_embeddings, lambda texts: text_features(model, processor, texts)), True)
-
-
-def load_detections(clip_ids: np.ndarray) -> dict[str, np.ndarray]:
-    """YOLO counts and labels per clip, reordered to match clip_ids."""
-    detections = load_from_disk(str(DETECTIONS_DIR)).to_pandas().set_index("clip_id")
-    if set(detections.index) != set(clip_ids):
-        raise ValueError(f"{DETECTIONS_DIR} lists different clips than the embeddings; rerun scripts/yolo/detect_clips.py")
-    detections = detections.loc[clip_ids]
-    return {column: detections[column].to_numpy() for column in ("left", "center", "right", "count", "label")}
 
 
 def load_methods() -> tuple[np.ndarray, dict]:

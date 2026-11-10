@@ -95,11 +95,6 @@ def cut_video_into_clips(
     return clip_infos
 
 
-def build_clips_dataset(all_clip_infos: list[dict]) -> Dataset:
-    """Build a HuggingFace Dataset from a flat list of clip metadata dicts."""
-    return Dataset.from_list(all_clip_infos)
-
-
 def save_clips_dataset(dataset: Dataset, output_dir: str | Path = CLIPS_DATASET_DIR) -> None:
     """Save the clips dataset to disk in HuggingFace format."""
     output_dir = Path(output_dir)

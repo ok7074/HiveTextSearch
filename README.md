@@ -69,9 +69,11 @@ HiveTextSearch/
 HiveTextSearch\Scripts\Activate.ps1        # Windows PowerShell
 # source HiveTextSearch/bin/activate       # macOS / Linux
 
-# 2. Install dependencies
-pip install numpy opencv-python datasets transformers torch Pillow mlflow hf_xet accelerate pytest ultralytics optuna
+# 2. Install the exact versions this project was run with
+pip install -r requirements.txt
 ```
+
+The model code needs transformers 5 (`get_image_features(...).pooler_output`).
 
 **Dataset** — download once from Hugging Face (gated, requires an access token):
 
