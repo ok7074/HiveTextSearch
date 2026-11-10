@@ -5,8 +5,10 @@ Methods:
   motion         motion queries only: frame difference across each clip's 4 frames,
                  most movement first, or least first for quiet words such as "calm"
   detector       count and position queries only, once scripts/yolo/detect_clips.py has run: YOLO bee counts;
-                 a query naming left/center/middle/right keeps clips with that label, ranked by bees in that third,
-                 otherwise all clips ranked by mean count (fewest first for quiet words such as "few")
+                 a query naming left/center/middle/right keeps clips with that label, ranked by bees in that third
+                 (or, with a quiet word like "empty", clips with bees elsewhere, fewest on that side first);
+                 count queries rank all clips by mean count (fewest first for quiet words such as "few");
+                 position queries without a side word are left to the other methods (see src/detection.py)
 
 Each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it.
 

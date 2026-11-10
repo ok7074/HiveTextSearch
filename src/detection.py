@@ -11,6 +11,8 @@ DETECTIONS_DIR = DATA_DIR / "detections"
 DEFAULT_WEIGHTS = DATA_DIR.parent / "experiments" / "yolo_runs" / "train-11" / "weights" / "best.pt"
 THIRDS = ("left", "center", "right")
 POSITION_WORDS = {"left": "left", "center": "center", "centre": "center", "middle": "center", "right": "right"}
+# "A handful of bees" means at least one bee, unlike "empty" or "no bees".
+FEW_WORDS = {"few", "handful", "couple"}
 
 
 def third_counts(x_centers, width: int) -> np.ndarray:
@@ -72,15 +74,24 @@ def query_position(query: str) -> str | None:
 
 def detector_scores(query: str, query_type: str, detections: dict[str, np.ndarray]) -> tuple[np.ndarray, bool] | None:
     """
-    Detector ranking for count and position queries; None (not applicable) for every other query type.
-    A query naming a third keeps only clips with that label, ranked by the boxes in that third;
-    excluded clips get NaN, which top_k drops. Otherwise all clips are ranked by their mean count.
-    Quiet words such as "few" or "empty" put the fewest bees first.
+    Detector ranking for count and position queries; None (not applicable) otherwise. Excluded clips get NaN,
+    which top_k drops. Quiet words such as "few" or "empty" put the fewest bees first.
+      - names a third, busy ("bees on the left"): clips with that label, ranked by the boxes in that third
+      - names a third, quiet ("left side empty"): clips with bees in the other thirds, fewest in that third first
+      - count query without a third: all clips by mean count; "few"/"handful"/"couple" leave out clips with no bees
+      - position query without a third: None, since a total count says nothing about where bees sit
     """
     if "count" not in query_type and "position" not in query_type:
         return None
-    position = query_position(query)
+    position, descending = query_position(query), motion_descending(query)
     if position is None:
-        return detections["count"].astype(np.float32), motion_descending(query)
-    scores = np.where(detections["label"] == position, detections[position], np.nan).astype(np.float32)
-    return scores, motion_descending(query)
+        if "count" not in query_type:
+            return None
+        scores = detections["count"].astype(np.float32)
+        if set(re.findall(r"[a-z]+", query.lower())) & FEW_WORDS:
+            scores = np.where(scores > 0, scores, np.nan).astype(np.float32)
+        return scores, descending
+    if not descending:
+        elsewhere = sum(detections[third] for third in THIRDS) - detections[position]
+        return np.where(elsewhere > 0, detections[position], np.nan).astype(np.float32), False
+    return np.where(detections["label"] == position, detections[position], np.nan).astype(np.float32), True

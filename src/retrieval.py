@@ -13,7 +13,10 @@ RUNS_DIR = DATA_DIR / "runs"
 SPLITS = ("train", "test")
 TOP_K = 10
 # shortcut: plain word match, so "not busy" still ranks the busiest clips first; switch to per-query rules if that matters.
-QUIET_WORDS = {"calm", "still", "quiet", "resting", "rest", "idle", "few", "empty", "slow", "inactive", "little", "no"}
+QUIET_WORDS = {
+    "calm", "still", "quiet", "resting", "rest", "idle", "few", "handful", "couple", "empty", "slow", "inactive",
+    "little", "no",
+}
 
 
 def load_queries(path: str | Path, split: str) -> list[dict]:
