@@ -25,6 +25,8 @@ mlartifacts/
 
 # YOLO training outputs and downloaded weights
 experiments/yolo/
+experiments/yolo_runs*/
+experiments/**/mlflow.db
 *.pt
 
 # Jupyter
