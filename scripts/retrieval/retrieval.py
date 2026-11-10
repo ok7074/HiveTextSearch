@@ -4,6 +4,9 @@ Methods:
   clip, siglip2  every query: cosine similarity between the query and each clip's averaged embedding
   motion         motion queries only: frame difference across each clip's 4 frames,
                  most movement first, or least first for quiet words such as "calm"
+  detector       count and position queries only, once scripts/yolo/detect_clips.py has run: YOLO bee counts;
+                 a query naming left/center/middle/right keeps clips with that label, ranked by bees in that third,
+                 otherwise all clips ranked by mean count (fewest first for quiet words such as "few")
 
 Output: data/runs/<split>/, a dataset with one row per query, method and rank:
   split, query_type, query, method, rank, clip_id, score
@@ -29,6 +32,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from datasets import Dataset, load_from_disk
 from src import track_run
+from src.detection import DETECTIONS_DIR, detector_scores
 from src.embeddings import EMBEDDINGS_DIR
 from src.frame_selection import CLIPS_FRAMES_DATASET_DIR, FRAMES_DIR
 from src.models import clip_text_features, load_clip, load_siglip2, siglip2_text_features
@@ -62,14 +66,23 @@ def load_motion_scores() -> tuple[np.ndarray, np.ndarray]:
 def text_method(load_model, text_features, clip_embeddings: np.ndarray):
     # device_map=None keeps the model on CPU, which is fast enough for one query at a time.
     model, processor = load_model(device_map=None)
-    return lambda query: (text_scores(query, clip_embeddings, lambda texts: text_features(model, processor, texts)), True)
+    return lambda q: (text_scores(q["query"], clip_embeddings, lambda texts: text_features(model, processor, texts)), True)
 
 
-@track_run(run_name="retrieval")
-def main(split: str, queries_file: str) -> None:
-    queries = load_queries(queries_file, split)
+def load_detections(clip_ids: np.ndarray) -> dict[str, np.ndarray]:
+    """YOLO counts and labels per clip, reordered to match clip_ids."""
+    detections = load_from_disk(str(DETECTIONS_DIR)).to_pandas().set_index("clip_id")
+    if set(detections.index) != set(clip_ids):
+        raise ValueError(f"{DETECTIONS_DIR} lists different clips than the embeddings; rerun scripts/yolo/detect_clips.py")
+    detections = detections.loc[clip_ids]
+    return {column: detections[column].to_numpy() for column in ("left", "center", "right", "count", "label")}
 
-    # Each method maps a query to (one score per clip, rank highest first?), all aligned with clip_ids.
+
+def load_methods() -> tuple[np.ndarray, dict]:
+    """
+    Every method maps a query dict to (one score per clip aligned with clip_ids, rank highest first?),
+    or to None when it does not apply to that query type.
+    """
     clip_ids, methods = None, {}
     for name, (load_model, text_features) in TEXT_MODELS.items():
         ids, embeddings = load_clip_embeddings(name)
@@ -80,14 +93,26 @@ def main(split: str, queries_file: str) -> None:
     motion_ids, motion = load_motion_scores()
     if not np.array_equal(motion_ids, clip_ids):
         raise ValueError(f"{MOTION_FILE} lists different clips than the embeddings; delete it to rebuild")
-    methods["motion"] = lambda query: (motion, motion_descending(query))
+    methods["motion"] = lambda q: (motion, motion_descending(q["query"])) if is_motion_query(q["query_type"]) else None
+    if DETECTIONS_DIR.exists():
+        detections = load_detections(clip_ids)
+        methods["detector"] = lambda q: detector_scores(q["query"], q["query_type"], detections)
+    else:
+        print(f"No {DETECTIONS_DIR} yet: run scripts/yolo/detect_clips.py to add the detector method", flush=True)
+    return clip_ids, methods
+
+
+@track_run(run_name="retrieval")
+def main(split: str, queries_file: str) -> None:
+    queries = load_queries(queries_file, split)
+    clip_ids, methods = load_methods()
 
     rows = []
     for number, q in enumerate(queries, 1):
         for name, method in methods.items():
-            if name == "motion" and not is_motion_query(q["query_type"]):
+            if (result := method(q)) is None:
                 continue
-            scores, descending = method(q["query"])
+            scores, descending = result
             for rank, (clip_id, score) in enumerate(top_k(scores, clip_ids, TOP_K, descending), 1):
                 rows.append({"split": split, **q, "method": name, "rank": rank, "clip_id": clip_id, "score": score})
         print(f"{number}/{len(queries)} [{q['query_type']}] {q['query']}", flush=True)

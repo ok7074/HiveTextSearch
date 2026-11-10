@@ -49,6 +49,12 @@ def test_top_k_orders_both_ways_and_keeps_ties_in_clip_order():
     assert [c for c, _ in top_k(scores, ids, k=3, descending=False)] == ["a", "c", "d"]
 
 
+def test_top_k_leaves_out_nan_scores():
+    ids = np.array(["a", "b", "c"])
+    assert [c for c, _ in top_k(np.array([np.nan, 1.0, 2.0]), ids, k=3)] == ["c", "b"]
+    assert [c for c, _ in top_k(np.array([np.nan, 1.0, 2.0]), ids, k=3, descending=False)] == ["b", "c"]
+
+
 def test_motion_descending_flips_for_quiet_words():
     assert motion_descending("busy entrance")
     assert not motion_descending("Calm, quiet board")

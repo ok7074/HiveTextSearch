@@ -11,15 +11,16 @@ Presentation deadline: **25 November 2026** — 15 minutes + Q&A, at most 3 slid
 - Cuts 96 unlabeled hive entrance videos (30 s, 1080×1920 @ 60 fps) into 2-second clips (~1,440 total)
 - Samples 4 evenly-spaced frames per clip and computes one embedding per clip (average of its 4 frames)
 - At query time, embeds the text query and ranks all clips by cosine similarity
-- Compares four retrieval methods:
-  | Method | Description |
-  |--------|-------------|
-  | CLIP | OpenAI `clip-vit-base-patch32`, zero-shot |
-  | SigLIP 2 | Google `siglip2-base-patch16-224`, zero-shot |
-  | Bee detector | YOLO fine-tuned on bee data; counts per region (left / middle / right) |
-  | Combined | Weighted mix of image–text score and detector score |
-- Evaluates with **mAP** and **nDCG** on hand-annotated relevance labels (0 / 1 / 2) across four query types: count, position, motion, general description
-- Reports latency at p50 and p99
+- Compares retrieval methods:
+  | Method | Query types | Description | Status |
+  |--------|-------------|-------------|--------|
+  | CLIP | all | OpenAI `clip-vit-base-patch32`, zero-shot | done |
+  | SigLIP 2 | all | Google `siglip2-base-patch16-224`, zero-shot | done |
+  | Motion | motion | Frame-difference score over the 4 frames (baseline) | done |
+  | Detector | count, position | YOLO26n fine-tuned on bee data; bee counts per vertical third | done |
+  | Combined | all | Weighted mix of image–text score and detector score | planned |
+- Evaluates with **mAP@10** and **nDCG@10** on hand-annotated relevance labels (0 / 1 / 2) across four query types: count, position, motion, general description
+- Reports latency at p50 and p99 over 200 queries per method
 
 No vector database or cloud service needed — at ~1,440 clips, a NumPy matrix multiply searches everything in milliseconds.
 
@@ -27,20 +28,33 @@ No vector database or cloud service needed — at ~1,440 clips, a NumPy matrix m
 
 ## Repository layout
 
+Reusable functions live in `src/<name>.py`; each runnable step is `scripts/<name>/<name>.py`.
+
 ```
 HiveTextSearch/
 ├── src/
-│   ├── __init__.py          # activates MLflow autologging on import
-│   ├── tracking.py          # mlflow.autolog() + @track_run decorator
-│   └── models/
-│       ├── __init__.py
-│       ├── clip_model.py    # load_clip, get_similarity_scores, get_image/text_features
-│       └── siglip2_model.py # load_siglip2, get_similarity_scores, get_image/text_features
-├── scripts/                 # one-off processing scripts (frame extraction, embedding, etc.)
-├── notebooks/               # exploratory notebooks
-├── experiments/
-│   └── logs/                # experiment outputs
-├── data/                    # dataset (git-ignored)
+│   ├── __init__.py            # activates MLflow autologging on import
+│   ├── tracking.py            # mlflow.autolog() + @track_run decorator
+│   ├── video_format.py, clips_and_frames.py, frame_selection.py   # data preparation
+│   ├── embeddings.py          # embed the 4 frames per clip, average, save .npz
+│   ├── optuna_tuning.py       # Optuna search for YOLO hyperparameters
+│   ├── retrieval.py           # query file parsing, cosine scores, motion score, top k
+│   ├── detection.py           # YOLO counts per third, clip labels, detector ranking
+│   ├── evaluation.py          # blind pooling, rating file checks, mAP / nDCG
+│   └── models/                # clip_model.py, siglip2_model.py, yolo_model.py
+├── scripts/
+│   ├── data_prep/             # videos -> 2 s clips -> 4 frames per clip
+│   ├── clip_siglip_embeddings/# CLIP and SigLIP 2 clip embeddings
+│   ├── yolo/                  # split bee data by hive, train YOLO, detect bees in all clips
+│   ├── retrieval/             # run every method over the train or test queries
+│   ├── pooling/               # build the blind rating sheet
+│   ├── scoring/               # mAP@10 / nDCG@10 from the ratings
+│   └── latency/               # p50 / p99 per method
+├── tests/                     # pytest
+├── queries.txt                # Train:/Test: then Count:/Position:/Motion:/General: headings
+├── experiments/               # YOLO runs, ratings_<split>.csv (git-ignored outputs)
+├── results/                   # metrics and latency JSON
+├── data/                      # dataset, frames, embeddings, detections, runs (git-ignored)
 └── README.md
 ```
 
@@ -70,6 +84,19 @@ ds.save_to_disk("data/thehiveisreal")
 ---
 
 ## Usage
+
+Full pipeline, after data preparation and embeddings:
+
+```bash
+python scripts/yolo/detect_clips.py                   # YOLO on all clips -> data/detections/
+python scripts/retrieval/retrieval.py --split train   # top 10 per method -> data/runs/train/
+python scripts/pooling/pooling.py                     # blind sheet -> experiments/ratings_train.csv
+# fill the rating column with 0 / 1 / 2
+python scripts/scoring/scoring.py                     # -> results/train_metrics.json
+python scripts/latency/latency.py                     # -> results/latency.json
+```
+
+Search from Python:
 
 ```python
 import numpy as np
@@ -104,22 +131,30 @@ Both models embed images and text into the same vector space. Cosine similarity 
 - For search, both rank clips by cosine similarity between embeddings; the loss only shapes training
 
 ### Bee detector
-YOLO fine-tuned on the [Sledevič et al. (2025)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11856287/) public bee dataset. Counts bees per frame region (left / middle / right third), then maps query keywords to count signals via simple rules.
+YOLO26n (640 px) fine-tuned on the [Sledevič et al. (2025)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11856287/) public bee dataset, split by hive so test hives are never seen in training (10 Optuna trials × 10 epochs, then 60 epochs). Held-out test hives: mAP50-95 0.613, mAP50 0.871, precision 0.824, recall 0.846. A larger YOLO26s (960 px) run is prepared in `scripts/yolo/train_yolo_s960.py`.
 
-### Combined score
+Per clip, the boxes in each vertical third (left / center / right) are summed over the 4 frames. The clip's label is the busiest third, `overall` on a tie, `empty` with no bees. At query time:
+- a count or position query naming left, center (also "middle", "centre") or right keeps only clips with that label, ranked by the bees in that third
+- other count and position queries rank all clips by mean bees per frame; quiet words ("few", "no", "empty", …) put the fewest first
+- motion and general queries do not use the detector
+
+Limitation: the detector was trained on landscape images, while the clips are portrait.
+
+### Motion baseline
+Frame-difference score: mean pixel change between consecutive frames of a clip. Busiest first, or stillest first for quiet words ("calm", "still", …). Used as the baseline and fallback for motion queries.
+
+### Combined score (planned)
 `final = w × image–text score + (1 − w) × detector score`, with `w` tuned on development queries only and reported on held-out test queries.
-
-### Baseline
-Frame-difference motion score: average pixel change across the 4 frames per clip. Used as a sanity check and fallback if the detector does not reach acceptable quality.
 
 ---
 
 ## Evaluation
 
 - **Query types:** count ("many bees"), position ("bees on the left"), motion ("busy entrance"), general description
-- **40 queries total**, 10 per type; 2 per type held out as development queries
-- **Pooling:** top 20 of each method merged per query; relevance labeled blind (0 = not relevant, 1 = partly, 2 = clearly relevant)
-- **Metrics:** mAP and nDCG per method × query type; p50 / p99 latency over 200+ queries
+- **40 queries total**, 10 per type; 2 per type are development (`Train:`) queries, the rest test queries
+- **Pooling:** top 10 of each method merged per query, duplicates removed, shuffled, method and rank hidden; rated blind in a CSV (0 = not relevant, 1 = partly, 2 = clearly relevant). Re-pooling after adding a method keeps existing ratings
+- **Metrics:** mAP@10 and nDCG@10 (mean and spread) per method × query type. Relevant = rating ≥ 1; the AP denominator is the relevant clips in the pool (at most 10); the nDCG ideal is the best 10 ratings in the pool; unrated clips count as 0
+- **Latency:** p50 / p99 over 200 queries per method, model loading excluded
 - **No model-made labels:** all relevance judgements are human-annotated
 
 ---

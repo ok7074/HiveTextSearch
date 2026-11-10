@@ -89,6 +89,7 @@ def motion_descending(query: str) -> bool:
 
 
 def top_k(scores: np.ndarray, clip_ids: np.ndarray, k: int = TOP_K, descending: bool = True) -> list[tuple[str, float]]:
-    """The k best (clip_id, score) pairs; ties keep clip order so reruns give the same list."""
-    order = np.argsort(-scores if descending else scores, kind="stable")[:k]
+    """The k best (clip_id, score) pairs; ties keep clip order so reruns give the same list. NaN scores are left out."""
+    order = np.argsort(-scores if descending else scores, kind="stable")
+    order = order[~np.isnan(scores[order])][:k]
     return [(str(clip_ids[i]), float(scores[i])) for i in order]
