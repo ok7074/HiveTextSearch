@@ -43,8 +43,12 @@ def run(
     tune_hours: float | None = None,
     final_hours: float | None = None,
     start_params: dict | None = None,
-) -> None:
-    """Tune, train and test one model. tune_hours and final_hours cap the time of each stage (None = no cap)."""
+    final_name: str | None = None,
+):
+    """
+    Tune, train and test one model; returns the final model. tune_hours and final_hours cap the time of each
+    stage (None = no cap). final_name names the final run's folder under experiments/yolo/ (None = train-N).
+    """
     data_yaml = BEE_DATASET_DIR / "data.yaml"
     if not data_yaml.exists():
         raise FileNotFoundError(f"{data_yaml} not found; run scripts/yolo/split_bee_dataset.py first")
@@ -65,7 +69,10 @@ def run(
 
     with mlflow.start_run(run_name="final", nested=True):
         # Ultralytics' time (hours) overrides epochs and fits the learning-rate schedule into that time.
-        model = train(data_yaml, model_name, epochs=FINAL_EPOCHS, time=final_hours, **train_args, **study.best_params)
+        model = train(
+            data_yaml, model_name, epochs=FINAL_EPOCHS, time=final_hours, name=final_name,
+            **train_args, **study.best_params,
+        )
         mlflow.log_metric("dev_val_map50_95", model.metrics.box.map)
         metrics = evaluate(model, data_yaml, split="test")
         mlflow.log_metrics({
@@ -74,6 +81,7 @@ def run(
             "test_precision": metrics.box.mp,
             "test_recall": metrics.box.mr,
         })
+    return model
 
 
 @track_run(run_name="train_yolo")
