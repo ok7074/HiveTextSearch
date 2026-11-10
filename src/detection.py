@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 import numpy as np
-from datasets import Dataset
+from datasets import Dataset, load_from_disk
 
 from .frame_selection import DATA_DIR, N_FRAMES
 from .retrieval import motion_descending
@@ -54,6 +54,15 @@ def detect_clips(model, dataset: Dataset, frames_dir: Path) -> list[dict]:
         if number % 100 == 0:
             print(f"{number}/{len(dataset)} clips", flush=True)
     return rows
+
+
+def load_detections(clip_ids: np.ndarray, detections_dir: Path = DETECTIONS_DIR) -> dict[str, np.ndarray]:
+    """YOLO counts and labels per clip, reordered so row i belongs to clip_ids[i]."""
+    detections = load_from_disk(str(detections_dir)).to_pandas().set_index("clip_id")
+    if set(detections.index) != set(clip_ids):
+        raise ValueError(f"{detections_dir} lists different clips than the embeddings; rerun scripts/yolo/detect_clips.py")
+    detections = detections.loc[clip_ids]
+    return {column: detections[column].to_numpy() for column in ("left", "center", "right", "count", "label")}
 
 
 def query_position(query: str) -> str | None:

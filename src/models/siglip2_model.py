@@ -15,26 +15,6 @@ def load_siglip2(model_id: str = DEFAULT_MODEL_ID, device_map: str = "auto") -> 
     return model, processor
 
 
-def get_similarity_scores(model, processor, images, texts: list[str]) -> torch.Tensor:
-    """Returns sigmoid probabilities of shape (n_images, n_texts).
-
-    SigLIP2 uses sigmoid (independent per label) rather than softmax.
-    Texts are auto-formatted as 'This is a photo of {label}.' to match training.
-    """
-    inputs = processor(
-        text=[_PROMPT.format(t) for t in texts],
-        images=images,
-        padding="max_length",
-        max_length=_TEXT_MAX_LENGTH,
-        truncation=True,
-        return_tensors="pt",
-        **_CENTER_CROP,
-    ).to(model.device)
-    with torch.no_grad():
-        outputs = model(**inputs)
-    return torch.sigmoid(outputs.logits_per_image)
-
-
 def get_image_features(model, processor, images) -> torch.Tensor:
     """Returns L2-normalised image embeddings."""
     inputs = processor(images=images, return_tensors="pt", **_CENTER_CROP).to(model.device)

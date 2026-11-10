@@ -16,11 +16,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from datasets import load_from_disk, Video as HFVideo
 from src import track_run
-from src.video_format import convert_all_videos
+from src.video_format import DATA_DIR, VIDEOS_DIR, convert_all_videos
 
-DATA_DIR = Path(__file__).parent.parent.parent / "data"
 DATASET_DIR = DATA_DIR / "thehiveisreal"
-VIDEOS_DIR = DATA_DIR / "videos"
 
 
 @track_run(run_name="convert_videos")

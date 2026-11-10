@@ -84,7 +84,8 @@ def score(runs: pd.DataFrame, ratings: pd.DataFrame, k: int = TOP_K) -> dict:
 
     per_query = pd.DataFrame(per_query)
     summary = {}
-    for (method, query_type), group in pd.concat([per_query, per_query.assign(query_type="all")]).groupby(["method", "query_type"]):
+    # No "all" row: methods run on different query types, so an overall mean would not compare like with like.
+    for (method, query_type), group in per_query.groupby(["method", "query_type"]):
         summary.setdefault(method, {})[query_type] = {
             "n_queries": int(group["ap"].notna().sum()),
             "map": _round(group["ap"].mean()),

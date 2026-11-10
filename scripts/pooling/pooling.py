@@ -7,13 +7,14 @@ query, and method and rank are left out, so you rate without knowing who found a
 Fill the rating column with 0 (not relevant), 1 (partly) or 2 (clearly), then run scripts/scoring/scoring.py.
 
 Running it again after adding a method (e.g. the detector) keeps every rating you already wrote
-and only appends the new clips at the bottom.
+and only appends the new clips at the bottom. Commit the CSV after each rating session: it is your only copy.
 
 Usage:
     python scripts/pooling/pooling.py
     python scripts/pooling/pooling.py --split test
 """
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -32,7 +33,10 @@ def main(split: str) -> None:
     ratings = pool(runs, existing)
     added = len(ratings) - (0 if existing is None else len(existing))
     RATINGS_DIR.mkdir(exist_ok=True)
-    ratings.to_csv(path, index=False)
+    # Write a copy first and swap it in, so a failed write never leaves the ratings half-erased.
+    tmp = path.with_suffix(".tmp")
+    ratings.to_csv(tmp, index=False)
+    os.replace(tmp, path)
     print(f"{path}: {len(ratings)} clips to rate over {ratings['query'].nunique()} queries, {added} new")
 
 

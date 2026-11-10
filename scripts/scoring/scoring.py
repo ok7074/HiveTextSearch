@@ -2,7 +2,7 @@
 
 Reads data/runs/<split> (each method's ranked top 10) and experiments/ratings_<split>.csv (your 0/1/2 ratings)
 and writes results/<split>_metrics.json:
-  summary    method -> query type (and "all") -> n_queries, map, map_std, ndcg, ndcg_std
+  summary    method -> query type -> n_queries, map, map_std, ndcg, ndcg_std
   per_query  AP and nDCG for every query and method, to show the spread
 Relevant = rating 1 or 2. Clips left unrated count as 0; their number is printed and saved as unrated_clips.
 A method only appears for the query types it ran on (motion: motion queries; detector: count and position).
@@ -37,8 +37,7 @@ def main(split: str) -> None:
     for method, by_type in metrics["summary"].items():
         for query_type, m in by_type.items():
             print(f"{method:9} {query_type:10} n={m['n_queries']:2}  mAP {m['map']}  nDCG {m['ndcg']}")
-            if query_type == "all":
-                mlflow.log_metrics({f"{method}_map": m["map"] or 0, f"{method}_ndcg": m["ndcg"] or 0})
+            mlflow.log_metrics({f"{method}_{query_type}_map": m["map"] or 0, f"{method}_{query_type}_ndcg": m["ndcg"] or 0})
     print(f"Unrated clips counted as 0: {metrics['unrated_clips']}. Saved {path}")
 
 

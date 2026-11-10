@@ -51,4 +51,4 @@ def test_score_uses_the_whole_pool_for_the_ideal():
     summary = score(RUNS, ratings, k=2)["summary"]
     assert summary["clip"]["count"]["map"] == pytest.approx(0.25)  # b relevant at rank 2 of 2 relevant: (1/2) / 2
     assert summary["siglip2"]["count"]["map"] == pytest.approx(1.0)
-    assert summary["siglip2"]["all"]["ndcg"] < 1  # b (1) before c (2)
+    assert summary["siglip2"]["count"]["ndcg"] < 1  # b (1) before c (2)

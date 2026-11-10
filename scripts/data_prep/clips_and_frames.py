@@ -22,19 +22,19 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from datasets import load_from_disk, Video as HFVideo
+from datasets import Dataset, load_from_disk, Video as HFVideo
 from src import track_run
 from src.clips_and_frames import (
+    CLIPS_DATASET_DIR,
+    CLIPS_DIR,
+    DATA_DIR,
     video_bytes_to_temp_file,
     cut_video_into_clips,
-    build_clips_dataset,
     save_clips_dataset,
 )
+from src.video_format import get_video_data
 
-DATA_DIR = Path(__file__).parent.parent.parent / "data"
 DATASET_DIR = DATA_DIR / "thehiveisreal"
-CLIPS_DIR = DATA_DIR / "clips"
-CLIPS_DATASET_DIR = DATA_DIR / "clips_dataset"
 
 
 @track_run(run_name="cut_clips")
@@ -54,8 +54,7 @@ def main() -> None:
         fps = float(row["fps"])
         mlflow.log_metric("fps", fps, step=i)
 
-        video_data = row["video"]
-        raw_bytes = video_data.get("bytes") if isinstance(video_data, dict) else bytes(video_data)
+        raw_bytes, _ = get_video_data(row)
         tmp_path = video_bytes_to_temp_file(raw_bytes)
         try:
             clips = cut_video_into_clips(tmp_path, video_name, CLIPS_DIR, fps)
@@ -64,7 +63,7 @@ def main() -> None:
         finally:
             os.unlink(tmp_path)
 
-    dataset = build_clips_dataset(all_clip_infos)
+    dataset = Dataset.from_list(all_clip_infos)
     save_clips_dataset(dataset, CLIPS_DATASET_DIR)
 
     csv_path = DATA_DIR / "clips.csv"
