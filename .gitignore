@@ -23,6 +23,10 @@ mlflow.db
 mlruns/
 mlartifacts/
 
+# YOLO training outputs and downloaded weights
+experiments/yolo/
+*.pt
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb
