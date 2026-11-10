@@ -130,6 +130,7 @@ Both models embed images and text into the same vector space. Cosine similarity 
 
 - CLIP is trained with a **softmax** contrastive loss: each image is pushed towards its own caption and away from every other caption in the batch
 - SigLIP 2 is trained with a **sigmoid** loss: each image–text pair is scored on its own as a match or not, with text formatted as `"This is a photo of {label}."`
+- For a fair comparison both models get the same prompt, `"This is a photo of {query}."`, and the same 224×224 center crop
 - For search, both rank clips by cosine similarity between embeddings; the loss only shapes training
 
 ### Bee detector
@@ -154,6 +155,7 @@ Frame-difference score: mean pixel change between consecutive frames of a clip. 
 
 - **Query types:** count ("many bees"), position ("bees on the left"), motion ("busy entrance"), general description
 - **40 queries total**, 10 per type; 2 per type are development (`Train:`) queries, the rest test queries
+- **Near-duplicates:** each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it
 - **Pooling:** top 10 of each method merged per query, duplicates removed, shuffled, method and rank hidden; rated blind in a CSV (0 = not relevant, 1 = partly, 2 = clearly relevant). Re-pooling after adding a method keeps existing ratings
 - **Metrics:** mAP@10 and nDCG@10 (mean and spread) per method × query type. Relevant = rating ≥ 1; the AP denominator is the relevant clips in the pool (at most 10); the nDCG ideal is the best 10 ratings in the pool; unrated clips count as 0
 - **Latency:** p50 / p99 over 200 queries per method, model loading excluded

@@ -8,6 +8,8 @@ Methods:
                  a query naming left/center/middle/right keeps clips with that label, ranked by bees in that third,
                  otherwise all clips ranked by mean count (fewest first for quiet words such as "few")
 
+Each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it.
+
 Output: data/runs/<split>/, a dataset with one row per query, method and rank:
   split, query_type, query, method, rank, clip_id, score
 Nothing is printed about which method found which clip, so the clips can later be rated blind.

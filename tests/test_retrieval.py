@@ -43,16 +43,22 @@ def test_text_scores_are_dot_products_with_the_query():
 
 
 def test_top_k_orders_both_ways_and_keeps_ties_in_clip_order():
-    ids = np.array(["a", "b", "c", "d"])
+    ids = np.array(["a01", "b01", "c01", "d01"])
     scores = np.array([0.2, 0.9, 0.2, 0.5])
-    assert [c for c, _ in top_k(scores, ids, k=3)] == ["b", "d", "a"]
-    assert [c for c, _ in top_k(scores, ids, k=3, descending=False)] == ["a", "c", "d"]
+    assert [c for c, _ in top_k(scores, ids, k=3)] == ["b01", "d01", "a01"]
+    assert [c for c, _ in top_k(scores, ids, k=3, descending=False)] == ["a01", "c01", "d01"]
 
 
 def test_top_k_leaves_out_nan_scores():
-    ids = np.array(["a", "b", "c"])
-    assert [c for c, _ in top_k(np.array([np.nan, 1.0, 2.0]), ids, k=3)] == ["c", "b"]
-    assert [c for c, _ in top_k(np.array([np.nan, 1.0, 2.0]), ids, k=3, descending=False)] == ["b", "c"]
+    ids = np.array(["a01", "b01", "c01"])
+    assert [c for c, _ in top_k(np.array([np.nan, 1.0, 2.0]), ids, k=3)] == ["c01", "b01"]
+    assert [c for c, _ in top_k(np.array([np.nan, 1.0, 2.0]), ids, k=3, descending=False)] == ["b01", "c01"]
+
+
+def test_top_k_keeps_only_the_best_clip_of_each_video():
+    ids = np.array(["v101", "v102", "v201", "v103"])
+    scores = np.array([0.9, 0.8, 0.5, 0.7])
+    assert [c for c, _ in top_k(scores, ids, k=3)] == ["v101", "v201"]
 
 
 def test_motion_descending_flips_for_quiet_words():

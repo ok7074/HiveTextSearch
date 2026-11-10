@@ -3,7 +3,7 @@ from transformers import AutoModel, AutoProcessor
 
 DEFAULT_MODEL_ID = "google/siglip2-base-patch16-224"
 _TEXT_MAX_LENGTH = 64
-_PROMPT = "This is a photo of {}."  # the text format SigLIP2 was trained with
+PROMPT = "This is a photo of {}."  # the text format SigLIP2 was trained with; CLIP uses it too for a fair comparison
 # Matches CLIP's preprocessing so both models see the same pixels of a portrait frame.
 _CENTER_CROP = {"do_center_crop": True, "size": {"shortest_edge": 224}, "crop_size": {"height": 224, "width": 224}}
 
@@ -29,7 +29,7 @@ def get_text_features(model, processor, texts: list[str]) -> torch.Tensor:
     Texts are auto-formatted as 'This is a photo of {query}.' to match training.
     """
     inputs = processor(
-        text=[_PROMPT.format(t) for t in texts],
+        text=[PROMPT.format(t) for t in texts],
         padding="max_length",
         max_length=_TEXT_MAX_LENGTH,
         truncation=True,
