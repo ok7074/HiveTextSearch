@@ -1,0 +1,51 @@
+Train:
+Count:
+1. Landing board packed with bees
+2. Only a handful of bees on the board
+Position:
+1. Bees clustered on the right side of the board
+2. Left side of the board empty
+Motion:
+1. Many bees flying in front of the hive
+2. Bees sitting still on the board
+General:
+1. Hive with an orange front and a white toothed entrance
+2. Hive with a red stripe and a square mesh grid
+
+Test:
+Count:
+1. A crowded hive entrance
+2. Almost empty landing board
+3. A dense mass of bees covering the board
+4. A few scattered bees
+5. A medium number of bees, not crowded
+6. Bees covering the whole width of the board
+7. A single bee sitting away from the entrance
+8. Very few bees at the entrance hole
+Position:
+1. Bees bunched in the middle of the board
+2. Bees on the left side near the pole
+3. Bees evenly spread along the board
+4. A bee on the wooden board above the entrance
+5. Bees sitting in the mesh grid above the entrance
+6. Bees at the lower edge of the board
+7. More bees on the right than on the left
+8. Two separate groups of bees on the board
+Motion:
+1. Bees taking off from the landing board
+2. Bees landing on the board
+3. Busy traffic at the entrance
+4. Bees walking across the board
+5. A bee flying low over the grass
+6. Bees crawling into the entrance
+7. Quiet entrance with little movement
+8. Bees moving quickly in all directions
+General:
+1. Bees in bright sunlight
+2. Landing board in shade
+3. Sun patches on the grass below the hive
+4. Bees above green leafy plants
+5. Bees above dry grass
+6. A blurry bee in flight
+7. A black pole next to the hive entrance
+8. Bees on a weathered grey wooden board
