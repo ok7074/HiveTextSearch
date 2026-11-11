@@ -5,8 +5,9 @@ Steps, in order (the CVAT check happens by hand between prelabel and add):
             plus extra frames from data/frames (unused clips, one per clip) so own frames are 8% of train
   prelabel  run the s960 bee detector on both splits; writes <split>/labels/*.txt and cvat_<split>.zip
             (Ultralytics YOLO Detection 1.0, images included) to load into CVAT
-  add       after you replaced <split>/labels/ with the corrected CVAT export: copy images + labels into
-            BeeDataset/dev/train and BeeDataset/test, and write BeeDataset/data_own_test.yaml
+  add       with the corrected CVAT export (YOLO 1.1) in data/yolohivedataf/<split>/obj_train_data: copy images
+            + labels into BeeDataset (whole videos of train, >= N_VAL frames, to dev/val; the rest to dev/train;
+            test to test), and write BeeDataset/data.yaml (classes bee, bee_flying) and data_own_test.yaml
   zip       pack BeeDataset (splits only) and the training code into data/kaggle_final_s960.zip
 
 Usage:
@@ -26,11 +27,14 @@ from src.models.yolo_model import BEE_DATASET_DIR, ROOT
 from src.own_frames import add_own_frames, split_own_frames
 
 OWN_DIR = ROOT / "data" / "yolohivedata"
+OWN_LABELS_DIR = ROOT / "data" / "yolohivedataf"
 # Final model of the s960 Optuna run (Kaggle), the best detector so far.
 PRELABEL_WEIGHTS = ROOT / "experiments" / "yolo_runsS960" / "yolo_runs" / "train-11" / "weights" / "best.pt"
 KAGGLE_ZIP = ROOT / "data" / "kaggle_final_s960.zip"
 N_TEST = 15
 OWN_SHARE = 0.08
+# ~15% of the 391 own train frames, so own frames weigh about as much in val as in train.
+N_VAL = 60
 
 
 def split() -> None:
@@ -64,7 +68,7 @@ def prelabel() -> None:
 
 
 def add() -> None:
-    print(add_own_frames(OWN_DIR, BEE_DATASET_DIR))
+    print(add_own_frames(OWN_DIR, OWN_LABELS_DIR, BEE_DATASET_DIR, N_VAL))
 
 
 def make_zip() -> None:

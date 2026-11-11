@@ -1,4 +1,5 @@
-"""Own hive frames (data/yolohivedata) for the final YOLO training: split, check the corrected labels, add to BeeDataset."""
+"""Own hive frames (data/yolohivedata, corrected labels in data/yolohivedataf) for the final YOLO training:
+split, check the corrected labels, add to BeeDataset."""
 import math
 import random
 import shutil
@@ -58,36 +59,60 @@ def split_own_frames(
     return {"test": n_test, "train_from_folder": len(frames) - n_test, "train_extra": n_extra}
 
 
-def check_labels(split_dir: Path) -> list[Path]:
+# Class ids of the CVAT export (obj.names). The public BeeDataset only uses 0.
+NAMES = {0: "bee", 1: "bee_flying"}
+
+
+def check_labels(images_dir: Path, labels_dir: Path) -> list[Path]:
     """
-    Check split_dir/labels/*.txt against split_dir/*.jpg and return the images.
-    Every label must belong to an image and hold 'class x y w h' lines with class 0 and values in [0, 1].
+    Check labels_dir/*.txt against images_dir/*.jpg and return the images.
+    Every label must belong to an image and hold 'class x y w h' lines with a class in NAMES and values in [0, 1].
     An image without a label file is a frame with no bees, which YOLO reads the same way.
     """
-    images = sorted(split_dir.glob("*.jpg"))
-    labels = sorted((split_dir / "labels").glob("*.txt"))
+    images = sorted(images_dir.glob("*.jpg"))
+    labels = sorted(labels_dir.glob("*.txt"))
     if not labels:
-        raise FileNotFoundError(f"No labels in {split_dir / 'labels'}; put the corrected CVAT export there")
+        raise FileNotFoundError(f"No labels in {labels_dir}; put the corrected CVAT export there")
     if stray := {label.stem for label in labels} - {image.stem for image in images}:
-        raise ValueError(f"Labels without an image in {split_dir}: {sorted(stray)[:5]}")
+        raise ValueError(f"Labels in {labels_dir} without an image in {images_dir}: {sorted(stray)[:5]}")
+    classes = {str(c) for c in NAMES}
     for label in labels:
         for line in label.read_text().splitlines():
             fields = line.split()
             if not fields:
                 continue
-            if len(fields) != 5 or fields[0] != "0" or not all(0 <= float(v) <= 1 for v in fields[1:]):
+            if len(fields) != 5 or fields[0] not in classes or not all(0 <= float(v) <= 1 for v in fields[1:]):
                 raise ValueError(f"Bad line in {label}: {line!r}")
     return images
 
 
-def add_own_frames(own_dir: Path, bee_dataset_dir: Path) -> dict[str, int]:
+def add_own_frames(
+    images_dir: Path, labels_dir: Path, bee_dataset_dir: Path, n_val: int, seed: int = 0,
+) -> dict[str, int]:
     """
-    Copy own_dir/train into bee_dataset_dir/dev/train and own_dir/test into bee_dataset_dir/test (images + labels).
-    Also writes own_test.txt and data_own_test.yaml, which evaluate on the own test frames alone.
-    Everything is checked before the first copy, so a bad label leaves BeeDataset untouched.
+    Copy the own frames (images_dir/<split>/*.jpg, labels from the CVAT export labels_dir/<split>/obj_train_data)
+    into BeeDataset: whole videos of the train frames, at least n_val frames, go to dev/val, the rest of train to
+    dev/train and test to test. Also writes data.yaml with NAMES, own_test.txt and data_own_test.yaml, which
+    evaluates on the own test frames alone. Everything is checked before the first copy, so a bad label leaves
+    BeeDataset untouched; images_dir and labels_dir are only read.
     """
-    targets = {"train": bee_dataset_dir / "dev" / "train", "test": bee_dataset_dir / "test"}
-    images = {split: check_labels(own_dir / split) for split in targets}
+    label_dirs = {split: labels_dir / split / "obj_train_data" for split in ("train", "test")}
+    checked = {split: check_labels(images_dir / split, label_dirs[split]) for split in label_dirs}
+
+    by_video = defaultdict(list)
+    for image in checked["train"]:
+        by_video[video_of(image)].append(image)
+    val = []
+    # Whole videos, so no val frame shares a video with a train frame.
+    for video in random.Random(seed).sample(sorted(by_video), len(by_video)):
+        if len(val) >= n_val:
+            break
+        val += by_video[video]
+    images = {"train": [i for i in checked["train"] if i not in val], "val": val, "test": checked["test"]}
+    sources = {"train": label_dirs["train"], "val": label_dirs["train"], "test": label_dirs["test"]}
+    targets = {
+        "train": bee_dataset_dir / "dev" / "train", "val": bee_dataset_dir / "dev" / "val", "test": bee_dataset_dir / "test",
+    }
     for split, target in targets.items():
         for image in images[split]:
             for kind in ("images", "labels"):
@@ -97,13 +122,13 @@ def add_own_frames(own_dir: Path, bee_dataset_dir: Path) -> dict[str, int]:
     for split, target in targets.items():
         for image in images[split]:
             shutil.copy2(image, target / "images" / image.name)
-            label = own_dir / split / "labels" / f"{image.stem}.txt"
+            label = sources[split] / f"{image.stem}.txt"
             if label.exists():
                 shutil.copy2(label, target / "labels" / label.name)
 
+    splits = {"train": "dev/train/images", "val": "dev/val/images"}
+    (bee_dataset_dir / "data.yaml").write_text(yaml.safe_dump({**splits, "test": "test/images", "names": NAMES}))
     # "./" lines resolve relative to the txt file, so this works wherever the dataset is unpacked.
     (bee_dataset_dir / "own_test.txt").write_text("".join(f"./test/images/{i.name}\n" for i in images["test"]))
-    (bee_dataset_dir / "data_own_test.yaml").write_text(yaml.safe_dump({
-        "train": "dev/train/images", "val": "dev/val/images", "test": "own_test.txt", "names": {0: "bee"},
-    }))
+    (bee_dataset_dir / "data_own_test.yaml").write_text(yaml.safe_dump({**splits, "test": "own_test.txt", "names": NAMES}))
     return {split: len(images[split]) for split in targets}

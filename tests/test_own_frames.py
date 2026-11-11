@@ -31,41 +31,50 @@ def test_split_puts_one_frame_per_video_in_test_and_tops_up_train(tmp_path):
         split_own_frames(own, frames, n_public_train=10, n_test=2, own_share=0.5)
 
 
-def _own_split(own, split, labels):
+def _own_split(own, export, split, labels):
+    """Images in own/<split>, labels in the CVAT export layout export/<split>/obj_train_data."""
     _frames(own / split, labels)
-    (own / split / "labels").mkdir()
+    (export / split / "obj_train_data").mkdir(parents=True)
     for name, text in labels.items():
         if text is not None:
-            (own / split / "labels" / f"{name}.txt").write_text(text)
+            (export / split / "obj_train_data" / f"{name}.txt").write_text(text)
 
 
 def _bee_dataset(root):
-    for split in ("dev/train", "test"):
+    for split in ("dev/train", "dev/val", "test"):
         for kind in ("images", "labels"):
             (root / split / kind).mkdir(parents=True)
 
 
-def test_add_copies_images_and_labels_and_writes_own_test_yaml(tmp_path):
-    own, bee = tmp_path / "own", tmp_path / "bee"
-    _own_split(own, "train", {"a01": "0 0.5 0.5 0.1 0.1\n", "b01": None})  # b01: no bees
-    _own_split(own, "test", {"c01": "0 0.2 0.3 0.1 0.1\n"})
+def test_add_splits_val_by_video_copies_labels_and_writes_yamls(tmp_path):
+    own, export, bee = tmp_path / "own", tmp_path / "export", tmp_path / "bee"
+    # Videos recA_v1 (2 frames) and recA_v2 (1 frame, no bees); n_val=1 must still move all of one video.
+    _own_split(own, export, "train", {"recA_v10101": "0 0.5 0.5 0.1 0.1\n", "recA_v10201": "1 0.5 0.5 0.1 0.1\n",
+                                      "recA_v20101": None})
+    _own_split(own, export, "test", {"recA_v30101": "0 0.2 0.3 0.1 0.1\n"})
     _bee_dataset(bee)
 
-    assert add_own_frames(own, bee) == {"train": 2, "test": 1}
-    assert {p.name for p in (bee / "dev/train/images").iterdir()} == {"a01.jpg", "b01.jpg"}
-    assert {p.name for p in (bee / "dev/train/labels").iterdir()} == {"a01.txt"}
-    assert (bee / "own_test.txt").read_text() == "./test/images/c01.jpg\n"
+    counts = add_own_frames(own, export, bee, n_val=1)
+    assert counts["train"] + counts["val"] == 3 and counts["test"] == 1
+    val = {p.stem[:-4] for p in (bee / "dev/val/images").iterdir()}
+    train = {p.stem[:-4] for p in (bee / "dev/train/images").iterdir()}
+    assert len(val) == 1 and not val & train, "val holds whole videos only"
+    assert len(list((bee / "dev/train/labels").iterdir())) + len(list((bee / "dev/val/labels").iterdir())) == 2
+    assert (bee / "own_test.txt").read_text() == "./test/images/recA_v30101.jpg\n"
+    for name in ("data.yaml", "data_own_test.yaml"):
+        assert yaml.safe_load((bee / name).read_text())["names"] == {0: "bee", 1: "bee_flying"}
     assert yaml.safe_load((bee / "data_own_test.yaml").read_text())["test"] == "own_test.txt"
+    assert list((own / "train").glob("*.jpg")), "source images are copied, not moved"
     with pytest.raises(FileExistsError):
-        add_own_frames(own, bee)
+        add_own_frames(own, export, bee, n_val=1)
 
 
-@pytest.mark.parametrize("bad", ["1 0.5 0.5 0.1 0.1", "0 1.5 0.5 0.1 0.1", "0 0.5 0.5 0.1"])
+@pytest.mark.parametrize("bad", ["2 0.5 0.5 0.1 0.1", "0 1.5 0.5 0.1 0.1", "0 0.5 0.5 0.1"])
 def test_add_rejects_bad_labels_before_copying_anything(tmp_path, bad):
-    own, bee = tmp_path / "own", tmp_path / "bee"
-    _own_split(own, "train", {"a01": "0 0.5 0.5 0.1 0.1\n"})
-    _own_split(own, "test", {"c01": bad + "\n"})
+    own, export, bee = tmp_path / "own", tmp_path / "export", tmp_path / "bee"
+    _own_split(own, export, "train", {"a01": "0 0.5 0.5 0.1 0.1\n"})
+    _own_split(own, export, "test", {"c01": bad + "\n"})
     _bee_dataset(bee)
     with pytest.raises(ValueError):
-        add_own_frames(own, bee)
+        add_own_frames(own, export, bee, n_val=0)
     assert not list((bee / "dev/train/images").iterdir())
