@@ -4,7 +4,7 @@ import torch
 from datasets import Dataset
 from PIL import Image
 
-from src.retrieval import frame_difference, load_queries, motion_descending, motion_scores, text_scores, top_k
+from src.retrieval import frame_difference, load_queries, motion_descending, motion_scores, rrf, text_scores, top_k
 
 QUERIES = """\
 Train:
@@ -81,3 +81,11 @@ def test_motion_scores_rank_a_changing_clip_above_a_still_one(tmp_path):
 def test_frame_difference_does_not_wrap_around_uint8():
     frames = [np.full((2, 2), 10, np.uint8), np.full((2, 2), 5, np.uint8)]
     assert frame_difference(frames) == 5
+
+
+def test_rrf_sums_reciprocal_ranks_with_shared_ties_and_skips_nan():
+    a = (np.array([0.9, 0.5, 0.1]), True)            # ranks 1, 2, 3
+    b = (np.array([3.0, 3.0, np.nan]), False)        # tie -> both rank 1.5, third clip left out
+    fused = rrf([a, b], k=60)
+    assert np.allclose(fused, [1 / 61 + 1 / 61.5, 1 / 62 + 1 / 61.5, 1 / 63])
+    assert np.argmax(fused) == 0

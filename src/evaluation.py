@@ -1,3 +1,5 @@
+import os
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -8,8 +10,43 @@ from .retrieval import TOP_K
 
 RATINGS_DIR = DATA_DIR.parent / "experiments"
 RESULTS_DIR = DATA_DIR.parent / "results"
+FAILURES_FILE = RATINGS_DIR / "failures.csv"
 KEY = ["query_type", "query", "clip_id"]
 RATINGS = (0, 1, 2)
+FAILURE_CATEGORIES = (
+    "hive shortcut", "wrong side or position", "negation or comparison", "wrong count",
+    "flying or blurry bee", "lighting or shadow", "other",
+)
+FAILURE_COLUMNS = ["split", "query_type", "query", "clip_id", "method", "category", "note", "time"]
+
+
+def write_ratings(ratings: pd.DataFrame, path: str | Path) -> None:
+    """Write the ratings CSV via a copy that is swapped in, so a failed write never leaves it half-erased."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    ratings.to_csv(tmp, index=False)
+    os.replace(tmp, path)
+
+
+def fully_rated_queries(runs: pd.DataFrame, ratings: pd.DataFrame) -> set[tuple[str, str]]:
+    """
+    (query_type, query) pairs whose clips are all rated: every clip any method returned is in the sheet with a rating.
+    A rerun that adds a method brings unpooled clips, which locks the query again until they are pooled and rated.
+    """
+    merged = runs[KEY].drop_duplicates().merge(ratings[KEY + ["rating"]], on=KEY, how="left")
+    done = merged.groupby(["query_type", "query"])["rating"].apply(lambda r: r.notna().all())
+    return set(done[done].index)
+
+
+def append_failure(row: dict, path: str | Path = FAILURES_FILE) -> None:
+    """Append one failure note (FAILURE_COLUMNS; time is filled in) to the failures CSV, creating it if needed."""
+    path = Path(path)
+    if row.get("category") not in FAILURE_CATEGORIES:
+        raise ValueError(f"category must be one of {FAILURE_CATEGORIES}, got {row.get('category')!r}")
+    record = pd.DataFrame([{**{c: row.get(c, "") for c in FAILURE_COLUMNS}, "time": datetime.now().isoformat(timespec="seconds")}])
+    path.parent.mkdir(parents=True, exist_ok=True)
+    record.to_csv(path, mode="a", header=not path.exists(), index=False)
 
 
 def pool(runs: pd.DataFrame, existing: pd.DataFrame | None = None, seed: int = 0) -> pd.DataFrame:

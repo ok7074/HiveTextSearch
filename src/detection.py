@@ -13,6 +13,7 @@ THIRDS = ("left", "center", "right")
 POSITION_WORDS = {"left": "left", "center": "center", "centre": "center", "middle": "center", "right": "right"}
 # "A handful of bees" means at least one bee, unlike "empty" or "no bees".
 FEW_WORDS = {"few", "handful", "couple"}
+DETECTOR_TYPES = ("count", "position", "general")
 
 
 def third_counts(x_centers, width: int) -> np.ndarray:
@@ -74,18 +75,19 @@ def query_position(query: str) -> str | None:
 
 def detector_scores(query: str, query_type: str, detections: dict[str, np.ndarray]) -> tuple[np.ndarray, bool] | None:
     """
-    Detector ranking for count and position queries; None (not applicable) otherwise. Excluded clips get NaN,
-    which top_k drops. Quiet words such as "few" or "empty" put the fewest bees first.
+    Detector ranking for count, position and general queries; None (not applicable) otherwise. Excluded clips get
+    NaN, which top_k drops. Quiet words such as "few" or "empty" put the fewest bees first.
       - names a third, busy ("bees on the left"): clips with that label, ranked by the boxes in that third
       - names a third, quiet ("left side empty"): clips with bees in the other thirds, fewest in that third first
-      - count query without a third: all clips by mean count; "few"/"handful"/"couple" leave out clips with no bees
+      - count or general query without a third: all clips by mean count; "few"/"handful"/"couple" leave out clips
+        with no bees. For general queries this is a measured test: a count mostly encodes which hive it is.
       - position query without a third: None, since a total count says nothing about where bees sit
     """
-    if "count" not in query_type and "position" not in query_type:
+    if not any(kind in query_type for kind in DETECTOR_TYPES):
         return None
     position, descending = query_position(query), motion_descending(query)
     if position is None:
-        if "count" not in query_type:
+        if "position" in query_type:
             return None
         scores = detections["count"].astype(np.float32)
         if set(re.findall(r"[a-z]+", query.lower())) & FEW_WORDS:

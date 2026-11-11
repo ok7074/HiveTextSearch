@@ -1,7 +1,9 @@
 import pandas as pd
 import pytest
 
-from src.evaluation import average_precision, ndcg, pool, read_ratings, score
+from src.evaluation import (
+    append_failure, average_precision, fully_rated_queries, ndcg, pool, read_ratings, score, write_ratings,
+)
 
 RUNS = pd.DataFrame([
     {"query_type": "count", "query": "many bees", "method": m, "rank": r, "clip_id": c}
@@ -52,3 +54,29 @@ def test_score_uses_the_whole_pool_for_the_ideal():
     assert summary["clip"]["count"]["map"] == pytest.approx(0.25)  # b relevant at rank 2 of 2 relevant: (1/2) / 2
     assert summary["siglip2"]["count"]["map"] == pytest.approx(1.0)
     assert summary["siglip2"]["count"]["ndcg"] < 1  # b (1) before c (2)
+
+
+def test_fully_rated_queries_locks_unrated_and_unpooled_clips(tmp_path):
+    rated = pool(RUNS).assign(rating=[2, 0, 1])
+    assert fully_rated_queries(RUNS, rated) == {("count", "many bees")}
+    assert fully_rated_queries(RUNS, rated.assign(rating=[2, pd.NA, 1]).astype({"rating": "Int64"})) == set()
+    more = pd.concat([RUNS, RUNS.iloc[[0]].assign(method="detector", clip_id="d")])
+    assert fully_rated_queries(more, rated) == set(), "a clip found by a new method is not in the sheet yet"
+
+
+def test_write_ratings_round_trips_and_leaves_no_temp_file(tmp_path):
+    path = tmp_path / "sub" / "ratings.csv"
+    ratings = pool(RUNS).assign(rating=pd.array([2, None, 1], dtype="Int64"))
+    write_ratings(ratings, path)
+    assert read_ratings(path).equals(ratings)
+    assert not path.with_suffix(".tmp").exists()
+
+
+def test_append_failure_adds_rows_and_rejects_unknown_categories(tmp_path):
+    path = tmp_path / "failures.csv"
+    for clip in ("a", ""):
+        append_failure({"split": "train", "query": "many bees", "clip_id": clip, "category": "hive shortcut"}, path)
+    rows = pd.read_csv(path, keep_default_na=False)
+    assert rows["clip_id"].tolist() == ["a", ""] and rows["time"].ne("").all()
+    with pytest.raises(ValueError):
+        append_failure({"category": "made up"}, path)

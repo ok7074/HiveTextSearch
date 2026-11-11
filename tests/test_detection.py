@@ -72,6 +72,13 @@ def test_empty_side_ranks_clips_with_bees_elsewhere_by_fewest_on_that_side():
     assert scores[1] == 0 and np.isnan(scores[0]) and np.isnan(scores[2])
 
 
+def test_general_queries_are_ranked_by_total_count():
+    scores, descending = detector_scores("Bees in bright sunlight", "general", WITH_EMPTY_CLIP)
+    assert descending and scores.tolist() == [1.0, 1.25, 0.0]
+    scores, descending = detector_scores("Quiet entrance in shade", "general", WITH_EMPTY_CLIP)
+    assert not descending
+
+
 def test_position_query_without_a_side_is_left_to_clip():
     """R4: no left/middle/right word, so the detector does not rank position queries."""
     assert detector_scores("Bees evenly spread along the board", "position", WITH_EMPTY_CLIP) is None
