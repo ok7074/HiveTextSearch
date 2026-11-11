@@ -4,6 +4,7 @@ from typing import Callable
 
 import cv2
 import numpy as np
+import pandas as pd
 from datasets import Dataset
 
 from .frame_selection import DATA_DIR, N_FRAMES
@@ -12,8 +13,13 @@ QUERIES_FILE = DATA_DIR.parent / "queries.txt"
 RUNS_DIR = DATA_DIR / "runs"
 SPLITS = ("train", "test")
 TOP_K = 10
+# Standard RRF constant (Cormack et al., 2009); fixed, so nothing is tuned on the queries.
+RRF_K = 60
 # shortcut: plain word match, so "not busy" still ranks the busiest clips first; switch to per-query rules if that matters.
-QUIET_WORDS = {"calm", "still", "quiet", "resting", "rest", "idle", "few", "empty", "slow", "inactive", "little", "no"}
+QUIET_WORDS = {
+    "calm", "still", "quiet", "resting", "rest", "idle", "few", "handful", "couple", "empty", "slow", "inactive",
+    "little", "no",
+}
 
 
 def load_queries(path: str | Path, split: str) -> list[dict]:
@@ -86,6 +92,19 @@ def motion_scores(dataset: Dataset, frames_dir: Path) -> np.ndarray:
 def motion_descending(query: str) -> bool:
     """True when the query asks for activity (most movement first), False for quiet words like "calm"."""
     return not set(re.findall(r"[a-z]+", query.lower())) & QUIET_WORDS
+
+
+def rrf(results: list[tuple[np.ndarray, bool]], k: int = RRF_K) -> np.ndarray:
+    """
+    Reciprocal rank fusion: each clip gets the sum over methods of 1 / (k + its rank in that method), highest best.
+    results holds (scores, descending) per method, as the methods return them. Clips with equal scores share
+    their average rank; a clip a method left out (NaN) gets nothing from that method.
+    """
+    fused = np.zeros(len(results[0][0]))
+    for scores, descending in results:
+        ranks = pd.Series(-scores if descending else scores).rank(method="average").to_numpy()
+        fused += np.nan_to_num(1 / (k + ranks))
+    return fused
 
 
 def top_k(scores: np.ndarray, clip_ids: np.ndarray, k: int = TOP_K, descending: bool = True) -> list[tuple[str, float]]:

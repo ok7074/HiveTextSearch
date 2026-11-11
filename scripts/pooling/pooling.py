@@ -14,7 +14,6 @@ Usage:
     python scripts/pooling/pooling.py --split test
 """
 import argparse
-import os
 import sys
 from pathlib import Path
 
@@ -22,7 +21,7 @@ from datasets import load_from_disk
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.evaluation import RATINGS_DIR, pool, read_ratings
+from src.evaluation import RATINGS_DIR, pool, read_ratings, write_ratings
 from src.retrieval import RUNS_DIR, SPLITS
 
 
@@ -32,11 +31,7 @@ def main(split: str) -> None:
     existing = read_ratings(path) if path.exists() else None
     ratings = pool(runs, existing)
     added = len(ratings) - (0 if existing is None else len(existing))
-    RATINGS_DIR.mkdir(exist_ok=True)
-    # Write a copy first and swap it in, so a failed write never leaves the ratings half-erased.
-    tmp = path.with_suffix(".tmp")
-    ratings.to_csv(tmp, index=False)
-    os.replace(tmp, path)
+    write_ratings(ratings, path)
     print(f"{path}: {len(ratings)} clips to rate over {ratings['query'].nunique()} queries, {added} new")
 
 

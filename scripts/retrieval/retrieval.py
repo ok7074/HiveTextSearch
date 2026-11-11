@@ -4,9 +4,12 @@ Methods:
   clip, siglip2  every query: cosine similarity between the query and each clip's averaged embedding
   motion         motion queries only: frame difference across each clip's 4 frames,
                  most movement first, or least first for quiet words such as "calm"
-  detector       count and position queries only, once scripts/yolo/detect_clips.py has run: YOLO bee counts;
-                 a query naming left/center/middle/right keeps clips with that label, ranked by bees in that third,
-                 otherwise all clips ranked by mean count (fewest first for quiet words such as "few")
+  detector       count, position and general queries, once scripts/yolo/detect_clips.py has run: YOLO bee counts;
+                 a query naming left/center/middle/right keeps clips with that label, ranked by bees in that third
+                 (or, with a quiet word like "empty", clips with bees elsewhere, fewest on that side first);
+                 count and general queries rank all clips by mean count (fewest first for quiet words such as "few");
+                 position queries without a side word are left to the other methods (see src/detection.py)
+  rrf            every query: reciprocal rank fusion (k = 60) of all the methods above that apply to it
 
 Each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it.
 
@@ -40,7 +43,7 @@ from src.frame_selection import CLIPS_FRAMES_DATASET_DIR, FRAMES_DIR
 from src.models import clip_text_features, load_clip, load_siglip2, siglip2_text_features
 from src.retrieval import (
     QUERIES_FILE, RUNS_DIR, SPLITS, TOP_K,
-    is_motion_query, load_queries, motion_descending, motion_scores, text_scores, top_k,
+    is_motion_query, load_queries, motion_descending, motion_scores, rrf, text_scores, top_k,
 )
 
 TEXT_MODELS = {
@@ -92,6 +95,8 @@ def load_methods() -> tuple[np.ndarray, dict]:
         methods["detector"] = lambda q: detector_scores(q["query"], q["query_type"], detections)
     else:
         print(f"No {DETECTIONS_DIR} yet: run scripts/yolo/detect_clips.py to add the detector method", flush=True)
+    single = dict(methods)
+    methods["rrf"] = lambda q: (rrf([r for m in single.values() if (r := m(q)) is not None]), True)
     return clip_ids, methods
 
 
