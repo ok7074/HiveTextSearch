@@ -5,8 +5,8 @@ and writes results/<split>_metrics.json:
   summary    method -> query type -> n_queries, map, map_std, ndcg, ndcg_std
   per_query  AP and nDCG for every query and method, to show the spread
 Relevant = rating 1 or 2. Clips left unrated count as 0; their number is printed and saved as unrated_clips.
-A method only appears for the query types it ran on (motion: motion queries; detector: count, position
-and general; rrf: all).
+A method only appears for the query types it ran on (motion: motion queries; detector: count, position,
+general and motion; rrf: all).
 
 Usage:
     python scripts/scoring/scoring.py

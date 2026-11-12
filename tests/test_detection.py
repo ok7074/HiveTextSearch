@@ -9,6 +9,7 @@ DETECTIONS = {
     "center": np.array([0, 2, 1]),
     "right": np.array([0, 0, 1]),
     "count": np.array([1.0, 0.5, 0.75]),
+    "flying": np.array([0.0, 0.5, 0.25]),
     "label": np.array(["left", "center", "overall"]),
 }
 
@@ -25,7 +26,10 @@ def test_clip_label_picks_the_busiest_third_or_overall_or_empty():
 
 
 def test_load_detections_reorders_rows_to_match_clip_ids(tmp_path):
-    rows = [{"clip_id": c, "left": n, "center": 0, "right": 0, "count": n / 4, "label": "left"} for c, n in (("b", 2), ("a", 1))]
+    rows = [
+        {"clip_id": c, "left": n, "center": 0, "right": 0, "count": n / 4, "flying": 0.0, "label": "left"}
+        for c, n in (("b", 2), ("a", 1))
+    ]
     Dataset.from_list(rows).save_to_disk(str(tmp_path))
     detections = load_detections(np.array(["a", "b"]), tmp_path)
     assert detections["left"].tolist() == [1, 2]
@@ -48,7 +52,14 @@ def test_detector_filters_by_label_and_ranks_by_that_third():
 def test_detector_ranks_count_queries_by_mean_count_and_skips_other_types():
     scores, descending = detector_scores("few bees", "count", DETECTIONS)
     assert not descending and scores.tolist() == [1.0, 0.5, 0.75]
-    assert detector_scores("busy entrance", "motion", DETECTIONS) is None
+    assert detector_scores("busy entrance", "colour", DETECTIONS) is None
+
+
+def test_motion_queries_rank_by_flying_bees_and_flip_for_quiet_words():
+    scores, descending = detector_scores("Many bees flying in front of the hive", "motion", DETECTIONS)
+    assert descending and scores.tolist() == [0.0, 0.5, 0.25]
+    _, descending = detector_scores("Bees sitting still on the board", "motion", DETECTIONS)
+    assert not descending
 
 
 WITH_EMPTY_CLIP = {

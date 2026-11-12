@@ -2,7 +2,7 @@
 
 Output: data/detections/, a dataset with one row per clip:
   clip_id, frame_counts (bees per frame), left, center, right (bees per vertical third, summed over the 4 frames),
-  count (mean bees per frame), label (left/center/right = third with the most bees, overall on a tie, empty with none)
+  count (mean bees per frame), flying (mean bee_flying boxes per frame), label (left/center/right = third with the most bees, overall on a tie, empty with none)
 scripts/retrieval/retrieval.py picks this up as the "detector" method. Runs on CPU.
 
 Usage:
@@ -37,5 +37,5 @@ def main(weights: str) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--weights", default=str(DEFAULT_WEIGHTS), help="trained YOLO weights (default: the n640 run)")
+    parser.add_argument("--weights", default=str(DEFAULT_WEIGHTS), help="trained YOLO weights (default: the final s960 run)")
     main(weights=parser.parse_args().weights)

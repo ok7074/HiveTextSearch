@@ -8,12 +8,13 @@ from .frame_selection import DATA_DIR, N_FRAMES
 from .retrieval import motion_descending
 
 DETECTIONS_DIR = DATA_DIR / "detections"
-DEFAULT_WEIGHTS = DATA_DIR.parent / "experiments" / "yolo_runs" / "train-11" / "weights" / "best.pt"
+DEFAULT_WEIGHTS = DATA_DIR.parent / "experiments" / "yolo_runsFinal" / "experiments" / "yolo" / "final_s960" / "weights" / "best.pt"
 THIRDS = ("left", "center", "right")
 POSITION_WORDS = {"left": "left", "center": "center", "centre": "center", "middle": "center", "right": "right"}
 # "A handful of bees" means at least one bee, unlike "empty" or "no bees".
 FEW_WORDS = {"few", "handful", "couple"}
-DETECTOR_TYPES = ("count", "position", "general")
+DETECTOR_TYPES = ("count", "position", "general", "motion")
+FLYING_CLASS = 1  # bee_flying in the final model's data.yaml
 
 
 def third_counts(x_centers, width: int) -> np.ndarray:
@@ -35,7 +36,7 @@ def detect_clips(model, dataset: Dataset, frames_dir: Path) -> list[dict]:
     """
     Run a YOLO model on every clip's saved frames and return one row per clip:
       clip_id, frame_counts (boxes per frame), left/center/right (boxes per third summed over the frames),
-      count (mean boxes per frame) and label (see clip_label).
+      count (mean boxes per frame), flying (mean bee_flying boxes per frame) and label (see clip_label).
     """
     rows = []
     for number, (clip_id, names) in enumerate(zip(dataset["clip_id"], dataset["frame_names"]), 1):
@@ -47,11 +48,13 @@ def detect_clips(model, dataset: Dataset, frames_dir: Path) -> list[dict]:
         results = model.predict([str(p) for p in paths], device="cpu", verbose=False)
         per_frame = [third_counts(r.boxes.xywh[:, 0].cpu().numpy(), r.orig_shape[1]) for r in results]
         total = np.sum(per_frame, axis=0)
+        flying = sum(int((r.boxes.cls == FLYING_CLASS).sum()) for r in results)
         rows.append({
             "clip_id": clip_id,
             "frame_counts": [int(c.sum()) for c in per_frame],
             **{third: int(n) for third, n in zip(THIRDS, total)},
             "count": float(total.sum() / N_FRAMES),
+            "flying": float(flying / N_FRAMES),
             "label": clip_label(total),
         })
         if number % 100 == 0:
@@ -65,7 +68,7 @@ def load_detections(clip_ids: np.ndarray, detections_dir: Path = DETECTIONS_DIR)
     if set(detections.index) != set(clip_ids):
         raise ValueError(f"{detections_dir} lists different clips than the embeddings; rerun scripts/yolo/detect_clips.py")
     detections = detections.loc[clip_ids]
-    return {column: detections[column].to_numpy() for column in ("left", "center", "right", "count", "label")}
+    return {column: detections[column].to_numpy() for column in ("left", "center", "right", "count", "flying", "label")}
 
 
 def query_position(query: str) -> str | None:
@@ -75,8 +78,9 @@ def query_position(query: str) -> str | None:
 
 def detector_scores(query: str, query_type: str, detections: dict[str, np.ndarray]) -> tuple[np.ndarray, bool] | None:
     """
-    Detector ranking for count, position and general queries; None (not applicable) otherwise. Excluded clips get
-    NaN, which top_k drops. Quiet words such as "few" or "empty" put the fewest bees first.
+    Detector ranking for count, position, general and motion queries; None (not applicable) otherwise. Excluded clips
+    get NaN, which top_k drops. Quiet words such as "few" or "empty" put the fewest bees first.
+      - motion query: all clips by mean bee_flying boxes per frame (fewest first for quiet words such as "still")
       - names a third, busy ("bees on the left"): clips with that label, ranked by the boxes in that third
       - names a third, quiet ("left side empty"): clips with bees in the other thirds, fewest in that third first
       - count or general query without a third: all clips by mean count; "few"/"handful"/"couple" leave out clips
@@ -86,6 +90,8 @@ def detector_scores(query: str, query_type: str, detections: dict[str, np.ndarra
     if not any(kind in query_type for kind in DETECTOR_TYPES):
         return None
     position, descending = query_position(query), motion_descending(query)
+    if "motion" in query_type:
+        return detections["flying"].astype(np.float32), descending
     if position is None:
         if "position" in query_type:
             return None
