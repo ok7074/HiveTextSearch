@@ -1,7 +1,7 @@
 """Time how long each method takes to answer a query, over 200 queries per method.
 
 Uses the train and test queries from queries.txt, cycling through the ones a method applies to
-(motion: motion queries; detector: count, position and general queries; rrf: all, timed including every
+(motion: motion queries; detector: count, position, general and motion queries; rrf: all, timed including every
 method it fuses) until it has answered --n of them.
 One timed answer = score every clip + pick the top 10; loading the models is not timed, and the first call
 per method (a warm-up) is not counted. Writes p50 and p99 in milliseconds to results/latency.json.

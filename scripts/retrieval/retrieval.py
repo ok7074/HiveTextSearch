@@ -4,7 +4,8 @@ Methods:
   clip, siglip2  every query: cosine similarity between the query and each clip's averaged embedding
   motion         motion queries only: frame difference across each clip's 4 frames,
                  most movement first, or least first for quiet words such as "calm"
-  detector       count, position and general queries, once scripts/yolo/detect_clips.py has run: YOLO bee counts;
+  detector       count, position, general and motion queries, once scripts/yolo/detect_clips.py has run: YOLO bee counts;
+                 motion queries rank clips by flying bees (bee_flying boxes), fewest first for quiet words;
                  a query naming left/center/middle/right keeps clips with that label, ranked by bees in that third
                  (or, with a quiet word like "empty", clips with bees elsewhere, fewest on that side first);
                  count and general queries rank all clips by mean count (fewest first for quiet words such as "few");
