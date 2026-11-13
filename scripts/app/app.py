@@ -99,7 +99,12 @@ def next_unrated(split: str, skipped: list[int]):
     if not todo:
         return f"{left} left, all skipped in this session; switch split and back to see them again.", None, None
     row = ratings.loc[todo[0]]
-    text = f"### {row['query']}\n*{row['query_type']} query* · {left} clips left to rate in {split}"
+    left_in_query = int((ratings["rating"].isna() & (ratings["query"] == row["query"])).sum())
+    # pool() keeps each query's rows together, so a different query on the row above means the query just changed.
+    new_query = todo[0] == 0 or ratings.loc[todo[0] - 1, "query"] != row["query"]
+    banner = "## 🔔 NEW QUERY — read it before rating\n" if new_query else ""
+    text = (f"{banner}### {row['query']}\n*{row['query_type']} query* · {left_in_query} clips left for this query"
+            f" · {left} left in {split}")
     return text, video(row["clip_id"]), {"row": int(todo[0]), "clip_id": row["clip_id"]}
 
 
