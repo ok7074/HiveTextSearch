@@ -17,9 +17,9 @@ Presentation deadline: **25 November 2026** — 15 minutes + Q&A, at most 3 slid
   | CLIP | all | OpenAI `clip-vit-base-patch32`, zero-shot | done |
   | SigLIP 2 | all | Google `siglip2-base-patch16-224`, zero-shot | done |
   | Motion | motion | Frame-difference score over the 4 frames (baseline) | done |
-  | Detector | count, position | YOLO26n fine-tuned on bee data; bee counts per vertical third | done |
-  | Combined | all | Weighted mix of image–text score and detector score | planned |
-- Evaluates with **mAP@10** and **nDCG@10** on hand-annotated relevance labels (0 / 1 / 2) across four query types: count, position, motion, general description
+  | Detector | count, position, general, motion | YOLO26s @ 960 fine-tuned on bee data (classes bee, bee_flying); bee counts per vertical third, flying bees for motion | done |
+  | Combined (RRF) | all | Reciprocal rank fusion (k = 60) of every method that applies to the query | done |
+- Evaluates with **mAP@10** and **nDCG@10** on hand-annotated relevance labels (0 / 1 / 2) across four query types (count, position, motion, general description) and the six pairs of them
 - Reports latency at p50 and p99 over 200 queries per method
 
 No vector database or cloud service needed — at ~1,440 clips, a NumPy matrix multiply searches everything in milliseconds.
@@ -153,8 +153,8 @@ Frame-difference score: mean pixel change between consecutive frames of a clip. 
 
 ## Evaluation
 
-- **Query types:** count ("many bees"), position ("bees on the left"), motion ("busy entrance"), general description
-- **40 queries total**, 10 per type; 2 per type are development (`Train:`) queries, the rest test queries
+- **Query types:** count ("many bees"), position ("bees on the left"), motion ("busy entrance"), general description, plus the six pairs of them (e.g. count-position: "many bees crowded on the left side")
+- **58 queries total**: 10 per single type (2 development `Train:` queries, 8 test) and 3 per pair (1 development, 2 test), so 14 train and 44 test
 - **Near-duplicates:** each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it
 - **Pooling:** top 10 of each method merged per query, duplicates removed, shuffled, method and rank hidden; rated blind in a CSV (0 = not relevant, 1 = partly, 2 = clearly relevant). Re-pooling after adding a method keeps existing ratings
 - **Metrics:** mAP@10 and nDCG@10 (mean and spread) per method × query type. Relevant = rating ≥ 1; the AP denominator is the relevant clips in the pool (at most 10); the nDCG ideal is the best 10 ratings in the pool; unrated clips count as 0

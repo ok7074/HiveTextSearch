@@ -35,7 +35,10 @@ from src.frame_selection import DATA_DIR, FRAMES_DIR
 from src.retrieval import RUNS_DIR, SPLITS, TOP_K, top_k
 
 CLIPS_DIR = DATA_DIR / "clips"
-QUERY_TYPES = ["general", "count", "position", "motion"]
+QUERY_TYPES = [
+    "general", "count", "position", "motion",
+    "count-position", "count-motion", "count-general", "position-motion", "position-general", "motion-general",
+]
 MARKS = {2: "✅2", 1: "🟡1", 0: "❌0"}
 WHOLE_QUERY = "whole query"
 
