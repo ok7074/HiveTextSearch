@@ -11,6 +11,8 @@ Methods:
                  count and general queries rank all clips by mean count (fewest first for quiet words such as "few");
                  position queries without a side word are left to the other methods (see src/detection.py)
   rrf            every query: reciprocal rank fusion (k = 60) of all the methods above that apply to it
+  rrf_weighted   the same fusion with each method's share weighted (src/retrieval.RRF_WEIGHTS:
+                 clip 0.5, siglip2 0.75, motion 1, detector 1.5)
 
 Each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it.
 
@@ -43,7 +45,7 @@ from src.embeddings import EMBEDDINGS_DIR
 from src.frame_selection import CLIPS_FRAMES_DATASET_DIR, FRAMES_DIR
 from src.models import clip_text_features, load_clip, load_siglip2, siglip2_text_features
 from src.retrieval import (
-    QUERIES_FILE, RUNS_DIR, SPLITS, TOP_K,
+    QUERIES_FILE, RRF_WEIGHTS, RUNS_DIR, SPLITS, TOP_K,
     is_motion_query, load_queries, motion_descending, motion_scores, rrf, text_scores, top_k,
 )
 
@@ -97,7 +99,16 @@ def load_methods() -> tuple[np.ndarray, dict]:
     else:
         print(f"No {DETECTIONS_DIR} yet: run scripts/yolo/detect_clips.py to add the detector method", flush=True)
     single = dict(methods)
-    methods["rrf"] = lambda q: (rrf([r for m in single.values() if (r := m(q)) is not None]), True)
+
+    def applicable(q):
+        return [(name, r) for name, m in single.items() if (r := m(q)) is not None]
+
+    def weighted(q):
+        hits = applicable(q)
+        return rrf([r for _, r in hits], weights=[RRF_WEIGHTS[name] for name, _ in hits]), True
+
+    methods["rrf"] = lambda q: (rrf([r for _, r in applicable(q)]), True)
+    methods["rrf_weighted"] = weighted
     return clip_ids, methods
 
 

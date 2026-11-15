@@ -19,6 +19,7 @@ Presentation deadline: **25 November 2026** — 15 minutes + Q&A, at most 3 slid
   | Motion | motion | Frame-difference score over the 4 frames (baseline) | done |
   | Detector | count, position, general, motion | YOLO26s @ 960 fine-tuned on bee data (classes bee, bee_flying); bee counts per vertical third, flying bees for motion | done |
   | Combined (RRF) | all | Reciprocal rank fusion (k = 60) of every method that applies to the query | done |
+  | Combined (weighted RRF) | all | RRF with weights clip 0.5, SigLIP 2 0.75, motion 1, detector 1.5 (chosen on train queries) | done |
 - Evaluates with **mAP@10** and **nDCG@10** on hand-annotated relevance labels (0 / 1 / 2) across four query types (count, position, motion, general description) and the six pairs of them
 - Reports latency at p50 and p99 over 200 queries per method
 
