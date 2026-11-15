@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from scripts.retrieval.retrieval import load_methods
 from src.evaluation import (
-    FAILURE_CATEGORIES, RATINGS_DIR, append_failure, fully_rated_queries, read_ratings, score, write_ratings,
+    FAILURE_CATEGORIES, RATING_RULES, RATINGS_DIR, append_failure, fully_rated_queries, read_ratings, score, write_ratings,
 )
 from src.frame_selection import DATA_DIR, FRAMES_DIR
 from src.retrieval import RUNS_DIR, SPLITS, TOP_K, top_k
@@ -67,8 +67,8 @@ def player_for(method: str):
 
 
 def rater(value: int):
-    def handler(split: str, current: dict | None, skipped: list[int]):
-        return rate(split, current, value, skipped)
+    def handler(split: str, current: dict | None, skipped: list[int], history: list[int]):
+        return rate(split, current, value, skipped, history)
     return handler
 
 
@@ -101,17 +101,24 @@ def next_unrated(split: str, skipped: list[int]):
         return f"All {len(ratings)} clips of {split} are rated.", None, None
     if not todo:
         return f"{left} left, all skipped in this session; switch split and back to see them again.", None, None
-    row = ratings.loc[todo[0]]
+    return show(ratings, todo[0], split)
+
+
+def show(ratings, index: int, split: str, note: str = ""):
+    """The query, its rating rule and the clip of one sheet row; note is added under the counts."""
+    row = ratings.loc[index]
+    left = int(ratings["rating"].isna().sum())
     left_in_query = int((ratings["rating"].isna() & (ratings["query"] == row["query"])).sum())
     # pool() keeps each query's rows together, so a different query on the row above means the query just changed.
-    new_query = todo[0] == 0 or ratings.loc[todo[0] - 1, "query"] != row["query"]
+    new_query = index == 0 or ratings.loc[index - 1, "query"] != row["query"]
     banner = "## 🔔 NEW QUERY — read it before rating\n" if new_query else ""
+    rule = RATING_RULES.get(row["query_type"], "No rule written for this query type yet.")
     text = (f"{banner}### {row['query']}\n*{row['query_type']} query* · {left_in_query} clips left for this query"
-            f" · {left} left in {split}")
-    return text, video(row["clip_id"]), {"row": int(todo[0]), "clip_id": row["clip_id"]}
+            f" · {left} left in {split}{note}\n\n**How to rate:**\n\n{rule}")
+    return text, video(row["clip_id"]), {"row": int(index), "clip_id": row["clip_id"]}
 
 
-def rate(split: str, current: dict | None, value: int, skipped: list[int]):
+def rate(split: str, current: dict | None, value: int, skipped: list[int], history: list[int]):
     if current is not None:
         path = ratings_path(split)
         ratings = read_ratings(path)
@@ -120,7 +127,19 @@ def rate(split: str, current: dict | None, value: int, skipped: list[int]):
             raise gr.Error("The ratings file changed underneath the app; reopen the tab.")
         ratings.loc[current["row"], "rating"] = value
         write_ratings(ratings, path)
-    return next_unrated(split, skipped)
+        history = history + [current["row"]]
+    return *next_unrated(split, skipped), history
+
+
+def back(split: str, current: dict | None, skipped: list[int], history: list[int]):
+    """Reopen the clip rated last in this session; the next 0/1/2 click overwrites its rating."""
+    if not history:
+        text, clip, current = next_unrated(split, skipped)
+        return f"*Nothing to go back to in this session.*\n\n{text}", clip, current, history
+    ratings = read_ratings(ratings_path(split))
+    row = history[-1]
+    note = f"\n\n**↩ Re-rating — you gave {ratings.loc[row, 'rating']}. Click 0, 1 or 2 to replace it.**"
+    return *show(ratings, row, split, note), history[:-1]
 
 
 def skip(split: str, current: dict | None, skipped: list[int]):
@@ -221,14 +240,16 @@ def build() -> gr.Blocks:
             rate_split = gr.Radio(list(SPLITS), value="train", label="Split")
             prompt = gr.Markdown()
             clip_video = gr.Video(autoplay=True, loop=True, height=480)
-            current, skipped = gr.State(None), gr.State([])
+            current, skipped, history = gr.State(None), gr.State([]), gr.State([])
             with gr.Row():
+                back_button = gr.Button("↩ Back")
                 buttons = [gr.Button(f"{v}", variant="primary") for v in (0, 1, 2)]
                 skip_button = gr.Button("Skip")
             outputs = [prompt, clip_video, current]
-            rate_split.change(lambda s: (*next_unrated(s, []), []), rate_split, [*outputs, skipped])
+            rate_split.change(lambda s: (*next_unrated(s, []), [], []), rate_split, [*outputs, skipped, history])
             for value, button in zip((0, 1, 2), buttons):
-                button.click(rater(value), [rate_split, current, skipped], outputs)
+                button.click(rater(value), [rate_split, current, skipped, history], [*outputs, history])
+            back_button.click(back, [rate_split, current, skipped, history], [*outputs, history])
             skip_button.click(skip, [rate_split, current, skipped], [*outputs, skipped])
             demo.load(lambda s: next_unrated(s, []), rate_split, outputs)
 

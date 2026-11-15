@@ -19,6 +19,56 @@ FAILURE_CATEGORIES = (
 )
 FAILURE_COLUMNS = ["split", "query_type", "query", "clip_id", "method", "category", "note", "time"]
 
+# Annotation rules per query type, shown in the Rate tab; README.md "Annotation rules" holds the same text.
+_PAIR = ("Judge each part with its own type's rule. **2** = both parts clearly true · **1** = one part true, the other "
+         "partly true or unclear · **0** = neither, or one part plainly wrong.\n\n")
+_GATE = "The general part decides first: wrong scene → **0**. If it is right, grade the other part with its own rule."
+RATING_RULES = {
+    "count": (
+        "Judge how much of the board is covered.\n\n"
+        "- *Busy* (packed, crowded, dense, many): **2** = covered almost edge to edge · **1** = many bees but clear "
+        "empty patches · **0** = scattered bees or mostly empty\n"
+        "- *Quiet* (few, handful, almost empty, single): **2** = mostly empty (an empty board too) · "
+        "**1** = medium coverage · **0** = well covered\n"
+        "- *Medium* (medium number, not crowded): **2** = clearly in between · **1** = borderline · "
+        "**0** = packed or empty"
+    ),
+    "position": (
+        "Judge only the named place; ignore the rest of the board.\n\n"
+        "- *Bees on / clustered on a side*: **2** = a clear dense group there, fewer bees elsewhere · **1** = bees "
+        "there but spread over the board too, no clear group · **0** = that place empty or the group sits elsewhere\n"
+        "- *A side empty*: **2** = few to no bees there (an empty board too) · **1** = some bees, clearly fewer than "
+        "elsewhere · **0** = as busy as the rest\n"
+        "- *Other places* (mesh grid, upper board, lower edge, two groups, evenly spread): **2** = clearly as "
+        "described · **1** = partly · **0** = not"
+    ),
+    "motion": (
+        "- *Busy* (flying, taking off, landing, traffic, walking, crawling): count the bees doing it. **2** = several "
+        "at once · **1** = one or two, or only partly that motion · **0** = none during the clip\n"
+        "- *Calm* (still, quiet, little movement): judge the whole clip. **2** = calm throughout · **1** = calm with "
+        "some activity · **0** = busy. Bees must be on the board for anything above 0"
+    ),
+    "general": (
+        "Is the described thing there? **2** = clearly (that hive, sunlight, shade, plants, pole …) · **0** = not · "
+        "**1** only when it is partly or unclearly visible. Hive descriptions are 2 or 0: each fits one hive."
+    ),
+    "count-position": _PAIR + (
+        "Count only inside the named place: **2** = that place densely covered (for *a few*: only a few there) · "
+        "**1** = a fair group with gaps, or the whole board busy without that side standing out · **0** = otherwise"
+    ),
+    "count-motion": _PAIR + (
+        "Count the bees doing the motion: **2** = the motion with the asked number of bees · **1** = the motion with "
+        "fewer or more bees than asked · **0** = the motion is missing"
+    ),
+    "position-motion": _PAIR + (
+        "Judge the motion inside the named place: **2** = that motion clearly happening there · **1** = happening "
+        "but mostly elsewhere, or only partly there · **0** = no such motion there"
+    ),
+    "count-general": _PAIR + _GATE,
+    "position-general": _PAIR + _GATE,
+    "motion-general": _PAIR + _GATE,
+}
+
 
 def write_ratings(ratings: pd.DataFrame, path: str | Path) -> None:
     """Write the ratings CSV via a copy that is swapped in, so a failed write never leaves it half-erased."""
