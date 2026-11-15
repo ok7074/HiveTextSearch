@@ -526,15 +526,15 @@ motion-general,Bees flying above green leafy plants,rec2125_seq00615,2
 motion-general,Bees flying above green leafy plants,rec2125_seq01504,1
 motion-general,Bees flying above green leafy plants,rec2125_seq00911,1
 motion-general,Bees flying above green leafy plants,rec2125_seq01512,0
-count,Landing board packed with bees,rec2123_seq06109,
-count,Only a handful of bees on the board,rec2125_seq00907,
-position,Left side of the board empty,rec2123_seq03607,
-position,Left side of the board empty,rec2123_seq07814,
-motion,Many bees flying in front of the hive,rec2125_seq01310,
-motion,Many bees flying in front of the hive,rec2125_seq00114,
-count-motion,Lots of bees flying in front of a busy entrance,rec2125_seq01310,
-position-motion,Bees walking on the left side of the board,rec2125_seq01402,
-position-motion,Bees walking on the left side of the board,rec2123_seq02610,
-position-motion,Bees walking on the left side of the board,rec2123_seq05502,
-position-general,Bees on the right side of a hive with a red stripe,rec2123_seq08804,
-motion-general,Bees flying above green leafy plants,rec2123_seq02610,
+count,Landing board packed with bees,rec2123_seq06109,1
+count,Only a handful of bees on the board,rec2125_seq00907,2
+position,Left side of the board empty,rec2123_seq03607,2
+position,Left side of the board empty,rec2123_seq07814,2
+motion,Many bees flying in front of the hive,rec2125_seq01310,2
+motion,Many bees flying in front of the hive,rec2125_seq00114,2
+count-motion,Lots of bees flying in front of a busy entrance,rec2125_seq01310,1
+position-motion,Bees walking on the left side of the board,rec2125_seq01402,1
+position-motion,Bees walking on the left side of the board,rec2123_seq02610,2
+position-motion,Bees walking on the left side of the board,rec2123_seq05502,1
+position-general,Bees on the right side of a hive with a red stripe,rec2123_seq08804,0
+motion-general,Bees flying above green leafy plants,rec2123_seq02610,0
