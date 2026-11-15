@@ -45,6 +45,8 @@ RATING_RULES = {
     "motion": (
         "- *Busy* (flying, taking off, landing, traffic, walking, crawling): count the bees doing it. **2** = several "
         "at once · **1** = one or two, or only partly that motion · **0** = none during the clip\n"
+        "- *Flying low over the grass*: due to constraints on depth perception, bees flying over the grass are "
+        "counted as partly (**1**)\n"
         "- *Calm* (still, quiet, little movement): judge the whole clip. **2** = calm throughout · **1** = calm with "
         "some activity · **0** = busy. Bees must be on the board for anything above 0"
     ),

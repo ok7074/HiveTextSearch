@@ -180,6 +180,7 @@ Each clip is rated against the query text only, by watching the whole 2-second c
 
 **Motion**
 - *Busy wording* (flying, taking off, landing, traffic, walking, crawling): count the bees doing it — 2 = several at once · 1 = one or two, or only partly that motion · 0 = none during the clip. Example: "Many bees flying in front of the hive".
+- *Flying low over the grass*: due to constraints on depth perception, bees flying over the grass are counted as partly (1).
 - *Calm wording* (still, quiet, little movement): judge the whole clip — 2 = calm throughout · 1 = calm with some activity · 0 = busy. Bees must be on the board for anything above 0. Example: "Bees sitting still on the board".
 
 **General** — is the described thing there? 2 = clearly (that hive, sunlight, shade, plants, pole …) · 0 = not · 1 only when it is partly or unclearly visible. Hive descriptions are 2 or 0, since each fits exactly one hive. Example: "Hive with an orange front and a white toothed entrance".
