@@ -1,0 +1,38 @@
+{
+  "clip": {
+    "n": 200,
+    "distinct_queries": 58,
+    "p50_ms": 19.154,
+    "p99_ms": 35.446
+  },
+  "siglip2": {
+    "n": 200,
+    "distinct_queries": 58,
+    "p50_ms": 61.99,
+    "p99_ms": 76.942
+  },
+  "motion": {
+    "n": 200,
+    "distinct_queries": 19,
+    "p50_ms": 0.124,
+    "p99_ms": 0.25
+  },
+  "detector": {
+    "n": 200,
+    "distinct_queries": 53,
+    "p50_ms": 0.217,
+    "p99_ms": 0.352
+  },
+  "rrf": {
+    "n": 200,
+    "distinct_queries": 58,
+    "p50_ms": 82.783,
+    "p99_ms": 134.717
+  },
+  "rrf_weighted": {
+    "n": 200,
+    "distinct_queries": 58,
+    "p50_ms": 84.339,
+    "p99_ms": 105.1
+  }
+}
