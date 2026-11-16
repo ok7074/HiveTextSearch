@@ -761,7 +761,7 @@ motion,Quiet entrance with little movement,rec2123_seq08614,2
 motion,Quiet entrance with little movement,rec2123_seq08502,1
 motion,Quiet entrance with little movement,rec2123_seq02001,1
 motion,Quiet entrance with little movement,rec2123_seq04109,2
-motion,Quiet entrance with little movement,rec2123_seq05402,
+motion,Quiet entrance with little movement,rec2123_seq05402,0
 motion,Quiet entrance with little movement,rec2123_seq03615,2
 motion,Quiet entrance with little movement,rec2123_seq03610,1
 motion,Quiet entrance with little movement,rec2123_seq07708,2
@@ -885,7 +885,7 @@ general,Landing board in shade,rec2125_seq01103,2
 general,Landing board in shade,rec2123_seq07010,2
 general,Landing board in shade,rec2125_seq01102,2
 general,Landing board in shade,rec2123_seq07113,2
-general,Landing board in shade,rec2123_seq05402,
+general,Landing board in shade,rec2123_seq05402,0
 general,Landing board in shade,rec2123_seq03415,1
 general,Landing board in shade,rec2123_seq02809,1
 general,Landing board in shade,rec2123_seq04704,2
@@ -941,689 +941,689 @@ general,Sun patches on the grass below the hive,rec2123_seq05910,2
 general,Sun patches on the grass below the hive,rec2123_seq08111,0
 general,Sun patches on the grass below the hive,rec2123_seq04513,0
 general,Sun patches on the grass below the hive,rec2123_seq06015,2
-general,Bees above green leafy plants,rec2125_seq00901,
-general,Bees above green leafy plants,rec2125_seq01406,
-general,Bees above green leafy plants,rec2123_seq07010,
-general,Bees above green leafy plants,rec2125_seq00002,
-general,Bees above green leafy plants,rec2123_seq07304,
-general,Bees above green leafy plants,rec2125_seq01805,
-general,Bees above green leafy plants,rec2125_seq00001,
-general,Bees above green leafy plants,rec2123_seq08804,
-general,Bees above green leafy plants,rec2123_seq08404,
-general,Bees above green leafy plants,rec2123_seq07405,
-general,Bees above green leafy plants,rec2123_seq07113,
-general,Bees above green leafy plants,rec2125_seq01512,
-general,Bees above green leafy plants,rec2125_seq00501,
-general,Bees above green leafy plants,rec2125_seq00209,
-general,Bees above green leafy plants,rec2125_seq01911,
-general,Bees above green leafy plants,rec2125_seq01803,
-general,Bees above green leafy plants,rec2125_seq01102,
-general,Bees above green leafy plants,rec2125_seq01411,
-general,Bees above green leafy plants,rec2125_seq00107,
-general,Bees above green leafy plants,rec2123_seq08304,
-general,Bees above green leafy plants,rec2123_seq06915,
-general,Bees above green leafy plants,rec2125_seq00403,
-general,Bees above green leafy plants,rec2125_seq01105,
-general,Bees above green leafy plants,rec2125_seq00414,
-general,Bees above green leafy plants,rec2125_seq01610,
-general,Bees above green leafy plants,rec2125_seq00306,
-general,Bees above green leafy plants,rec2125_seq01702,
-general,Bees above green leafy plants,rec2125_seq01002,
-general,Bees above green leafy plants,rec2123_seq07214,
-general,Bees above green leafy plants,rec2125_seq01607,
-general,Bees above green leafy plants,rec2125_seq00311,
-general,Bees above green leafy plants,rec2125_seq01802,
-general,Bees above green leafy plants,rec2123_seq05910,
-general,Bees above dry grass,rec2123_seq07412,
-general,Bees above dry grass,rec2123_seq02908,
-general,Bees above dry grass,rec2123_seq06015,
-general,Bees above dry grass,rec2123_seq07113,
-general,Bees above dry grass,rec2123_seq07010,
-general,Bees above dry grass,rec2123_seq01513,
-general,Bees above dry grass,rec2125_seq01701,
-general,Bees above dry grass,rec2123_seq02707,
-general,Bees above dry grass,rec2123_seq07214,
-general,Bees above dry grass,rec2123_seq02803,
-general,Bees above dry grass,rec2123_seq02604,
-general,Bees above dry grass,rec2123_seq07405,
-general,Bees above dry grass,rec2123_seq06915,
-general,Bees above dry grass,rec2123_seq01512,
-general,Bees above dry grass,rec2123_seq03207,
-general,Bees above dry grass,rec2123_seq07704,
-general,Bees above dry grass,rec2123_seq05908,
-general,Bees above dry grass,rec2123_seq02504,
-general,Bees above dry grass,rec2123_seq07304,
-general,Bees above dry grass,rec2123_seq07110,
-general,Bees above dry grass,rec2123_seq02512,
-general,Bees above dry grass,rec2123_seq08804,
-general,Bees above dry grass,rec2123_seq02414,
-general,Bees above dry grass,rec2123_seq06115,
-general,Bees above dry grass,rec2123_seq02814,
-general,Bees above dry grass,rec2123_seq01914,
-general,Bees above dry grass,rec2123_seq08304,
-general,Bees above dry grass,rec2123_seq03615,
-general,Bees above dry grass,rec2123_seq08404,
-general,Bees above dry grass,rec2123_seq05910,
-general,Bees above dry grass,rec2123_seq07908,
-general,Bees above dry grass,rec2123_seq03408,
-general,Bees above dry grass,rec2123_seq07509,
-general,A blurry bee in flight,rec2125_seq01609,
-general,A blurry bee in flight,rec2123_seq08304,
-general,A blurry bee in flight,rec2125_seq00607,
-general,A blurry bee in flight,rec2123_seq08404,
-general,A blurry bee in flight,rec2125_seq00910,
-general,A blurry bee in flight,rec2125_seq00814,
-general,A blurry bee in flight,rec2123_seq02802,
-general,A blurry bee in flight,rec2123_seq06804,
-general,A blurry bee in flight,rec2123_seq01513,
-general,A blurry bee in flight,rec2123_seq02602,
-general,A blurry bee in flight,rec2123_seq07113,
-general,A blurry bee in flight,rec2123_seq07010,
-general,A blurry bee in flight,rec2125_seq01715,
-general,A blurry bee in flight,rec2125_seq01008,
-general,A blurry bee in flight,rec2125_seq01801,
-general,A blurry bee in flight,rec2125_seq00302,
-general,A blurry bee in flight,rec2125_seq01002,
-general,A blurry bee in flight,rec2123_seq07304,
-general,A blurry bee in flight,rec2125_seq01512,
-general,A blurry bee in flight,rec2125_seq01608,
-general,A blurry bee in flight,rec2123_seq08804,
-general,A blurry bee in flight,rec2125_seq00001,
-general,A blurry bee in flight,rec2125_seq00911,
-general,A blurry bee in flight,rec2123_seq05910,
-general,A blurry bee in flight,rec2123_seq07802,
-general,A blurry bee in flight,rec2123_seq06915,
-general,A blurry bee in flight,rec2125_seq00514,
-general,A blurry bee in flight,rec2123_seq06706,
-general,A blurry bee in flight,rec2123_seq07214,
-general,A blurry bee in flight,rec2125_seq01103,
-general,A blurry bee in flight,rec2123_seq04105,
-general,A blurry bee in flight,rec2125_seq00603,
-general,A blurry bee in flight,rec2125_seq00315,
-general,A blurry bee in flight,rec2123_seq07405,
-general,A black pole next to the hive entrance,rec2123_seq04514,
-general,A black pole next to the hive entrance,rec2123_seq05308,
-general,A black pole next to the hive entrance,rec2123_seq07506,
-general,A black pole next to the hive entrance,rec2123_seq05601,
-general,A black pole next to the hive entrance,rec2123_seq06303,
-general,A black pole next to the hive entrance,rec2123_seq03209,
-general,A black pole next to the hive entrance,rec2123_seq03505,
-general,A black pole next to the hive entrance,rec2123_seq03307,
-general,A black pole next to the hive entrance,rec2123_seq08304,
-general,A black pole next to the hive entrance,rec2123_seq04409,
-general,A black pole next to the hive entrance,rec2123_seq07215,
-general,A black pole next to the hive entrance,rec2123_seq05513,
-general,A black pole next to the hive entrance,rec2123_seq07313,
-general,A black pole next to the hive entrance,rec2123_seq05614,
-general,A black pole next to the hive entrance,rec2123_seq04315,
-general,A black pole next to the hive entrance,rec2123_seq02701,
-general,A black pole next to the hive entrance,rec2123_seq02803,
-general,A black pole next to the hive entrance,rec2123_seq05402,
-general,A black pole next to the hive entrance,rec2123_seq08804,
-general,A black pole next to the hive entrance,rec2123_seq03401,
-general,A black pole next to the hive entrance,rec2123_seq06915,
-general,A black pole next to the hive entrance,rec2123_seq08404,
-general,A black pole next to the hive entrance,rec2123_seq04609,
-general,A black pole next to the hive entrance,rec2123_seq05910,
-general,A black pole next to the hive entrance,rec2123_seq05102,
-general,A black pole next to the hive entrance,rec2123_seq04811,
-general,A black pole next to the hive entrance,rec2123_seq06106,
-general,A black pole next to the hive entrance,rec2123_seq07214,
-general,A black pole next to the hive entrance,rec2123_seq07405,
-general,A black pole next to the hive entrance,rec2123_seq07113,
-general,A black pole next to the hive entrance,rec2123_seq05615,
-general,A black pole next to the hive entrance,rec2123_seq02103,
-general,A black pole next to the hive entrance,rec2123_seq07304,
-general,A black pole next to the hive entrance,rec2123_seq06113,
-general,A black pole next to the hive entrance,rec2123_seq07010,
-general,Bees on a weathered grey wooden board,rec2125_seq01811,
-general,Bees on a weathered grey wooden board,rec2123_seq07010,
-general,Bees on a weathered grey wooden board,rec2123_seq07113,
-general,Bees on a weathered grey wooden board,rec2123_seq07405,
-general,Bees on a weathered grey wooden board,rec2123_seq06812,
-general,Bees on a weathered grey wooden board,rec2123_seq07304,
-general,Bees on a weathered grey wooden board,rec2123_seq08109,
-general,Bees on a weathered grey wooden board,rec2125_seq01011,
-general,Bees on a weathered grey wooden board,rec2125_seq02013,
-general,Bees on a weathered grey wooden board,rec2123_seq08804,
-general,Bees on a weathered grey wooden board,rec2125_seq01609,
-general,Bees on a weathered grey wooden board,rec2123_seq08611,
-general,Bees on a weathered grey wooden board,rec2123_seq08610,
-general,Bees on a weathered grey wooden board,rec2123_seq07610,
-general,Bees on a weathered grey wooden board,rec2123_seq08111,
-general,Bees on a weathered grey wooden board,rec2123_seq08613,
-general,Bees on a weathered grey wooden board,rec2123_seq06903,
-general,Bees on a weathered grey wooden board,rec2123_seq06915,
-general,Bees on a weathered grey wooden board,rec2123_seq05910,
-general,Bees on a weathered grey wooden board,rec2123_seq06807,
-general,Bees on a weathered grey wooden board,rec2123_seq08012,
-general,Bees on a weathered grey wooden board,rec2123_seq08304,
-general,Bees on a weathered grey wooden board,rec2123_seq07014,
-general,Bees on a weathered grey wooden board,rec2125_seq01102,
-general,Bees on a weathered grey wooden board,rec2123_seq08913,
-general,Bees on a weathered grey wooden board,rec2123_seq06714,
-general,Bees on a weathered grey wooden board,rec2123_seq08404,
-general,Bees on a weathered grey wooden board,rec2123_seq08713,
-general,Bees on a weathered grey wooden board,rec2123_seq07214,
-general,Bees on a weathered grey wooden board,rec2125_seq01915,
-general,Bees on a weathered grey wooden board,rec2123_seq07206,
-general,Bees on a weathered grey wooden board,rec2123_seq07509,
-count-position,A few bees on the right side of the board,rec2125_seq01010,
-count-position,A few bees on the right side of the board,rec2125_seq00405,
-count-position,A few bees on the right side of the board,rec2125_seq00910,
-count-position,A few bees on the right side of the board,rec2125_seq00109,
-count-position,A few bees on the right side of the board,rec2125_seq00901,
-count-position,A few bees on the right side of the board,rec2125_seq00303,
-count-position,A few bees on the right side of the board,rec2125_seq01512,
-count-position,A few bees on the right side of the board,rec2125_seq00505,
-count-position,A few bees on the right side of the board,rec2125_seq00005,
-count-position,A few bees on the right side of the board,rec2125_seq01110,
-count-position,A few bees on the right side of the board,rec2125_seq01609,
-count-position,A few bees on the right side of the board,rec2125_seq00903,
-count-position,A few bees on the right side of the board,rec2125_seq01910,
-count-position,A few bees on the right side of the board,rec2125_seq00207,
-count-position,A few bees on the right side of the board,rec2125_seq00610,
-count-position,A few bees on the right side of the board,rec2125_seq00313,
-count-position,A few bees on the right side of the board,rec2125_seq00715,
-count-position,A few bees on the right side of the board,rec2125_seq01011,
-count-position,A few bees on the right side of the board,rec2125_seq01104,
-count-position,A few bees on the right side of the board,rec2125_seq01915,
-count-position,A few bees on the right side of the board,rec2125_seq02011,
-count-position,A few bees on the right side of the board,rec2125_seq00713,
-count-position,A few bees on the right side of the board,rec2125_seq01102,
-count-position,A few bees on the right side of the board,rec2125_seq00010,
-count-position,A few bees on the right side of the board,rec2125_seq00613,
-count-position,A few bees on the right side of the board,rec2125_seq00801,
-count-position,A few bees on the right side of the board,rec2125_seq01705,
-count-position,A few bees on the right side of the board,rec2125_seq01811,
-count-position,A few bees on the right side of the board,rec2125_seq01813,
-count-position,A few bees on the right side of the board,rec2125_seq00605,
-count-position,A few bees on the right side of the board,rec2125_seq01614,
-count-position,A few bees on the right side of the board,rec2125_seq01208,
-count-position,A dense group of bees in the middle of the board,rec2123_seq05910,
-count-position,A dense group of bees in the middle of the board,rec2125_seq01405,
-count-position,A dense group of bees in the middle of the board,rec2123_seq07010,
-count-position,A dense group of bees in the middle of the board,rec2123_seq06405,
-count-position,A dense group of bees in the middle of the board,rec2123_seq06013,
-count-position,A dense group of bees in the middle of the board,rec2123_seq05809,
-count-position,A dense group of bees in the middle of the board,rec2125_seq01306,
-count-position,A dense group of bees in the middle of the board,rec2123_seq06914,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00514,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00902,
-count-position,A dense group of bees in the middle of the board,rec2125_seq01915,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00613,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00815,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00615,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00113,
-count-position,A dense group of bees in the middle of the board,rec2125_seq01801,
-count-position,A dense group of bees in the middle of the board,rec2123_seq07202,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00901,
-count-position,A dense group of bees in the middle of the board,rec2125_seq01609,
-count-position,A dense group of bees in the middle of the board,rec2123_seq05202,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00510,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00911,
-count-position,A dense group of bees in the middle of the board,rec2123_seq08109,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00715,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00405,
-count-position,A dense group of bees in the middle of the board,rec2123_seq08111,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00610,
-count-position,A dense group of bees in the middle of the board,rec2125_seq01212,
-count-position,A dense group of bees in the middle of the board,rec2123_seq07113,
-count-position,A dense group of bees in the middle of the board,rec2123_seq06015,
-count-position,A dense group of bees in the middle of the board,rec2125_seq00706,
-count-position,A dense group of bees in the middle of the board,rec2125_seq01004,
-count-motion,A few bees walking slowly on the board,rec2125_seq01002,
-count-motion,A few bees walking slowly on the board,rec2125_seq01011,
-count-motion,A few bees walking slowly on the board,rec2123_seq08809,
-count-motion,A few bees walking slowly on the board,rec2123_seq02304,
-count-motion,A few bees walking slowly on the board,rec2125_seq01212,
-count-motion,A few bees walking slowly on the board,rec2125_seq01513,
-count-motion,A few bees walking slowly on the board,rec2125_seq00910,
-count-motion,A few bees walking slowly on the board,rec2123_seq02501,
-count-motion,A few bees walking slowly on the board,rec2125_seq01801,
-count-motion,A few bees walking slowly on the board,rec2123_seq01705,
-count-motion,A few bees walking slowly on the board,rec2125_seq01608,
-count-motion,A few bees walking slowly on the board,rec2125_seq01705,
-count-motion,A few bees walking slowly on the board,rec2125_seq01915,
-count-motion,A few bees walking slowly on the board,rec2125_seq00109,
-count-motion,A few bees walking slowly on the board,rec2125_seq00805,
-count-motion,A few bees walking slowly on the board,rec2123_seq08004,
-count-motion,A few bees walking slowly on the board,rec2123_seq08411,
-count-motion,A few bees walking slowly on the board,rec2123_seq08502,
-count-motion,A few bees walking slowly on the board,rec2125_seq01514,
-count-motion,A few bees walking slowly on the board,rec2123_seq02402,
-count-motion,A few bees walking slowly on the board,rec2123_seq02901,
-count-motion,A few bees walking slowly on the board,rec2123_seq01901,
-count-motion,A few bees walking slowly on the board,rec2123_seq08906,
-count-motion,A few bees walking slowly on the board,rec2125_seq00905,
-count-motion,A few bees walking slowly on the board,rec2125_seq00903,
-count-motion,A few bees walking slowly on the board,rec2125_seq01609,
-count-motion,A few bees walking slowly on the board,rec2125_seq00002,
-count-motion,A few bees walking slowly on the board,rec2125_seq01215,
-count-motion,A few bees walking slowly on the board,rec2125_seq00712,
-count-motion,A few bees walking slowly on the board,rec2125_seq00801,
-count-motion,A few bees walking slowly on the board,rec2123_seq07807,
-count-motion,A few bees walking slowly on the board,rec2123_seq02001,
-count-motion,A few bees walking slowly on the board,rec2123_seq01505,
-count-motion,A few bees walking slowly on the board,rec2123_seq01612,
-count-motion,A few bees walking slowly on the board,rec2125_seq01208,
-count-motion,A few bees walking slowly on the board,rec2123_seq08614,
-count-motion,A few bees walking slowly on the board,rec2123_seq08314,
-count-motion,A few bees walking slowly on the board,rec2125_seq01305,
-count-motion,A few bees walking slowly on the board,rec2125_seq00715,
-count-motion,A few bees walking slowly on the board,rec2123_seq02215,
-count-motion,A few bees walking slowly on the board,rec2125_seq00814,
-count-motion,A few bees walking slowly on the board,rec2123_seq07915,
-count-motion,A few bees walking slowly on the board,rec2125_seq02012,
-count-motion,A few bees walking slowly on the board,rec2123_seq07708,
-count-motion,A crowded board with many bees taking off,rec2123_seq06015,
-count-motion,A crowded board with many bees taking off,rec2123_seq03110,
-count-motion,A crowded board with many bees taking off,rec2125_seq00515,
-count-motion,A crowded board with many bees taking off,rec2123_seq07908,
-count-motion,A crowded board with many bees taking off,rec2123_seq06203,
-count-motion,A crowded board with many bees taking off,rec2125_seq01213,
-count-motion,A crowded board with many bees taking off,rec2125_seq00806,
-count-motion,A crowded board with many bees taking off,rec2123_seq01703,
-count-motion,A crowded board with many bees taking off,rec2125_seq00201,
-count-motion,A crowded board with many bees taking off,rec2123_seq06008,
-count-motion,A crowded board with many bees taking off,rec2123_seq01514,
-count-motion,A crowded board with many bees taking off,rec2123_seq05711,
-count-motion,A crowded board with many bees taking off,rec2123_seq02102,
-count-motion,A crowded board with many bees taking off,rec2125_seq01405,
-count-motion,A crowded board with many bees taking off,rec2125_seq00005,
-count-motion,A crowded board with many bees taking off,rec2123_seq02013,
-count-motion,A crowded board with many bees taking off,rec2125_seq01801,
-count-motion,A crowded board with many bees taking off,rec2123_seq04506,
-count-motion,A crowded board with many bees taking off,rec2125_seq00708,
-count-motion,A crowded board with many bees taking off,rec2123_seq01505,
-count-motion,A crowded board with many bees taking off,rec2125_seq00613,
-count-motion,A crowded board with many bees taking off,rec2125_seq00615,
-count-motion,A crowded board with many bees taking off,rec2123_seq01603,
-count-motion,A crowded board with many bees taking off,rec2125_seq01404,
-count-motion,A crowded board with many bees taking off,rec2125_seq01915,
-count-motion,A crowded board with many bees taking off,rec2125_seq00510,
-count-motion,A crowded board with many bees taking off,rec2125_seq00115,
-count-motion,A crowded board with many bees taking off,rec2125_seq00706,
-count-motion,A crowded board with many bees taking off,rec2123_seq02608,
-count-motion,A crowded board with many bees taking off,rec2123_seq02506,
-count-motion,A crowded board with many bees taking off,rec2123_seq06801,
-count-motion,A crowded board with many bees taking off,rec2125_seq00714,
-count-motion,A crowded board with many bees taking off,rec2125_seq00701,
-count-motion,A crowded board with many bees taking off,rec2123_seq02807,
-count-motion,A crowded board with many bees taking off,rec2125_seq01504,
-count-motion,A crowded board with many bees taking off,rec2123_seq05414,
-count-motion,A crowded board with many bees taking off,rec2123_seq02913,
-count-motion,A crowded board with many bees taking off,rec2125_seq00001,
-count-motion,A crowded board with many bees taking off,rec2123_seq05509,
-count-motion,A crowded board with many bees taking off,rec2123_seq02209,
-count-motion,A crowded board with many bees taking off,rec2125_seq01110,
-count-motion,A crowded board with many bees taking off,rec2125_seq01212,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01915,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01801,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00801,
-count-general,A few bees on the board in bright sunlight,rec2125_seq02013,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01011,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00002,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00909,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01010,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01705,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00411,
-count-general,A few bees on the board in bright sunlight,rec2123_seq01513,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01208,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01513,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01912,
-count-general,A few bees on the board in bright sunlight,rec2123_seq02303,
-count-general,A few bees on the board in bright sunlight,rec2123_seq03114,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00608,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01701,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00715,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00004,
-count-general,A few bees on the board in bright sunlight,rec2123_seq03802,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01608,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01811,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00908,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01104,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00602,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00712,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01609,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01313,
-count-general,A few bees on the board in bright sunlight,rec2125_seq00109,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01203,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01508,
-count-general,A crowded landing board in shade,rec2123_seq04207,
-count-general,A crowded landing board in shade,rec2125_seq01415,
-count-general,A crowded landing board in shade,rec2123_seq08404,
-count-general,A crowded landing board in shade,rec2123_seq04108,
-count-general,A crowded landing board in shade,rec2123_seq03615,
-count-general,A crowded landing board in shade,rec2125_seq00305,
-count-general,A crowded landing board in shade,rec2123_seq07010,
-count-general,A crowded landing board in shade,rec2125_seq00814,
-count-general,A crowded landing board in shade,rec2123_seq05011,
-count-general,A crowded landing board in shade,rec2125_seq01212,
-count-general,A crowded landing board in shade,rec2123_seq07113,
-count-general,A crowded landing board in shade,rec2123_seq07405,
-count-general,A crowded landing board in shade,rec2125_seq01113,
-count-general,A crowded landing board in shade,rec2125_seq01105,
-count-general,A crowded landing board in shade,rec2125_seq01102,
-count-general,A crowded landing board in shade,rec2125_seq01007,
-count-general,A crowded landing board in shade,rec2123_seq05908,
-count-general,A crowded landing board in shade,rec2123_seq07304,
-count-general,A crowded landing board in shade,rec2123_seq04513,
-count-general,A crowded landing board in shade,rec2125_seq00613,
-count-general,A crowded landing board in shade,rec2123_seq06915,
-count-general,A crowded landing board in shade,rec2125_seq00509,
-count-general,A crowded landing board in shade,rec2123_seq08304,
-count-general,A crowded landing board in shade,rec2123_seq08804,
-count-general,A crowded landing board in shade,rec2123_seq05910,
-count-general,A crowded landing board in shade,rec2125_seq00715,
-count-general,A crowded landing board in shade,rec2123_seq07214,
-count-general,A crowded landing board in shade,rec2125_seq00005,
-count-general,A crowded landing board in shade,rec2125_seq00906,
-count-general,A crowded landing board in shade,rec2123_seq04509,
-count-general,A crowded landing board in shade,rec2125_seq00611,
-count-general,A crowded landing board in shade,rec2123_seq04711,
-count-general,A crowded landing board in shade,rec2125_seq00514,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq04509,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq02807,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01213,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01610,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01410,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01504,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq02802,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq02102,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00706,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00806,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq05711,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01110,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq06203,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq01505,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq04608,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq05402,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq03404,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00005,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq02608,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01404,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq01514,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq01603,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq02209,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00814,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01002,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq04102,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00001,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01811,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq03914,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01507,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00911,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00510,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq03615,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00714,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq01703,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq04208,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00114,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00303,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq01604,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq04012,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq04513,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00615,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq04506,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq00201,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq06008,
-position-motion,Bees resting in the middle of the board,rec2125_seq01011,
-position-motion,Bees resting in the middle of the board,rec2123_seq02215,
-position-motion,Bees resting in the middle of the board,rec2125_seq00905,
-position-motion,Bees resting in the middle of the board,rec2123_seq07708,
-position-motion,Bees resting in the middle of the board,rec2125_seq01110,
-position-motion,Bees resting in the middle of the board,rec2123_seq02402,
-position-motion,Bees resting in the middle of the board,rec2123_seq08906,
-position-motion,Bees resting in the middle of the board,rec2125_seq01609,
-position-motion,Bees resting in the middle of the board,rec2123_seq07915,
-position-motion,Bees resting in the middle of the board,rec2123_seq02901,
-position-motion,Bees resting in the middle of the board,rec2123_seq07807,
-position-motion,Bees resting in the middle of the board,rec2123_seq04613,
-position-motion,Bees resting in the middle of the board,rec2123_seq01901,
-position-motion,Bees resting in the middle of the board,rec2123_seq08314,
-position-motion,Bees resting in the middle of the board,rec2123_seq08804,
-position-motion,Bees resting in the middle of the board,rec2125_seq00501,
-position-motion,Bees resting in the middle of the board,rec2123_seq08411,
-position-motion,Bees resting in the middle of the board,rec2123_seq02601,
-position-motion,Bees resting in the middle of the board,rec2123_seq02501,
-position-motion,Bees resting in the middle of the board,rec2125_seq01915,
-position-motion,Bees resting in the middle of the board,rec2125_seq00415,
-position-motion,Bees resting in the middle of the board,rec2125_seq00715,
-position-motion,Bees resting in the middle of the board,rec2123_seq02515,
-position-motion,Bees resting in the middle of the board,rec2125_seq01811,
-position-motion,Bees resting in the middle of the board,rec2123_seq02304,
-position-motion,Bees resting in the middle of the board,rec2125_seq01212,
-position-motion,Bees resting in the middle of the board,rec2123_seq08614,
-position-motion,Bees resting in the middle of the board,rec2123_seq08809,
-position-motion,Bees resting in the middle of the board,rec2125_seq00610,
-position-motion,Bees resting in the middle of the board,rec2123_seq02001,
-position-motion,Bees resting in the middle of the board,rec2123_seq04703,
-position-motion,Bees resting in the middle of the board,rec2125_seq01105,
-position-motion,Bees resting in the middle of the board,rec2125_seq00507,
-position-motion,Bees resting in the middle of the board,rec2123_seq08109,
-position-motion,Bees resting in the middle of the board,rec2123_seq06015,
-position-motion,Bees resting in the middle of the board,rec2123_seq01612,
-position-motion,Bees resting in the middle of the board,rec2125_seq00910,
-position-motion,Bees resting in the middle of the board,rec2123_seq01505,
-position-motion,Bees resting in the middle of the board,rec2123_seq08502,
-position-motion,Bees resting in the middle of the board,rec2123_seq08004,
-position-motion,Bees resting in the middle of the board,rec2123_seq08508,
-position-motion,Bees resting in the middle of the board,rec2123_seq01705,
-position-motion,Bees resting in the middle of the board,rec2123_seq02414,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04506,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq02515,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04703,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq02601,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq06015,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq05313,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04908,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq00914,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq01811,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04313,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq02809,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq00813,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq02010,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq01306,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq00613,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq02010,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04803,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq01101,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq02702,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq00005,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq02206,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq01704,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq01906,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq00608,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04413,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04511,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04601,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq01915,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq00702,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq03615,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq04311,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq00707,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq01110,
-position-general,Bees on the left side of the board in sunlight,rec2123_seq02414,
-position-general,Bees on the left side of the board in sunlight,rec2125_seq01015,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07712,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq05910,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07910,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq05202,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07504,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq02515,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq08614,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq04405,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07214,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq08111,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq06405,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07113,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq04711,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07010,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq04605,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq05809,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq02601,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07215,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq06013,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq02012,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq06015,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07908,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq08004,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq02809,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq08115,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq05915,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq08508,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07914,
-position-general,Bees in the middle of the board next to a black pole,rec2125_seq01105,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq08010,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07513,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07202,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq07705,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq04503,
-position-general,Bees in the middle of the board next to a black pole,rec2123_seq06914,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01101,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01404,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04409,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00806,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00509,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00615,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00201,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq06008,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01411,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01514,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00001,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq06203,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04509,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01604,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01213,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq02807,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04113,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00007,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq05404,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00702,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04506,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00802,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00714,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00611,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01603,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq02209,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04015,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01603,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04606,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01511,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq05711,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00701,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04304,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq02102,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq05502,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04207,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00104,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01513,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq03615,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00004,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq05208,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01703,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01505,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq02608,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01504,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq00902,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq07206,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08111,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq00303,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq01915,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq02501,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq06709,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08314,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq01011,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq01515,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq01609,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq01505,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08913,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08713,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq07915,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq02012,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq01811,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08611,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq07807,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq02304,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq01901,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08004,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq02001,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08906,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq02215,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08614,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08415,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq02901,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq07906,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08905,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq02402,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq07708,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08809,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08502,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq01705,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq06714,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq07806,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq06801,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq00814,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq07014,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq06613,
-motion-general,Bees sitting still on a weathered grey board,rec2125_seq01102,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq06909,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08411,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq01612,
-count,A crowded hive entrance,rec2123_seq06109,
-count,A crowded hive entrance,rec2123_seq05809,
-count,A dense mass of bees covering the board,rec2123_seq06109,
-count,A few scattered bees,rec2125_seq01204,
-count,A few scattered bees,rec2125_seq00503,
-count,A few scattered bees,rec2125_seq01103,
-count,"A medium number of bees, not crowded",rec2123_seq06109,
-count,Bees covering the whole width of the board,rec2123_seq05809,
-count,Very few bees at the entrance hole,rec2125_seq00506,
-count,Very few bees at the entrance hole,rec2125_seq01802,
-position,Bees sitting in the mesh grid above the entrance,rec2123_seq05614,
-position,Bees at the lower edge of the board,rec2125_seq01102,
-position,Bees at the lower edge of the board,rec2123_seq08111,
-position,Bees at the lower edge of the board,rec2125_seq00911,
-position,More bees on the right than on the left,rec2123_seq07513,
-position,Two separate groups of bees on the board,rec2125_seq00903,
-motion,Bees taking off from the landing board,rec2123_seq02510,
-motion,Bees taking off from the landing board,rec2125_seq01402,
-motion,Bees landing on the board,rec2123_seq02610,
-motion,Bees landing on the board,rec2125_seq01402,
-motion,Busy traffic at the entrance,rec2123_seq06001,
-motion,Busy traffic at the entrance,rec2125_seq01402,
-motion,Bees walking across the board,rec2123_seq02610,
-motion,Bees walking across the board,rec2125_seq01402,
-motion,Bees walking across the board,rec2123_seq03703,
-motion,Quiet entrance with little movement,rec2123_seq03408,
-motion,Quiet entrance with little movement,rec2123_seq08108,
-motion,Bees moving quickly in all directions,rec2125_seq01402,
-general,Bees in bright sunlight,rec2123_seq06109,
-general,Landing board in shade,rec2123_seq04308,
-general,Landing board in shade,rec2123_seq06109,
-general,Sun patches on the grass below the hive,rec2123_seq04308,
-general,Bees above green leafy plants,rec2123_seq06109,
-general,Bees above dry grass,rec2123_seq05809,
-general,A blurry bee in flight,rec2123_seq06109,
-general,A black pole next to the hive entrance,rec2123_seq05809,
-general,A black pole next to the hive entrance,rec2123_seq06109,
-general,Bees on a weathered grey wooden board,rec2123_seq07210,
-general,Bees on a weathered grey wooden board,rec2123_seq07102,
-general,Bees on a weathered grey wooden board,rec2123_seq08206,
-count-position,A dense group of bees in the middle of the board,rec2123_seq05915,
-count-position,A dense group of bees in the middle of the board,rec2123_seq06101,
-count-motion,A crowded board with many bees taking off,rec2123_seq02610,
-count-motion,A crowded board with many bees taking off,rec2123_seq05502,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01008,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01202,
-count-general,A few bees on the board in bright sunlight,rec2125_seq01103,
-position-motion,Bees flying near the right side of the entrance,rec2125_seq01402,
-position-motion,Bees flying near the right side of the entrance,rec2123_seq03801,
-position-motion,Bees resting in the middle of the board,rec2125_seq01103,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq06001,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01402,
-motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00005,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08001,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq06610,
-motion-general,Bees sitting still on a weathered grey board,rec2123_seq08114,
+general,Bees above green leafy plants,rec2125_seq00901,2
+general,Bees above green leafy plants,rec2125_seq01406,0
+general,Bees above green leafy plants,rec2123_seq07010,1
+general,Bees above green leafy plants,rec2125_seq00002,1
+general,Bees above green leafy plants,rec2123_seq07304,1
+general,Bees above green leafy plants,rec2125_seq01805,2
+general,Bees above green leafy plants,rec2125_seq00001,1
+general,Bees above green leafy plants,rec2123_seq08804,2
+general,Bees above green leafy plants,rec2123_seq08404,0
+general,Bees above green leafy plants,rec2123_seq07405,1
+general,Bees above green leafy plants,rec2123_seq07113,2
+general,Bees above green leafy plants,rec2125_seq01512,0
+general,Bees above green leafy plants,rec2125_seq00501,1
+general,Bees above green leafy plants,rec2125_seq00209,0
+general,Bees above green leafy plants,rec2125_seq01911,1
+general,Bees above green leafy plants,rec2125_seq01803,2
+general,Bees above green leafy plants,rec2125_seq01102,1
+general,Bees above green leafy plants,rec2125_seq01411,0
+general,Bees above green leafy plants,rec2125_seq00107,1
+general,Bees above green leafy plants,rec2123_seq08304,1
+general,Bees above green leafy plants,rec2123_seq06915,2
+general,Bees above green leafy plants,rec2125_seq00403,2
+general,Bees above green leafy plants,rec2125_seq01105,0
+general,Bees above green leafy plants,rec2125_seq00414,1
+general,Bees above green leafy plants,rec2125_seq01610,1
+general,Bees above green leafy plants,rec2125_seq00306,2
+general,Bees above green leafy plants,rec2125_seq01702,2
+general,Bees above green leafy plants,rec2125_seq01002,2
+general,Bees above green leafy plants,rec2123_seq07214,1
+general,Bees above green leafy plants,rec2125_seq01607,2
+general,Bees above green leafy plants,rec2125_seq00311,2
+general,Bees above green leafy plants,rec2125_seq01802,2
+general,Bees above green leafy plants,rec2123_seq05910,1
+general,Bees above dry grass,rec2123_seq07412,0
+general,Bees above dry grass,rec2123_seq02908,2
+general,Bees above dry grass,rec2123_seq06015,2
+general,Bees above dry grass,rec2123_seq07113,2
+general,Bees above dry grass,rec2123_seq07010,2
+general,Bees above dry grass,rec2123_seq01513,2
+general,Bees above dry grass,rec2125_seq01701,0
+general,Bees above dry grass,rec2123_seq02707,2
+general,Bees above dry grass,rec2123_seq07214,2
+general,Bees above dry grass,rec2123_seq02803,2
+general,Bees above dry grass,rec2123_seq02604,2
+general,Bees above dry grass,rec2123_seq07405,2
+general,Bees above dry grass,rec2123_seq06915,2
+general,Bees above dry grass,rec2123_seq01512,2
+general,Bees above dry grass,rec2123_seq03207,2
+general,Bees above dry grass,rec2123_seq07704,2
+general,Bees above dry grass,rec2123_seq05908,2
+general,Bees above dry grass,rec2123_seq02504,2
+general,Bees above dry grass,rec2123_seq07304,2
+general,Bees above dry grass,rec2123_seq07110,2
+general,Bees above dry grass,rec2123_seq02512,2
+general,Bees above dry grass,rec2123_seq08804,2
+general,Bees above dry grass,rec2123_seq02414,2
+general,Bees above dry grass,rec2123_seq06115,2
+general,Bees above dry grass,rec2123_seq02814,2
+general,Bees above dry grass,rec2123_seq01914,2
+general,Bees above dry grass,rec2123_seq08304,2
+general,Bees above dry grass,rec2123_seq03615,2
+general,Bees above dry grass,rec2123_seq08404,2
+general,Bees above dry grass,rec2123_seq05910,2
+general,Bees above dry grass,rec2123_seq07908,2
+general,Bees above dry grass,rec2123_seq03408,2
+general,Bees above dry grass,rec2123_seq07509,2
+general,A blurry bee in flight,rec2125_seq01609,2
+general,A blurry bee in flight,rec2123_seq08304,1
+general,A blurry bee in flight,rec2125_seq00607,1
+general,A blurry bee in flight,rec2123_seq08404,2
+general,A blurry bee in flight,rec2125_seq00910,1
+general,A blurry bee in flight,rec2125_seq00814,2
+general,A blurry bee in flight,rec2123_seq02802,1
+general,A blurry bee in flight,rec2123_seq06804,2
+general,A blurry bee in flight,rec2123_seq01513,1
+general,A blurry bee in flight,rec2123_seq02602,2
+general,A blurry bee in flight,rec2123_seq07113,2
+general,A blurry bee in flight,rec2123_seq07010,2
+general,A blurry bee in flight,rec2125_seq01715,1
+general,A blurry bee in flight,rec2125_seq01008,1
+general,A blurry bee in flight,rec2125_seq01801,2
+general,A blurry bee in flight,rec2125_seq00302,2
+general,A blurry bee in flight,rec2125_seq01002,0
+general,A blurry bee in flight,rec2123_seq07304,2
+general,A blurry bee in flight,rec2125_seq01512,0
+general,A blurry bee in flight,rec2125_seq01608,0
+general,A blurry bee in flight,rec2123_seq08804,2
+general,A blurry bee in flight,rec2125_seq00001,1
+general,A blurry bee in flight,rec2125_seq00911,2
+general,A blurry bee in flight,rec2123_seq05910,1
+general,A blurry bee in flight,rec2123_seq07802,2
+general,A blurry bee in flight,rec2123_seq06915,2
+general,A blurry bee in flight,rec2125_seq00514,2
+general,A blurry bee in flight,rec2123_seq06706,2
+general,A blurry bee in flight,rec2123_seq07214,2
+general,A blurry bee in flight,rec2125_seq01103,0
+general,A blurry bee in flight,rec2123_seq04105,2
+general,A blurry bee in flight,rec2125_seq00603,1
+general,A blurry bee in flight,rec2125_seq00315,1
+general,A blurry bee in flight,rec2123_seq07405,2
+general,A black pole next to the hive entrance,rec2123_seq04514,2
+general,A black pole next to the hive entrance,rec2123_seq05308,2
+general,A black pole next to the hive entrance,rec2123_seq07506,2
+general,A black pole next to the hive entrance,rec2123_seq05601,2
+general,A black pole next to the hive entrance,rec2123_seq06303,2
+general,A black pole next to the hive entrance,rec2123_seq03209,2
+general,A black pole next to the hive entrance,rec2123_seq03505,2
+general,A black pole next to the hive entrance,rec2123_seq03307,2
+general,A black pole next to the hive entrance,rec2123_seq08304,2
+general,A black pole next to the hive entrance,rec2123_seq04409,2
+general,A black pole next to the hive entrance,rec2123_seq07215,2
+general,A black pole next to the hive entrance,rec2123_seq05513,2
+general,A black pole next to the hive entrance,rec2123_seq07313,2
+general,A black pole next to the hive entrance,rec2123_seq05614,2
+general,A black pole next to the hive entrance,rec2123_seq04315,2
+general,A black pole next to the hive entrance,rec2123_seq02701,2
+general,A black pole next to the hive entrance,rec2123_seq02803,2
+general,A black pole next to the hive entrance,rec2123_seq05402,0
+general,A black pole next to the hive entrance,rec2123_seq08804,2
+general,A black pole next to the hive entrance,rec2123_seq03401,2
+general,A black pole next to the hive entrance,rec2123_seq06915,2
+general,A black pole next to the hive entrance,rec2123_seq08404,2
+general,A black pole next to the hive entrance,rec2123_seq04609,2
+general,A black pole next to the hive entrance,rec2123_seq05910,2
+general,A black pole next to the hive entrance,rec2123_seq05102,2
+general,A black pole next to the hive entrance,rec2123_seq04811,2
+general,A black pole next to the hive entrance,rec2123_seq06106,2
+general,A black pole next to the hive entrance,rec2123_seq07214,2
+general,A black pole next to the hive entrance,rec2123_seq07405,2
+general,A black pole next to the hive entrance,rec2123_seq07113,2
+general,A black pole next to the hive entrance,rec2123_seq05615,2
+general,A black pole next to the hive entrance,rec2123_seq02103,2
+general,A black pole next to the hive entrance,rec2123_seq07304,2
+general,A black pole next to the hive entrance,rec2123_seq06113,2
+general,A black pole next to the hive entrance,rec2123_seq07010,2
+general,Bees on a weathered grey wooden board,rec2125_seq01811,0
+general,Bees on a weathered grey wooden board,rec2123_seq07010,2
+general,Bees on a weathered grey wooden board,rec2123_seq07113,2
+general,Bees on a weathered grey wooden board,rec2123_seq07405,2
+general,Bees on a weathered grey wooden board,rec2123_seq06812,2
+general,Bees on a weathered grey wooden board,rec2123_seq07304,2
+general,Bees on a weathered grey wooden board,rec2123_seq08109,2
+general,Bees on a weathered grey wooden board,rec2125_seq01011,0
+general,Bees on a weathered grey wooden board,rec2125_seq02013,0
+general,Bees on a weathered grey wooden board,rec2123_seq08804,2
+general,Bees on a weathered grey wooden board,rec2125_seq01609,0
+general,Bees on a weathered grey wooden board,rec2123_seq08611,2
+general,Bees on a weathered grey wooden board,rec2123_seq08610,2
+general,Bees on a weathered grey wooden board,rec2123_seq07610,2
+general,Bees on a weathered grey wooden board,rec2123_seq08111,2
+general,Bees on a weathered grey wooden board,rec2123_seq08613,2
+general,Bees on a weathered grey wooden board,rec2123_seq06903,2
+general,Bees on a weathered grey wooden board,rec2123_seq06915,2
+general,Bees on a weathered grey wooden board,rec2123_seq05910,2
+general,Bees on a weathered grey wooden board,rec2123_seq06807,2
+general,Bees on a weathered grey wooden board,rec2123_seq08012,2
+general,Bees on a weathered grey wooden board,rec2123_seq08304,2
+general,Bees on a weathered grey wooden board,rec2123_seq07014,2
+general,Bees on a weathered grey wooden board,rec2125_seq01102,0
+general,Bees on a weathered grey wooden board,rec2123_seq08913,2
+general,Bees on a weathered grey wooden board,rec2123_seq06714,2
+general,Bees on a weathered grey wooden board,rec2123_seq08404,2
+general,Bees on a weathered grey wooden board,rec2123_seq08713,2
+general,Bees on a weathered grey wooden board,rec2123_seq07214,2
+general,Bees on a weathered grey wooden board,rec2125_seq01915,0
+general,Bees on a weathered grey wooden board,rec2123_seq07206,2
+general,Bees on a weathered grey wooden board,rec2123_seq07509,2
+count-position,A few bees on the right side of the board,rec2125_seq01010,2
+count-position,A few bees on the right side of the board,rec2125_seq00405,0
+count-position,A few bees on the right side of the board,rec2125_seq00910,2
+count-position,A few bees on the right side of the board,rec2125_seq00109,0
+count-position,A few bees on the right side of the board,rec2125_seq00901,2
+count-position,A few bees on the right side of the board,rec2125_seq00303,0
+count-position,A few bees on the right side of the board,rec2125_seq01512,2
+count-position,A few bees on the right side of the board,rec2125_seq00505,0
+count-position,A few bees on the right side of the board,rec2125_seq00005,1
+count-position,A few bees on the right side of the board,rec2125_seq01110,1
+count-position,A few bees on the right side of the board,rec2125_seq01609,1
+count-position,A few bees on the right side of the board,rec2125_seq00903,2
+count-position,A few bees on the right side of the board,rec2125_seq01910,2
+count-position,A few bees on the right side of the board,rec2125_seq00207,0
+count-position,A few bees on the right side of the board,rec2125_seq00610,0
+count-position,A few bees on the right side of the board,rec2125_seq00313,0
+count-position,A few bees on the right side of the board,rec2125_seq00715,0
+count-position,A few bees on the right side of the board,rec2125_seq01011,2
+count-position,A few bees on the right side of the board,rec2125_seq01104,2
+count-position,A few bees on the right side of the board,rec2125_seq01915,2
+count-position,A few bees on the right side of the board,rec2125_seq02011,1
+count-position,A few bees on the right side of the board,rec2125_seq00713,0
+count-position,A few bees on the right side of the board,rec2125_seq01102,1
+count-position,A few bees on the right side of the board,rec2125_seq00010,1
+count-position,A few bees on the right side of the board,rec2125_seq00613,0
+count-position,A few bees on the right side of the board,rec2125_seq00801,0
+count-position,A few bees on the right side of the board,rec2125_seq01705,2
+count-position,A few bees on the right side of the board,rec2125_seq01811,1
+count-position,A few bees on the right side of the board,rec2125_seq01813,2
+count-position,A few bees on the right side of the board,rec2125_seq00605,2
+count-position,A few bees on the right side of the board,rec2125_seq01614,1
+count-position,A few bees on the right side of the board,rec2125_seq01208,1
+count-position,A dense group of bees in the middle of the board,rec2123_seq05910,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq01405,1
+count-position,A dense group of bees in the middle of the board,rec2123_seq07010,1
+count-position,A dense group of bees in the middle of the board,rec2123_seq06405,2
+count-position,A dense group of bees in the middle of the board,rec2123_seq06013,1
+count-position,A dense group of bees in the middle of the board,rec2123_seq05809,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq01306,0
+count-position,A dense group of bees in the middle of the board,rec2123_seq06914,1
+count-position,A dense group of bees in the middle of the board,rec2125_seq00514,0
+count-position,A dense group of bees in the middle of the board,rec2125_seq00902,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq01915,1
+count-position,A dense group of bees in the middle of the board,rec2125_seq00613,1
+count-position,A dense group of bees in the middle of the board,rec2125_seq00815,1
+count-position,A dense group of bees in the middle of the board,rec2125_seq00615,1
+count-position,A dense group of bees in the middle of the board,rec2125_seq00113,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq01801,0
+count-position,A dense group of bees in the middle of the board,rec2123_seq07202,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq00901,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq01609,0
+count-position,A dense group of bees in the middle of the board,rec2123_seq05202,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq00510,1
+count-position,A dense group of bees in the middle of the board,rec2125_seq00911,0
+count-position,A dense group of bees in the middle of the board,rec2123_seq08109,1
+count-position,A dense group of bees in the middle of the board,rec2125_seq00715,0
+count-position,A dense group of bees in the middle of the board,rec2125_seq00405,2
+count-position,A dense group of bees in the middle of the board,rec2123_seq08111,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq00610,0
+count-position,A dense group of bees in the middle of the board,rec2125_seq01212,0
+count-position,A dense group of bees in the middle of the board,rec2123_seq07113,2
+count-position,A dense group of bees in the middle of the board,rec2123_seq06015,2
+count-position,A dense group of bees in the middle of the board,rec2125_seq00706,0
+count-position,A dense group of bees in the middle of the board,rec2125_seq01004,0
+count-motion,A few bees walking slowly on the board,rec2125_seq01002,1
+count-motion,A few bees walking slowly on the board,rec2125_seq01011,0
+count-motion,A few bees walking slowly on the board,rec2123_seq08809,1
+count-motion,A few bees walking slowly on the board,rec2123_seq02304,1
+count-motion,A few bees walking slowly on the board,rec2125_seq01212,2
+count-motion,A few bees walking slowly on the board,rec2125_seq01513,2
+count-motion,A few bees walking slowly on the board,rec2125_seq00910,2
+count-motion,A few bees walking slowly on the board,rec2123_seq02501,1
+count-motion,A few bees walking slowly on the board,rec2125_seq01801,0
+count-motion,A few bees walking slowly on the board,rec2123_seq01705,1
+count-motion,A few bees walking slowly on the board,rec2125_seq01608,2
+count-motion,A few bees walking slowly on the board,rec2125_seq01705,2
+count-motion,A few bees walking slowly on the board,rec2125_seq01915,1
+count-motion,A few bees walking slowly on the board,rec2125_seq00109,1
+count-motion,A few bees walking slowly on the board,rec2125_seq00805,2
+count-motion,A few bees walking slowly on the board,rec2123_seq08004,1
+count-motion,A few bees walking slowly on the board,rec2123_seq08411,0
+count-motion,A few bees walking slowly on the board,rec2123_seq08502,0
+count-motion,A few bees walking slowly on the board,rec2125_seq01514,2
+count-motion,A few bees walking slowly on the board,rec2123_seq02402,1
+count-motion,A few bees walking slowly on the board,rec2123_seq02901,0
+count-motion,A few bees walking slowly on the board,rec2123_seq01901,2
+count-motion,A few bees walking slowly on the board,rec2123_seq08906,1
+count-motion,A few bees walking slowly on the board,rec2125_seq00905,2
+count-motion,A few bees walking slowly on the board,rec2125_seq00903,2
+count-motion,A few bees walking slowly on the board,rec2125_seq01609,2
+count-motion,A few bees walking slowly on the board,rec2125_seq00002,1
+count-motion,A few bees walking slowly on the board,rec2125_seq01215,1
+count-motion,A few bees walking slowly on the board,rec2125_seq00712,1
+count-motion,A few bees walking slowly on the board,rec2125_seq00801,1
+count-motion,A few bees walking slowly on the board,rec2123_seq07807,2
+count-motion,A few bees walking slowly on the board,rec2123_seq02001,2
+count-motion,A few bees walking slowly on the board,rec2123_seq01505,2
+count-motion,A few bees walking slowly on the board,rec2123_seq01612,2
+count-motion,A few bees walking slowly on the board,rec2125_seq01208,2
+count-motion,A few bees walking slowly on the board,rec2123_seq08614,2
+count-motion,A few bees walking slowly on the board,rec2123_seq08314,1
+count-motion,A few bees walking slowly on the board,rec2125_seq01305,2
+count-motion,A few bees walking slowly on the board,rec2125_seq00715,1
+count-motion,A few bees walking slowly on the board,rec2123_seq02215,2
+count-motion,A few bees walking slowly on the board,rec2125_seq00814,1
+count-motion,A few bees walking slowly on the board,rec2123_seq07915,0
+count-motion,A few bees walking slowly on the board,rec2125_seq02012,2
+count-motion,A few bees walking slowly on the board,rec2123_seq07708,0
+count-motion,A crowded board with many bees taking off,rec2123_seq06015,0
+count-motion,A crowded board with many bees taking off,rec2123_seq03110,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00515,0
+count-motion,A crowded board with many bees taking off,rec2123_seq07908,0
+count-motion,A crowded board with many bees taking off,rec2123_seq06203,0
+count-motion,A crowded board with many bees taking off,rec2125_seq01213,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00806,0
+count-motion,A crowded board with many bees taking off,rec2123_seq01703,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00201,1
+count-motion,A crowded board with many bees taking off,rec2123_seq06008,0
+count-motion,A crowded board with many bees taking off,rec2123_seq01514,0
+count-motion,A crowded board with many bees taking off,rec2123_seq05711,0
+count-motion,A crowded board with many bees taking off,rec2123_seq02102,0
+count-motion,A crowded board with many bees taking off,rec2125_seq01405,1
+count-motion,A crowded board with many bees taking off,rec2125_seq00005,0
+count-motion,A crowded board with many bees taking off,rec2123_seq02013,0
+count-motion,A crowded board with many bees taking off,rec2125_seq01801,0
+count-motion,A crowded board with many bees taking off,rec2123_seq04506,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00708,0
+count-motion,A crowded board with many bees taking off,rec2123_seq01505,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00613,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00615,1
+count-motion,A crowded board with many bees taking off,rec2123_seq01603,0
+count-motion,A crowded board with many bees taking off,rec2125_seq01404,1
+count-motion,A crowded board with many bees taking off,rec2125_seq01915,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00510,1
+count-motion,A crowded board with many bees taking off,rec2125_seq00115,1
+count-motion,A crowded board with many bees taking off,rec2125_seq00706,1
+count-motion,A crowded board with many bees taking off,rec2123_seq02608,0
+count-motion,A crowded board with many bees taking off,rec2123_seq02506,0
+count-motion,A crowded board with many bees taking off,rec2123_seq06801,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00714,0
+count-motion,A crowded board with many bees taking off,rec2125_seq00701,1
+count-motion,A crowded board with many bees taking off,rec2123_seq02807,0
+count-motion,A crowded board with many bees taking off,rec2125_seq01504,0
+count-motion,A crowded board with many bees taking off,rec2123_seq05414,0
+count-motion,A crowded board with many bees taking off,rec2123_seq02913,1
+count-motion,A crowded board with many bees taking off,rec2125_seq00001,0
+count-motion,A crowded board with many bees taking off,rec2123_seq05509,1
+count-motion,A crowded board with many bees taking off,rec2123_seq02209,2
+count-motion,A crowded board with many bees taking off,rec2125_seq01110,0
+count-motion,A crowded board with many bees taking off,rec2125_seq01212,2
+count-general,A few bees on the board in bright sunlight,rec2125_seq01915,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01801,1
+count-general,A few bees on the board in bright sunlight,rec2125_seq00801,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq02013,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01011,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00002,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00909,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01010,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01705,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00411,0
+count-general,A few bees on the board in bright sunlight,rec2123_seq01513,1
+count-general,A few bees on the board in bright sunlight,rec2125_seq01208,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01513,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01912,0
+count-general,A few bees on the board in bright sunlight,rec2123_seq02303,1
+count-general,A few bees on the board in bright sunlight,rec2123_seq03114,2
+count-general,A few bees on the board in bright sunlight,rec2125_seq00608,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01701,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00715,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00004,0
+count-general,A few bees on the board in bright sunlight,rec2123_seq03802,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01608,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01811,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00908,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01104,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00602,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00712,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01609,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01313,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq00109,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01203,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01508,0
+count-general,A crowded landing board in shade,rec2123_seq04207,2
+count-general,A crowded landing board in shade,rec2125_seq01415,0
+count-general,A crowded landing board in shade,rec2123_seq08404,2
+count-general,A crowded landing board in shade,rec2123_seq04108,1
+count-general,A crowded landing board in shade,rec2123_seq03615,1
+count-general,A crowded landing board in shade,rec2125_seq00305,0
+count-general,A crowded landing board in shade,rec2123_seq07010,2
+count-general,A crowded landing board in shade,rec2125_seq00814,0
+count-general,A crowded landing board in shade,rec2123_seq05011,1
+count-general,A crowded landing board in shade,rec2125_seq01212,0
+count-general,A crowded landing board in shade,rec2123_seq07113,2
+count-general,A crowded landing board in shade,rec2123_seq07405,2
+count-general,A crowded landing board in shade,rec2125_seq01113,0
+count-general,A crowded landing board in shade,rec2125_seq01105,0
+count-general,A crowded landing board in shade,rec2125_seq01102,0
+count-general,A crowded landing board in shade,rec2125_seq01007,0
+count-general,A crowded landing board in shade,rec2123_seq05908,2
+count-general,A crowded landing board in shade,rec2123_seq07304,2
+count-general,A crowded landing board in shade,rec2123_seq04513,1
+count-general,A crowded landing board in shade,rec2125_seq00613,0
+count-general,A crowded landing board in shade,rec2123_seq06915,2
+count-general,A crowded landing board in shade,rec2125_seq00509,0
+count-general,A crowded landing board in shade,rec2123_seq08304,1
+count-general,A crowded landing board in shade,rec2123_seq08804,1
+count-general,A crowded landing board in shade,rec2123_seq05910,2
+count-general,A crowded landing board in shade,rec2125_seq00715,0
+count-general,A crowded landing board in shade,rec2123_seq07214,1
+count-general,A crowded landing board in shade,rec2125_seq00005,1
+count-general,A crowded landing board in shade,rec2125_seq00906,0
+count-general,A crowded landing board in shade,rec2123_seq04509,1
+count-general,A crowded landing board in shade,rec2125_seq00611,0
+count-general,A crowded landing board in shade,rec2123_seq04711,1
+count-general,A crowded landing board in shade,rec2125_seq00514,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq04509,2
+position-motion,Bees flying near the right side of the entrance,rec2123_seq02807,2
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01213,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01610,0
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01410,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01504,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq02802,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq02102,2
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00706,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00806,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq05711,2
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01110,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq06203,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq01505,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq04608,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq05402,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq03404,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00005,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq02608,2
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01404,2
+position-motion,Bees flying near the right side of the entrance,rec2123_seq01514,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq01603,2
+position-motion,Bees flying near the right side of the entrance,rec2123_seq02209,2
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00814,0
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01002,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq04102,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00001,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01811,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq03914,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01507,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00911,0
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00510,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq03615,2
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00714,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq01703,2
+position-motion,Bees flying near the right side of the entrance,rec2123_seq04208,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00114,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00303,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq01604,2
+position-motion,Bees flying near the right side of the entrance,rec2123_seq04012,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq04513,2
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00615,2
+position-motion,Bees flying near the right side of the entrance,rec2123_seq04506,1
+position-motion,Bees flying near the right side of the entrance,rec2125_seq00201,0
+position-motion,Bees flying near the right side of the entrance,rec2123_seq06008,1
+position-motion,Bees resting in the middle of the board,rec2125_seq01011,1
+position-motion,Bees resting in the middle of the board,rec2123_seq02215,2
+position-motion,Bees resting in the middle of the board,rec2125_seq00905,2
+position-motion,Bees resting in the middle of the board,rec2123_seq07708,1
+position-motion,Bees resting in the middle of the board,rec2125_seq01110,1
+position-motion,Bees resting in the middle of the board,rec2123_seq02402,2
+position-motion,Bees resting in the middle of the board,rec2123_seq08906,2
+position-motion,Bees resting in the middle of the board,rec2125_seq01609,1
+position-motion,Bees resting in the middle of the board,rec2123_seq07915,2
+position-motion,Bees resting in the middle of the board,rec2123_seq02901,0
+position-motion,Bees resting in the middle of the board,rec2123_seq07807,1
+position-motion,Bees resting in the middle of the board,rec2123_seq04613,2
+position-motion,Bees resting in the middle of the board,rec2123_seq01901,2
+position-motion,Bees resting in the middle of the board,rec2123_seq08314,2
+position-motion,Bees resting in the middle of the board,rec2123_seq08804,2
+position-motion,Bees resting in the middle of the board,rec2125_seq00501,1
+position-motion,Bees resting in the middle of the board,rec2123_seq08411,2
+position-motion,Bees resting in the middle of the board,rec2123_seq02601,1
+position-motion,Bees resting in the middle of the board,rec2123_seq02501,2
+position-motion,Bees resting in the middle of the board,rec2125_seq01915,0
+position-motion,Bees resting in the middle of the board,rec2125_seq00415,0
+position-motion,Bees resting in the middle of the board,rec2125_seq00715,0
+position-motion,Bees resting in the middle of the board,rec2123_seq02515,1
+position-motion,Bees resting in the middle of the board,rec2125_seq01811,1
+position-motion,Bees resting in the middle of the board,rec2123_seq02304,2
+position-motion,Bees resting in the middle of the board,rec2125_seq01212,0
+position-motion,Bees resting in the middle of the board,rec2123_seq08614,1
+position-motion,Bees resting in the middle of the board,rec2123_seq08809,2
+position-motion,Bees resting in the middle of the board,rec2125_seq00610,0
+position-motion,Bees resting in the middle of the board,rec2123_seq02001,2
+position-motion,Bees resting in the middle of the board,rec2123_seq04703,1
+position-motion,Bees resting in the middle of the board,rec2125_seq01105,0
+position-motion,Bees resting in the middle of the board,rec2125_seq00507,0
+position-motion,Bees resting in the middle of the board,rec2123_seq08109,2
+position-motion,Bees resting in the middle of the board,rec2123_seq06015,0
+position-motion,Bees resting in the middle of the board,rec2123_seq01612,0
+position-motion,Bees resting in the middle of the board,rec2125_seq00910,0
+position-motion,Bees resting in the middle of the board,rec2123_seq01505,1
+position-motion,Bees resting in the middle of the board,rec2123_seq08502,1
+position-motion,Bees resting in the middle of the board,rec2123_seq08004,0
+position-motion,Bees resting in the middle of the board,rec2123_seq08508,2
+position-motion,Bees resting in the middle of the board,rec2123_seq01705,2
+position-motion,Bees resting in the middle of the board,rec2123_seq02414,2
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04506,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq02515,1
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04703,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq02601,1
+position-general,Bees on the left side of the board in sunlight,rec2123_seq06015,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq05313,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04908,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq00914,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq01811,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04313,1
+position-general,Bees on the left side of the board in sunlight,rec2123_seq02809,2
+position-general,Bees on the left side of the board in sunlight,rec2125_seq00813,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq02010,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq01306,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq00613,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq02010,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04803,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq01101,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq02702,2
+position-general,Bees on the left side of the board in sunlight,rec2125_seq00005,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq02206,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq01704,1
+position-general,Bees on the left side of the board in sunlight,rec2125_seq01906,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq00608,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04413,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04511,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04601,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq01915,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq00702,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq03615,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq04311,1
+position-general,Bees on the left side of the board in sunlight,rec2125_seq00707,0
+position-general,Bees on the left side of the board in sunlight,rec2125_seq01110,0
+position-general,Bees on the left side of the board in sunlight,rec2123_seq02414,2
+position-general,Bees on the left side of the board in sunlight,rec2125_seq01015,0
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07712,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq05910,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07910,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq05202,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07504,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq02515,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq08614,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq04405,0
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07214,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq08111,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq06405,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07113,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq04711,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07010,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq04605,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq05809,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq02601,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07215,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq06013,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq02012,0
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq06015,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07908,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq08004,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq02809,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq08115,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq05915,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq08508,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07914,1
+position-general,Bees in the middle of the board next to a black pole,rec2125_seq01105,0
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq08010,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07513,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07202,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07705,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq04503,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq06914,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01101,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01404,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04409,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00806,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00509,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00615,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00201,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq06008,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01411,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01514,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00001,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq06203,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04509,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01604,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01213,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq02807,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04113,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00007,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq05404,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00702,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04506,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00802,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00714,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00611,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01603,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq02209,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04015,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01603,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04606,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01511,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq05711,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00701,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04304,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq02102,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq05502,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04207,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00104,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01513,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq03615,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00004,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq05208,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01703,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq01505,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq02608,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01504,0
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq00902,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq07206,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08111,1
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq00303,0
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq01915,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq02501,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq06709,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08314,1
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq01011,0
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq01515,0
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq01609,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq01505,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08913,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08713,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq07915,1
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq02012,2
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq01811,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08611,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq07807,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq02304,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq01901,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08004,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq02001,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08906,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq02215,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08614,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08415,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq02901,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq07906,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08905,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq02402,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq07708,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08809,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08502,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq01705,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq06714,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq07806,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq06801,1
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq00814,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq07014,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq06613,0
+motion-general,Bees sitting still on a weathered grey board,rec2125_seq01102,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq06909,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08411,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq01612,1
+count,A crowded hive entrance,rec2123_seq06109,2
+count,A crowded hive entrance,rec2123_seq05809,1
+count,A dense mass of bees covering the board,rec2123_seq06109,1
+count,A few scattered bees,rec2125_seq01204,0
+count,A few scattered bees,rec2125_seq00503,0
+count,A few scattered bees,rec2125_seq01103,1
+count,"A medium number of bees, not crowded",rec2123_seq06109,2
+count,Bees covering the whole width of the board,rec2123_seq05809,1
+count,Very few bees at the entrance hole,rec2125_seq00506,2
+count,Very few bees at the entrance hole,rec2125_seq01802,1
+position,Bees sitting in the mesh grid above the entrance,rec2123_seq05614,0
+position,Bees at the lower edge of the board,rec2125_seq01102,1
+position,Bees at the lower edge of the board,rec2123_seq08111,1
+position,Bees at the lower edge of the board,rec2125_seq00911,0
+position,More bees on the right than on the left,rec2123_seq07513,1
+position,Two separate groups of bees on the board,rec2125_seq00903,1
+motion,Bees taking off from the landing board,rec2123_seq02510,1
+motion,Bees taking off from the landing board,rec2125_seq01402,1
+motion,Bees landing on the board,rec2123_seq02610,1
+motion,Bees landing on the board,rec2125_seq01402,1
+motion,Busy traffic at the entrance,rec2123_seq06001,1
+motion,Busy traffic at the entrance,rec2125_seq01402,1
+motion,Bees walking across the board,rec2123_seq02610,1
+motion,Bees walking across the board,rec2125_seq01402,2
+motion,Bees walking across the board,rec2123_seq03703,2
+motion,Quiet entrance with little movement,rec2123_seq03408,0
+motion,Quiet entrance with little movement,rec2123_seq08108,2
+motion,Bees moving quickly in all directions,rec2125_seq01402,1
+general,Bees in bright sunlight,rec2123_seq06109,1
+general,Landing board in shade,rec2123_seq04308,2
+general,Landing board in shade,rec2123_seq06109,2
+general,Sun patches on the grass below the hive,rec2123_seq04308,0
+general,Bees above green leafy plants,rec2123_seq06109,1
+general,Bees above dry grass,rec2123_seq05809,2
+general,A blurry bee in flight,rec2123_seq06109,2
+general,A black pole next to the hive entrance,rec2123_seq05809,2
+general,A black pole next to the hive entrance,rec2123_seq06109,2
+general,Bees on a weathered grey wooden board,rec2123_seq07210,2
+general,Bees on a weathered grey wooden board,rec2123_seq07102,2
+general,Bees on a weathered grey wooden board,rec2123_seq08206,2
+count-position,A dense group of bees in the middle of the board,rec2123_seq05915,2
+count-position,A dense group of bees in the middle of the board,rec2123_seq06101,2
+count-motion,A crowded board with many bees taking off,rec2123_seq02610,0
+count-motion,A crowded board with many bees taking off,rec2123_seq05502,1
+count-general,A few bees on the board in bright sunlight,rec2125_seq01008,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01202,0
+count-general,A few bees on the board in bright sunlight,rec2125_seq01103,0
+position-motion,Bees flying near the right side of the entrance,rec2125_seq01402,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq03801,2
+position-motion,Bees resting in the middle of the board,rec2125_seq01103,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq06001,1
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq01402,0
+motion-general,Busy traffic at the entrance in bright sunlight,rec2125_seq00005,1
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08001,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq06610,0
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08114,2
