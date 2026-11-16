@@ -2,8 +2,15 @@ import pandas as pd
 import pytest
 
 from src.evaluation import (
-    append_failure, average_precision, fully_rated_queries, ndcg, pool, read_ratings, score, write_ratings,
+    RATING_RULES, append_failure, average_precision, fully_rated_queries, ndcg, pool, read_ratings, score,
+    write_ratings,
 )
+from src.retrieval import QUERIES_FILE, SPLITS, load_queries
+
+
+def test_every_query_type_has_a_rating_rule():
+    types = {q["query_type"] for split in SPLITS for q in load_queries(QUERIES_FILE, split)}
+    assert types <= set(RATING_RULES), f"No rating rule for {sorted(types - set(RATING_RULES))}"
 
 RUNS = pd.DataFrame([
     {"query_type": "count", "query": "many bees", "method": m, "rank": r, "clip_id": c}

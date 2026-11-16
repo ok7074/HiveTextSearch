@@ -89,3 +89,11 @@ def test_rrf_sums_reciprocal_ranks_with_shared_ties_and_skips_nan():
     fused = rrf([a, b], k=60)
     assert np.allclose(fused, [1 / 61 + 1 / 61.5, 1 / 62 + 1 / 61.5, 1 / 63])
     assert np.argmax(fused) == 0
+
+
+def test_rrf_weights_let_the_heavier_method_win():
+    clip = (np.array([0.9, 0.1]), True)        # clip ranks clip 0 first
+    detector = (np.array([1.0, 5.0]), True)    # detector ranks clip 1 first
+    assert np.isclose(*rrf([clip, detector]))  # unweighted: a tie
+    weighted = rrf([clip, detector], weights=[0.5, 1.5])
+    assert np.allclose(weighted, [0.5 / 61 + 1.5 / 62, 0.5 / 62 + 1.5 / 61]) and np.argmax(weighted) == 1

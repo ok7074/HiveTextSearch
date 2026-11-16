@@ -17,9 +17,10 @@ Presentation deadline: **25 November 2026** — 15 minutes + Q&A, at most 3 slid
   | CLIP | all | OpenAI `clip-vit-base-patch32`, zero-shot | done |
   | SigLIP 2 | all | Google `siglip2-base-patch16-224`, zero-shot | done |
   | Motion | motion | Frame-difference score over the 4 frames (baseline) | done |
-  | Detector | count, position | YOLO26n fine-tuned on bee data; bee counts per vertical third | done |
-  | Combined | all | Weighted mix of image–text score and detector score | planned |
-- Evaluates with **mAP@10** and **nDCG@10** on hand-annotated relevance labels (0 / 1 / 2) across four query types: count, position, motion, general description
+  | Detector | count, position, general, motion | YOLO26s @ 960 fine-tuned on bee data (classes bee, bee_flying); bee counts per vertical third, flying bees for motion | done |
+  | Combined (RRF) | all | Reciprocal rank fusion (k = 60) of every method that applies to the query | done |
+  | Combined (weighted RRF) | all | RRF with weights clip 0.5, SigLIP 2 0.75, motion 1, detector 1.5 (chosen on train queries) | done |
+- Evaluates with **mAP@10** and **nDCG@10** on hand-annotated relevance labels (0 / 1 / 2) across four query types (count, position, motion, general description) and the six pairs of them
 - Reports latency at p50 and p99 over 200 queries per method
 
 No vector database or cloud service needed — at ~1,440 clips, a NumPy matrix multiply searches everything in milliseconds.
@@ -153,13 +154,42 @@ Frame-difference score: mean pixel change between consecutive frames of a clip. 
 
 ## Evaluation
 
-- **Query types:** count ("many bees"), position ("bees on the left"), motion ("busy entrance"), general description
-- **40 queries total**, 10 per type; 2 per type are development (`Train:`) queries, the rest test queries
+- **Query types:** count ("many bees"), position ("bees on the left"), motion ("busy entrance"), general description, plus the six pairs of them (e.g. count-position: "many bees crowded on the left side")
+- **58 queries total**: 10 per single type (2 development `Train:` queries, 8 test) and 3 per pair (1 development, 2 test), so 14 train and 44 test
 - **Near-duplicates:** each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it
 - **Pooling:** top 10 of each method merged per query, duplicates removed, shuffled, method and rank hidden; rated blind in a CSV (0 = not relevant, 1 = partly, 2 = clearly relevant). Re-pooling after adding a method keeps existing ratings
 - **Metrics:** mAP@10 and nDCG@10 (mean and spread) per method × query type. Relevant = rating ≥ 1; the AP denominator is the relevant clips in the pool (at most 10); the nDCG ideal is the best 10 ratings in the pool; unrated clips count as 0
 - **Latency:** p50 / p99 over 200 queries per method, model loading excluded
 - **No model-made labels:** all relevance judgements are human-annotated
+
+### Annotation rules
+
+Each clip is rated against the query text only, by watching the whole 2-second clip: **2** = clearly relevant,
+**1** = partly, **0** = not. The rule for the current query type is shown under the query in the app's Rate tab
+(`RATING_RULES` in `src/evaluation.py`, the same text as below).
+
+**Count** — judge how much of the board is covered.
+- *Busy wording* (packed, crowded, dense, many): 2 = covered almost edge to edge · 1 = many bees but clear empty patches · 0 = scattered bees or mostly empty. Example: "Landing board packed with bees".
+- *Quiet wording* (few, handful, almost empty, single): the mirror — 2 = mostly empty (an empty board too) · 1 = medium coverage · 0 = well covered. Example: "Only a handful of bees on the board".
+- *Medium wording* ("a medium number, not crowded"): 2 = clearly in between · 1 = borderline · 0 = packed or empty.
+
+**Position** — judge only the named place and ignore the rest of the board.
+- *Bees on / clustered on a side*: 2 = a clear dense group there, fewer bees elsewhere · 1 = bees there but spread over the board too, no clear group · 0 = that place empty or the group sits elsewhere. Example: "Bees clustered on the right side of the board".
+- *A side empty*: 2 = few to no bees there (an empty board too) · 1 = some bees, clearly fewer than elsewhere · 0 = as busy as the rest. Example: "Left side of the board empty".
+- *Other places* (mesh grid, upper board, lower edge, two groups, evenly spread): 2 = clearly as described · 1 = partly · 0 = not.
+
+**Motion**
+- *Busy wording* (flying, taking off, landing, traffic, walking, crawling): count the bees doing it — 2 = several at once · 1 = one or two, or only partly that motion · 0 = none during the clip. Example: "Many bees flying in front of the hive".
+- *Flying low over the grass*: due to constraints on depth perception, bees flying over the grass are counted as partly (1).
+- *Calm wording* (still, quiet, little movement): judge the whole clip — 2 = calm throughout · 1 = calm with some activity · 0 = busy. Bees must be on the board for anything above 0. Example: "Bees sitting still on the board".
+
+**General** — is the described thing there? 2 = clearly (that hive, sunlight, shade, plants, pole …) · 0 = not · 1 only when it is partly or unclearly visible. Hive descriptions are 2 or 0, since each fits exactly one hive. Example: "Hive with an orange front and a white toothed entrance".
+
+**Pairs of types** — judge each part with its own type's rule. 2 = both parts clearly true · 1 = one part true and the other partly true or unclear · 0 = neither, or one part plainly wrong. Per pair:
+- *count-position*: count only inside the named place — 2 = that place densely covered (for "a few": only a few there) · 1 = a fair group with gaps, or the whole board busy without that side standing out · 0 = otherwise.
+- *count-motion*: count the bees doing the motion — 2 = the motion with the asked number of bees · 1 = the motion with fewer or more bees than asked · 0 = the motion is missing.
+- *position-motion*: judge the motion inside the named place — 2 = that motion clearly happening there · 1 = happening but mostly elsewhere, or only partly there · 0 = no such motion there.
+- *count-general, position-general, motion-general*: the general part decides first; the wrong scene is 0. If it is right, the other part is graded with its own rule.
 
 ---
 

@@ -11,6 +11,18 @@ Motion:
 General:
 1. Hive with an orange front and a white toothed entrance
 2. Hive with a red stripe and a square mesh grid
+Count-Position:
+1. Many bees crowded on the left side of the board
+Count-Motion:
+1. Lots of bees flying in front of a busy entrance
+Count-General:
+1. Many bees on an orange hive with a white toothed entrance
+Position-Motion:
+1. Bees walking on the left side of the board
+Position-General:
+1. Bees on the right side of a hive with a red stripe
+Motion-General:
+1. Bees flying above green leafy plants
 
 Test:
 Count:
@@ -49,3 +61,21 @@ General:
 6. A blurry bee in flight
 7. A black pole next to the hive entrance
 8. Bees on a weathered grey wooden board
+Count-Position:
+1. A few bees on the right side of the board
+2. A dense group of bees in the middle of the board
+Count-Motion:
+1. A few bees walking slowly on the board
+2. A crowded board with many bees taking off
+Count-General:
+1. A few bees on the board in bright sunlight
+2. A crowded landing board in shade
+Position-Motion:
+1. Bees flying near the right side of the entrance
+2. Bees resting in the middle of the board
+Position-General:
+1. Bees on the left side of the board in sunlight
+2. Bees in the middle of the board next to a black pole
+Motion-General:
+1. Busy traffic at the entrance in bright sunlight
+2. Bees sitting still on a weathered grey board
