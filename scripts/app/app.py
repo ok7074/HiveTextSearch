@@ -160,7 +160,7 @@ def load_split(split: str):
     return runs, ratings, fully_rated_queries(runs, ratings), ""
 
 
-def overview(split: str):
+def overview(split: str, type_filter: str = "all", sort_method: str = "rrf", metric: str = "AP", order: str = "worst first"):
     runs, ratings, done, message = load_split(split)
     if ratings is None:
         return pd.DataFrame(), gr.Dropdown(choices=[], value=None), message
@@ -170,12 +170,18 @@ def overview(split: str):
 
     per_query = pd.DataFrame(score(runs, ratings)["per_query"])
     per_query = per_query[[key in done for key in zip(per_query["query_type"], per_query["query"])]]
+    if type_filter != "all":  # a pair such as count-position shows under both of its types
+        per_query = per_query[[type_filter in t.split("-") for t in per_query["query_type"]]]
     if per_query.empty:
         return pd.DataFrame(), gr.Dropdown(choices=[], value=None), locked or "Nothing rated yet."
     table = per_query.pivot(index=["query_type", "query"], columns="method", values=["ap", "ndcg"])
     table.columns = [f"{method} {'AP' if metric == 'ap' else 'nDCG'}" for metric, method in table.columns]
-    sort_by = "rrf AP" if "rrf AP" in table.columns else table.columns[0]
-    table = table.sort_values(sort_by, na_position="first").reset_index()
+    sort_by = f"{sort_method} {metric}"
+    if sort_by not in table.columns:  # e.g. motion has no score on count queries
+        return pd.DataFrame(), gr.Dropdown(choices=[], value=None), f"**{sort_method}** has no {metric} on these queries."
+    # Queries a method does not answer (NaN) go last, so "worst" means the worst real scores.
+    table = table.sort_values(sort_by, ascending=order == "worst first", na_position="last").reset_index()
+    table = table[["query_type", "query", sort_by, *[c for c in table.columns if c not in ("query_type", "query", sort_by)]]]
     choices = [(f"[{t}] {q}", f"{t}|{q}") for t, q in zip(table["query_type"], table["query"])]
     return table.round(3), gr.Dropdown(choices=choices, value=choices[0][1]), locked
 
@@ -256,7 +262,13 @@ def build() -> gr.Blocks:
         with gr.Tab("Failure analysis"):
             fa_split = gr.Radio(list(SPLITS), value="train", label="Split")
             refresh = gr.Button("Refresh after rating")
-            worst = gr.Dataframe(label="Fully rated queries, worst rrf AP first", interactive=False)
+            with gr.Row():
+                fa_type = gr.Dropdown(["all", "count", "position", "motion", "general"], value="all",
+                                      label="Query type (pairs show under both their types)")
+                fa_method = gr.Dropdown(METHOD_NAMES, value="rrf", label="Sort by method")
+                fa_metric = gr.Dropdown(["AP", "nDCG"], value="AP", label="Metric")
+                fa_order = gr.Dropdown(["worst first", "best first"], value="worst first", label="Order")
+            worst = gr.Dataframe(label="Fully rated queries, sorted by the chosen method and metric", interactive=False)
             locked = gr.Markdown()
             picked = gr.Dropdown(label="Query", choices=[])
             headers, galleries = [], []
@@ -275,8 +287,9 @@ def build() -> gr.Blocks:
             save = gr.Button("Save failure note")
             saved = gr.Markdown()
 
-            for trigger in (fa_split.change, refresh.click, demo.load):
-                trigger(overview, fa_split, [worst, picked, locked])
+            filters = [fa_split, fa_type, fa_method, fa_metric, fa_order]
+            for trigger in (*(f.change for f in filters), refresh.click, demo.load):
+                trigger(overview, filters, [worst, picked, locked])
             picked.change(side_by_side, [fa_split, picked], [*galleries, *headers, method_ids, fail_clip])
             for name, gallery in zip(METHOD_NAMES, galleries):
                 gallery.select(player_for(name), method_ids, fa_player)

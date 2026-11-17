@@ -141,9 +141,9 @@
       },
       "position-motion": {
         "n_queries": 1,
-        "map": 0.89,
+        "map": 1.0,
         "map_std": null,
-        "ndcg": 0.7078,
+        "ndcg": 0.7117,
         "ndcg_std": null
       }
     },
@@ -243,9 +243,9 @@
       },
       "position-motion": {
         "n_queries": 1,
-        "map": 0.8521,
+        "map": 0.7621,
         "map_std": null,
-        "ndcg": 0.8348,
+        "ndcg": 0.7113,
         "ndcg_std": null
       }
     },
@@ -315,9 +315,9 @@
       },
       "position-motion": {
         "n_queries": 1,
-        "map": 1.0,
+        "map": 0.7578,
         "map_std": null,
-        "ndcg": 0.7823,
+        "ndcg": 0.6654,
         "ndcg_std": null
       }
     },
@@ -826,22 +826,22 @@
       "query_type": "position-motion",
       "query": "Bees walking on the left side of the board",
       "method": "detector",
-      "ap": 0.89,
-      "ndcg": 0.7078
+      "ap": 1.0,
+      "ndcg": 0.7117
     },
     {
       "query_type": "position-motion",
       "query": "Bees walking on the left side of the board",
       "method": "rrf",
-      "ap": 0.8521,
-      "ndcg": 0.8348
+      "ap": 0.7621,
+      "ndcg": 0.7113
     },
     {
       "query_type": "position-motion",
       "query": "Bees walking on the left side of the board",
       "method": "rrf_weighted",
-      "ap": 1.0,
-      "ndcg": 0.7823
+      "ap": 0.7578,
+      "ndcg": 0.6654
     },
     {
       "query_type": "position-general",
