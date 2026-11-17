@@ -549,3 +549,10 @@ position-motion,Bees walking on the left side of the board,rec2125_seq01701,0
 position-motion,Bees walking on the left side of the board,rec2123_seq05504,1
 position-motion,Bees walking on the left side of the board,rec2125_seq01310,1
 position-motion,Bees walking on the left side of the board,rec2123_seq06608,2
+count,Only a handful of bees on the board,rec2125_seq00503,1
+count,Only a handful of bees on the board,rec2125_seq01202,2
+position,Left side of the board empty,rec2123_seq05408,2
+motion,Bees sitting still on the board,rec2123_seq06709,1
+motion,Bees sitting still on the board,rec2123_seq08404,1
+count-motion,Lots of bees flying in front of a busy entrance,rec2125_seq01402,1
+position-general,Bees on the right side of a hive with a red stripe,rec2123_seq06113,0

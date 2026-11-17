@@ -13,6 +13,7 @@ Methods:
   rrf            every query: reciprocal rank fusion (k = 60) of all the methods above that apply to it
   rrf_weighted   the same fusion with each method's share weighted (src/retrieval.RRF_WEIGHTS:
                  clip 0.5, siglip2 0.75, motion 1, detector 1.5)
+  rrf_weighted_noclip  rrf_weighted without CLIP, same weights (added after the first test scoring)
 
 Each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it.
 
@@ -100,15 +101,16 @@ def load_methods() -> tuple[np.ndarray, dict]:
         print(f"No {DETECTIONS_DIR} yet: run scripts/yolo/detect_clips.py to add the detector method", flush=True)
     single = dict(methods)
 
-    def applicable(q):
-        return [(name, r) for name, m in single.items() if (r := m(q)) is not None]
+    def applicable(q, skip=None):
+        return [(name, r) for name, m in single.items() if name != skip and (r := m(q)) is not None]
 
-    def weighted(q):
-        hits = applicable(q)
+    def weighted(q, skip=None):
+        hits = applicable(q, skip)  # skipped before it runs, so latency drops too
         return rrf([r for _, r in hits], weights=[RRF_WEIGHTS[name] for name, _ in hits]), True
 
     methods["rrf"] = lambda q: (rrf([r for _, r in applicable(q)]), True)
     methods["rrf_weighted"] = weighted
+    methods["rrf_weighted_noclip"] = lambda q: weighted(q, skip="clip")
     return clip_ids, methods
 
 

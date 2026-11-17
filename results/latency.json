@@ -2,37 +2,43 @@
   "clip": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 17.321,
-    "p99_ms": 21.654
+    "p50_ms": 16.129,
+    "p99_ms": 18.779
   },
   "siglip2": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 66.865,
-    "p99_ms": 71.244
+    "p50_ms": 63.344,
+    "p99_ms": 80.155
   },
   "motion": {
     "n": 200,
     "distinct_queries": 19,
-    "p50_ms": 0.095,
-    "p99_ms": 0.194
+    "p50_ms": 0.129,
+    "p99_ms": 0.164
   },
   "detector": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 0.091,
-    "p99_ms": 28.668
+    "p50_ms": 0.089,
+    "p99_ms": 29.338
   },
   "rrf": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 90.41,
-    "p99_ms": 179.967
+    "p50_ms": 87.417,
+    "p99_ms": 165.983
   },
   "rrf_weighted": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 92.438,
-    "p99_ms": 173.084
+    "p50_ms": 88.4,
+    "p99_ms": 168.882
+  },
+  "rrf_weighted_noclip": {
+    "n": 200,
+    "distinct_queries": 58,
+    "p50_ms": 71.805,
+    "p99_ms": 157.03
   }
 }

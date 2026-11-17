@@ -154,7 +154,7 @@ Limitations: the detector was trained on landscape images, while the clips are p
 Frame-difference score: mean pixel change between consecutive frames of a clip. Busiest first, or stillest first for quiet words ("calm", "still", …). Used as the baseline and fallback for motion queries.
 
 ### Combined score (RRF)
-Reciprocal rank fusion (Cormack et al., 2009): each clip scores the sum over methods of `weight / (60 + rank)`, using every method that applies to the query. `rrf` uses equal weights; `rrf_weighted` uses clip 0.5, SigLIP 2 0.75, motion 1, detector 1.5, chosen on the train queries and frozen before test.
+Reciprocal rank fusion (Cormack et al., 2009): each clip scores the sum over methods of `weight / (60 + rank)`, using every method that applies to the query. `rrf` uses equal weights; `rrf_weighted` uses clip 0.5, SigLIP 2 0.75, motion 1, detector 1.5, chosen on the train queries and frozen before test. `rrf_weighted_noclip` is `rrf_weighted` without CLIP, same weights; it was added after the first test scoring, once a weight sweep showed CLIP adds little, so its test numbers are not as blind as the others'.
 
 ---
 
@@ -169,20 +169,21 @@ Reciprocal rank fusion (Cormack et al., 2009): each clip scores the sum over met
 - **No model-made labels:** all relevance judgements are human-annotated
 
 ### Results (test split)
-mAP@10 / nDCG@10 per single query type (8 test queries each; all 1,707 pooled clips rated). Full numbers, including the six pairs (2 queries each, so noisy), in `results/test_metrics.json`.
+mAP@10 / nDCG@10 per single query type (8 test queries each; all 1,730 pooled clips rated). Full numbers, including the six pairs (2 queries each, so noisy), in `results/test_metrics.json`.
 
 | Method | Count | General | Motion | Position |
 |--------|-------|---------|--------|----------|
 | CLIP | 0.57 / 0.44 | 0.57 / 0.60 | 0.59 / 0.48 | 0.27 / 0.35 |
-| SigLIP 2 | 0.50 / 0.47 | **0.86 / 0.78** | 0.66 / 0.56 | 0.44 / 0.44 |
+| SigLIP 2 | 0.50 / 0.47 | **0.86 / 0.78** | 0.66 / 0.56 | 0.43 / 0.44 |
 | Motion | – | – | 0.59 / 0.54 | – |
-| Detector | **0.81 / 0.75** | 0.75 / 0.69 | 0.69 / 0.60 | **0.70 / 0.64** |
-| RRF | 0.67 / 0.64 | 0.70 / 0.72 | 0.64 / 0.55 | 0.44 / 0.44 |
-| Weighted RRF | 0.77 / 0.72 | 0.76 / 0.71 | **0.69 / 0.61** | 0.67 / 0.63 |
+| Detector | **0.81 / 0.75** | 0.75 / 0.69 | 0.69 / 0.59 | 0.70 / 0.64 |
+| RRF | 0.67 / 0.64 | 0.70 / 0.72 | 0.64 / 0.54 | 0.44 / 0.44 |
+| Weighted RRF | 0.77 / 0.72 | 0.76 / 0.71 | 0.69 / 0.60 | 0.67 / 0.63 |
+| Weighted RRF, no CLIP | 0.77 / 0.71 | 0.76 / 0.70 | **0.70 / 0.61** | **0.71 / 0.66** |
 
 **Note on position:** the detector's up/down, spread and position-motion rules were added *after* the first test scoring, which had covered only 3 position queries with the detector (detector 0.63 / 0.55; weighted RRF 0.53 / 0.52). The new clips they found were rated blind like all others, and the weighted RRF weights were not changed. The first scoring is kept in `results/test_metrics_frozen.json`. CLIP and SigLIP 2 position scores dropped although their top 10s did not change: the new clips added relevant ones to the pool, which raises the bar for every method.
 
-Latency per query (p50 / p99, `results/latency.json`): CLIP 17 / 22 ms, SigLIP 2 67 / 71 ms, motion 0.1 / 0.2 ms, detector 0.1 / 29 ms (detections precomputed; the p99 is the spread rules looping over boxes), RRF 90 / 180 ms, weighted RRF 92 / 173 ms.
+Latency per query (p50 / p99, `results/latency.json`): CLIP 16 / 19 ms, SigLIP 2 63 / 80 ms, motion 0.1 / 0.2 ms, detector 0.1 / 29 ms (detections precomputed; the p99 is the spread rules looping over boxes), RRF 87 / 166 ms, weighted RRF 88 / 169 ms, weighted RRF without CLIP 72 / 157 ms.
 
 ### Annotation rules
 

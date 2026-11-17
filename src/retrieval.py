@@ -16,6 +16,7 @@ TOP_K = 10
 # Standard RRF constant (Cormack et al., 2009); fixed, so nothing is tuned on the queries.
 RRF_K = 60
 # Weights for rrf_weighted, chosen on the train queries (detector strongest there, CLIP weakest); frozen before test.
+# rrf_weighted_noclip uses the same weights minus clip.
 RRF_WEIGHTS = {"clip": 0.5, "siglip2": 0.75, "motion": 1.0, "detector": 1.5}
 # shortcut: plain word match, so "not busy" still ranks the busiest clips first; switch to per-query rules if that matters.
 QUIET_WORDS = {

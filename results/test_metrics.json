@@ -43,8 +43,8 @@
         "n_queries": 8,
         "map": 0.5934,
         "map_std": 0.3721,
-        "ndcg": 0.48,
-        "ndcg_std": 0.2367
+        "ndcg": 0.478,
+        "ndcg_std": 0.2388
       },
       "motion-general": {
         "n_queries": 2,
@@ -57,8 +57,8 @@
         "n_queries": 8,
         "map": 0.2742,
         "map_std": 0.171,
-        "ndcg": 0.3532,
-        "ndcg_std": 0.1721
+        "ndcg": 0.3522,
+        "ndcg_std": 0.1733
       },
       "position-general": {
         "n_queries": 2,
@@ -115,8 +115,8 @@
         "n_queries": 8,
         "map": 0.6853,
         "map_std": 0.312,
-        "ndcg": 0.5983,
-        "ndcg_std": 0.1932
+        "ndcg": 0.5949,
+        "ndcg_std": 0.1964
       },
       "motion-general": {
         "n_queries": 2,
@@ -129,8 +129,8 @@
         "n_queries": 8,
         "map": 0.7043,
         "map_std": 0.3359,
-        "ndcg": 0.6425,
-        "ndcg_std": 0.2986
+        "ndcg": 0.6384,
+        "ndcg_std": 0.2977
       },
       "position-general": {
         "n_queries": 2,
@@ -159,8 +159,8 @@
         "n_queries": 8,
         "map": 0.5852,
         "map_std": 0.343,
-        "ndcg": 0.5397,
-        "ndcg_std": 0.2254
+        "ndcg": 0.5355,
+        "ndcg_std": 0.2255
       },
       "motion-general": {
         "n_queries": 2,
@@ -217,8 +217,8 @@
         "n_queries": 8,
         "map": 0.6364,
         "map_std": 0.315,
-        "ndcg": 0.5481,
-        "ndcg_std": 0.2007
+        "ndcg": 0.5444,
+        "ndcg_std": 0.2021
       },
       "motion-general": {
         "n_queries": 2,
@@ -231,8 +231,8 @@
         "n_queries": 8,
         "map": 0.4379,
         "map_std": 0.2431,
-        "ndcg": 0.4385,
-        "ndcg_std": 0.1982
+        "ndcg": 0.4365,
+        "ndcg_std": 0.1992
       },
       "position-general": {
         "n_queries": 2,
@@ -289,8 +289,8 @@
         "n_queries": 8,
         "map": 0.6856,
         "map_std": 0.3352,
-        "ndcg": 0.6059,
-        "ndcg_std": 0.2393
+        "ndcg": 0.6023,
+        "ndcg_std": 0.2418
       },
       "motion-general": {
         "n_queries": 2,
@@ -303,8 +303,8 @@
         "n_queries": 8,
         "map": 0.6715,
         "map_std": 0.3109,
-        "ndcg": 0.6317,
-        "ndcg_std": 0.2963
+        "ndcg": 0.6271,
+        "ndcg_std": 0.2936
       },
       "position-general": {
         "n_queries": 2,
@@ -319,6 +319,78 @@
         "map_std": 0.0945,
         "ndcg": 0.7689,
         "ndcg_std": 0.0865
+      }
+    },
+    "rrf_weighted_noclip": {
+      "count": {
+        "n_queries": 8,
+        "map": 0.7667,
+        "map_std": 0.354,
+        "ndcg": 0.7138,
+        "ndcg_std": 0.3043
+      },
+      "count-general": {
+        "n_queries": 2,
+        "map": 0.5156,
+        "map_std": 0.685,
+        "ndcg": 0.4491,
+        "ndcg_std": 0.5098
+      },
+      "count-motion": {
+        "n_queries": 2,
+        "map": 0.3015,
+        "map_std": 0.351,
+        "ndcg": 0.3771,
+        "ndcg_std": 0.363
+      },
+      "count-position": {
+        "n_queries": 2,
+        "map": 1.0,
+        "map_std": 0.0,
+        "ndcg": 0.8077,
+        "ndcg_std": 0.0848
+      },
+      "general": {
+        "n_queries": 8,
+        "map": 0.7604,
+        "map_std": 0.4436,
+        "ndcg": 0.6996,
+        "ndcg_std": 0.3941
+      },
+      "motion": {
+        "n_queries": 8,
+        "map": 0.701,
+        "map_std": 0.3027,
+        "ndcg": 0.6064,
+        "ndcg_std": 0.2015
+      },
+      "motion-general": {
+        "n_queries": 2,
+        "map": 0.8021,
+        "map_std": 0.2799,
+        "ndcg": 0.7404,
+        "ndcg_std": 0.0628
+      },
+      "position": {
+        "n_queries": 8,
+        "map": 0.7059,
+        "map_std": 0.3441,
+        "ndcg": 0.6578,
+        "ndcg_std": 0.3084
+      },
+      "position-general": {
+        "n_queries": 2,
+        "map": 0.5,
+        "map_std": 0.7071,
+        "ndcg": 0.4345,
+        "ndcg_std": 0.6145
+      },
+      "position-motion": {
+        "n_queries": 2,
+        "map": 1.0,
+        "map_std": 0.0,
+        "ndcg": 0.8077,
+        "ndcg_std": 0.0784
       }
     },
     "siglip2": {
@@ -361,8 +433,8 @@
         "n_queries": 8,
         "map": 0.6587,
         "map_std": 0.3702,
-        "ndcg": 0.5619,
-        "ndcg_std": 0.2242
+        "ndcg": 0.5598,
+        "ndcg_std": 0.2273
       },
       "motion-general": {
         "n_queries": 2,
@@ -375,8 +447,8 @@
         "n_queries": 8,
         "map": 0.4347,
         "map_std": 0.2617,
-        "ndcg": 0.4389,
-        "ndcg_std": 0.1741
+        "ndcg": 0.4381,
+        "ndcg_std": 0.1757
       },
       "position-general": {
         "n_queries": 2,
@@ -432,6 +504,13 @@
     },
     {
       "query_type": "count",
+      "query": "A crowded hive entrance",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.9227
+    },
+    {
+      "query_type": "count",
       "query": "Almost empty landing board",
       "method": "clip",
       "ap": 0.9,
@@ -464,6 +543,13 @@
       "method": "rrf_weighted",
       "ap": 0.89,
       "ndcg": 0.9337
+    },
+    {
+      "query_type": "count",
+      "query": "Almost empty landing board",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.8789,
+      "ndcg": 0.9306
     },
     {
       "query_type": "count",
@@ -502,6 +588,13 @@
     },
     {
       "query_type": "count",
+      "query": "A dense mass of bees covering the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.8156
+    },
+    {
+      "query_type": "count",
       "query": "A few scattered bees",
       "method": "clip",
       "ap": 0.2877,
@@ -534,6 +627,13 @@
       "method": "rrf_weighted",
       "ap": 0.7,
       "ndcg": 0.7166
+    },
+    {
+      "query_type": "count",
+      "query": "A few scattered bees",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.7578,
+      "ndcg": 0.7449
     },
     {
       "query_type": "count",
@@ -572,6 +672,13 @@
     },
     {
       "query_type": "count",
+      "query": "A medium number of bees, not crowded",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.4825,
+      "ndcg": 0.527
+    },
+    {
+      "query_type": "count",
       "query": "Bees covering the whole width of the board",
       "method": "clip",
       "ap": 0.2378,
@@ -604,6 +711,13 @@
       "method": "rrf_weighted",
       "ap": 1.0,
       "ndcg": 0.8091
+    },
+    {
+      "query_type": "count",
+      "query": "Bees covering the whole width of the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.7749
     },
     {
       "query_type": "count",
@@ -642,6 +756,13 @@
     },
     {
       "query_type": "count",
+      "query": "A single bee sitting away from the entrance",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.0143,
+      "ndcg": 0.0425
+    },
+    {
+      "query_type": "count",
       "query": "Very few bees at the entrance hole",
       "method": "clip",
       "ap": 0.3127,
@@ -674,6 +795,13 @@
       "method": "rrf_weighted",
       "ap": 1.0,
       "ndcg": 0.8877
+    },
+    {
+      "query_type": "count",
+      "query": "Very few bees at the entrance hole",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.9526
     },
     {
       "query_type": "position",
@@ -712,6 +840,13 @@
     },
     {
       "query_type": "position",
+      "query": "Bees bunched in the middle of the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.8023
+    },
+    {
+      "query_type": "position",
       "query": "Bees on the left side near the pole",
       "method": "clip",
       "ap": 0.0967,
@@ -742,6 +877,13 @@
       "query_type": "position",
       "query": "Bees on the left side near the pole",
       "method": "rrf_weighted",
+      "ap": 0.0,
+      "ndcg": 0.0
+    },
+    {
+      "query_type": "position",
+      "query": "Bees on the left side near the pole",
+      "method": "rrf_weighted_noclip",
       "ap": 0.0,
       "ndcg": 0.0
     },
@@ -782,6 +924,13 @@
     },
     {
       "query_type": "position",
+      "query": "Bees evenly spread along the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.5014,
+      "ndcg": 0.3978
+    },
+    {
+      "query_type": "position",
       "query": "A bee on the wooden board above the entrance",
       "method": "clip",
       "ap": 0.5475,
@@ -817,38 +966,52 @@
     },
     {
       "query_type": "position",
+      "query": "A bee on the wooden board above the entrance",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.855
+    },
+    {
+      "query_type": "position",
       "query": "Bees sitting in the mesh grid above the entrance",
       "method": "clip",
       "ap": 0.1286,
-      "ndcg": 0.178
+      "ndcg": 0.1699
     },
     {
       "query_type": "position",
       "query": "Bees sitting in the mesh grid above the entrance",
       "method": "siglip2",
       "ap": 0.1,
-      "ndcg": 0.1335
+      "ndcg": 0.1274
     },
     {
       "query_type": "position",
       "query": "Bees sitting in the mesh grid above the entrance",
       "method": "detector",
       "ap": 0.6171,
-      "ndcg": 0.7152
+      "ndcg": 0.6827
     },
     {
       "query_type": "position",
       "query": "Bees sitting in the mesh grid above the entrance",
       "method": "rrf",
       "ap": 0.2471,
-      "ndcg": 0.3507
+      "ndcg": 0.3348
     },
     {
       "query_type": "position",
       "query": "Bees sitting in the mesh grid above the entrance",
       "method": "rrf_weighted",
       "ap": 0.6709,
-      "ndcg": 0.8016
+      "ndcg": 0.7652
+    },
+    {
+      "query_type": "position",
+      "query": "Bees sitting in the mesh grid above the entrance",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.6671,
+      "ndcg": 0.8192
     },
     {
       "query_type": "position",
@@ -887,6 +1050,13 @@
     },
     {
       "query_type": "position",
+      "query": "Bees at the lower edge of the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.8521,
+      "ndcg": 0.7372
+    },
+    {
+      "query_type": "position",
       "query": "More bees on the right than on the left",
       "method": "clip",
       "ap": 0.0533,
@@ -922,6 +1092,13 @@
     },
     {
       "query_type": "position",
+      "query": "More bees on the right than on the left",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.9182
+    },
+    {
+      "query_type": "position",
       "query": "Two separate groups of bees on the board",
       "method": "clip",
       "ap": 0.3748,
@@ -954,6 +1131,13 @@
       "method": "rrf_weighted",
       "ap": 0.6468,
       "ndcg": 0.7095
+    },
+    {
+      "query_type": "position",
+      "query": "Two separate groups of bees on the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.6268,
+      "ndcg": 0.733
     },
     {
       "query_type": "motion",
@@ -999,45 +1183,59 @@
     },
     {
       "query_type": "motion",
+      "query": "Bees taking off from the landing board",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.2917,
+      "ndcg": 0.4145
+    },
+    {
+      "query_type": "motion",
       "query": "Bees landing on the board",
       "method": "clip",
       "ap": 0.2095,
-      "ndcg": 0.2747
+      "ndcg": 0.258
     },
     {
       "query_type": "motion",
       "query": "Bees landing on the board",
       "method": "siglip2",
       "ap": 0.2289,
-      "ndcg": 0.2786
+      "ndcg": 0.2617
     },
     {
       "query_type": "motion",
       "query": "Bees landing on the board",
       "method": "motion",
       "ap": 0.5563,
-      "ndcg": 0.5482
+      "ndcg": 0.515
     },
     {
       "query_type": "motion",
       "query": "Bees landing on the board",
       "method": "detector",
       "ap": 0.3627,
-      "ndcg": 0.4494
+      "ndcg": 0.4222
     },
     {
       "query_type": "motion",
       "query": "Bees landing on the board",
       "method": "rrf",
       "ap": 0.3875,
-      "ndcg": 0.4915
+      "ndcg": 0.4617
     },
     {
       "query_type": "motion",
       "query": "Bees landing on the board",
       "method": "rrf_weighted",
       "ap": 0.4063,
-      "ndcg": 0.4732
+      "ndcg": 0.4445
+    },
+    {
+      "query_type": "motion",
+      "query": "Bees landing on the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.4239,
+      "ndcg": 0.4473
     },
     {
       "query_type": "motion",
@@ -1083,6 +1281,13 @@
     },
     {
       "query_type": "motion",
+      "query": "Busy traffic at the entrance",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.7239
+    },
+    {
+      "query_type": "motion",
       "query": "Bees walking across the board",
       "method": "clip",
       "ap": 1.0,
@@ -1122,6 +1327,13 @@
       "method": "rrf_weighted",
       "ap": 1.0,
       "ndcg": 0.855
+    },
+    {
+      "query_type": "motion",
+      "query": "Bees walking across the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.8584
     },
     {
       "query_type": "motion",
@@ -1167,6 +1379,13 @@
     },
     {
       "query_type": "motion",
+      "query": "A bee flying low over the grass",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.3563,
+      "ndcg": 0.3069
+    },
+    {
+      "query_type": "motion",
       "query": "Bees crawling into the entrance",
       "method": "clip",
       "ap": 0.498,
@@ -1206,6 +1425,13 @@
       "method": "rrf_weighted",
       "ap": 1.0,
       "ndcg": 0.7612
+    },
+    {
+      "query_type": "motion",
+      "query": "Bees crawling into the entrance",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.7694
     },
     {
       "query_type": "motion",
@@ -1251,6 +1477,13 @@
     },
     {
       "query_type": "motion",
+      "query": "Quiet entrance with little movement",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.7454,
+      "ndcg": 0.7691
+    },
+    {
+      "query_type": "motion",
       "query": "Bees moving quickly in all directions",
       "method": "clip",
       "ap": 0.0717,
@@ -1292,6 +1525,13 @@
       "ndcg": 0.5917
     },
     {
+      "query_type": "motion",
+      "query": "Bees moving quickly in all directions",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.7904,
+      "ndcg": 0.5615
+    },
+    {
       "query_type": "general",
       "query": "Bees in bright sunlight",
       "method": "clip",
@@ -1328,6 +1568,13 @@
     },
     {
       "query_type": "general",
+      "query": "Bees in bright sunlight",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.0333,
+      "ndcg": 0.0611
+    },
+    {
+      "query_type": "general",
       "query": "Landing board in shade",
       "method": "clip",
       "ap": 0.8664,
@@ -1358,6 +1605,13 @@
       "query_type": "general",
       "query": "Landing board in shade",
       "method": "rrf_weighted",
+      "ap": 1.0,
+      "ndcg": 0.9574
+    },
+    {
+      "query_type": "general",
+      "query": "Landing board in shade",
+      "method": "rrf_weighted_noclip",
       "ap": 1.0,
       "ndcg": 0.9574
     },
@@ -1398,6 +1652,13 @@
     },
     {
       "query_type": "general",
+      "query": "Sun patches on the grass below the hive",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.05,
+      "ndcg": 0.1385
+    },
+    {
+      "query_type": "general",
       "query": "Bees above green leafy plants",
       "method": "clip",
       "ap": 0.7435,
@@ -1433,6 +1694,13 @@
     },
     {
       "query_type": "general",
+      "query": "Bees above green leafy plants",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.6045
+    },
+    {
+      "query_type": "general",
       "query": "Bees above dry grass",
       "method": "clip",
       "ap": 0.7532,
@@ -1463,6 +1731,13 @@
       "query_type": "general",
       "query": "Bees above dry grass",
       "method": "rrf_weighted",
+      "ap": 1.0,
+      "ndcg": 1.0
+    },
+    {
+      "query_type": "general",
+      "query": "Bees above dry grass",
+      "method": "rrf_weighted_noclip",
       "ap": 1.0,
       "ndcg": 1.0
     },
@@ -1503,6 +1778,13 @@
     },
     {
       "query_type": "general",
+      "query": "A blurry bee in flight",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.8349
+    },
+    {
+      "query_type": "general",
       "query": "A black pole next to the hive entrance",
       "method": "clip",
       "ap": 0.7904,
@@ -1538,6 +1820,13 @@
     },
     {
       "query_type": "general",
+      "query": "A black pole next to the hive entrance",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 1.0
+    },
+    {
+      "query_type": "general",
       "query": "Bees on a weathered grey wooden board",
       "method": "clip",
       "ap": 0.1662,
@@ -1568,6 +1857,13 @@
       "query_type": "general",
       "query": "Bees on a weathered grey wooden board",
       "method": "rrf_weighted",
+      "ap": 1.0,
+      "ndcg": 1.0
+    },
+    {
+      "query_type": "general",
+      "query": "Bees on a weathered grey wooden board",
+      "method": "rrf_weighted_noclip",
       "ap": 1.0,
       "ndcg": 1.0
     },
@@ -1608,6 +1904,13 @@
     },
     {
       "query_type": "count-position",
+      "query": "A few bees on the right side of the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.7477
+    },
+    {
+      "query_type": "count-position",
       "query": "A dense group of bees in the middle of the board",
       "method": "clip",
       "ap": 0.4822,
@@ -1640,6 +1943,13 @@
       "method": "rrf_weighted",
       "ap": 1.0,
       "ndcg": 0.9159
+    },
+    {
+      "query_type": "count-position",
+      "query": "A dense group of bees in the middle of the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.8677
     },
     {
       "query_type": "count-motion",
@@ -1685,6 +1995,13 @@
     },
     {
       "query_type": "count-motion",
+      "query": "A few bees walking slowly on the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.5498,
+      "ndcg": 0.6338
+    },
+    {
+      "query_type": "count-motion",
       "query": "A crowded board with many bees taking off",
       "method": "clip",
       "ap": 0.1995,
@@ -1726,6 +2043,13 @@
       "ndcg": 0.2073
     },
     {
+      "query_type": "count-motion",
+      "query": "A crowded board with many bees taking off",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.0533,
+      "ndcg": 0.1203
+    },
+    {
       "query_type": "count-general",
       "query": "A few bees on the board in bright sunlight",
       "method": "clip",
@@ -1762,6 +2086,13 @@
     },
     {
       "query_type": "count-general",
+      "query": "A few bees on the board in bright sunlight",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.0312,
+      "ndcg": 0.0886
+    },
+    {
+      "query_type": "count-general",
       "query": "A crowded landing board in shade",
       "method": "clip",
       "ap": 0.0833,
@@ -1794,6 +2125,13 @@
       "method": "rrf_weighted",
       "ap": 1.0,
       "ndcg": 0.7767
+    },
+    {
+      "query_type": "count-general",
+      "query": "A crowded landing board in shade",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.8096
     },
     {
       "query_type": "position-motion",
@@ -1839,6 +2177,13 @@
     },
     {
       "query_type": "position-motion",
+      "query": "Bees flying near the right side of the entrance",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.8632
+    },
+    {
+      "query_type": "position-motion",
       "query": "Bees resting in the middle of the board",
       "method": "clip",
       "ap": 0.5685,
@@ -1880,6 +2225,13 @@
       "ndcg": 0.7077
     },
     {
+      "query_type": "position-motion",
+      "query": "Bees resting in the middle of the board",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.7523
+    },
+    {
       "query_type": "position-general",
       "query": "Bees on the left side of the board in sunlight",
       "method": "clip",
@@ -1911,6 +2263,13 @@
       "query_type": "position-general",
       "query": "Bees on the left side of the board in sunlight",
       "method": "rrf_weighted",
+      "ap": 0.0,
+      "ndcg": 0.0
+    },
+    {
+      "query_type": "position-general",
+      "query": "Bees on the left side of the board in sunlight",
+      "method": "rrf_weighted_noclip",
       "ap": 0.0,
       "ndcg": 0.0
     },
@@ -1948,6 +2307,13 @@
       "method": "rrf_weighted",
       "ap": 1.0,
       "ndcg": 0.7239
+    },
+    {
+      "query_type": "position-general",
+      "query": "Bees in the middle of the board next to a black pole",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.8691
     },
     {
       "query_type": "motion-general",
@@ -1993,6 +2359,13 @@
     },
     {
       "query_type": "motion-general",
+      "query": "Busy traffic at the entrance in bright sunlight",
+      "method": "rrf_weighted_noclip",
+      "ap": 0.6042,
+      "ndcg": 0.696
+    },
+    {
+      "query_type": "motion-general",
       "query": "Bees sitting still on a weathered grey board",
       "method": "clip",
       "ap": 0.0333,
@@ -2032,6 +2405,13 @@
       "method": "rrf_weighted",
       "ap": 0.9,
       "ndcg": 0.7423
+    },
+    {
+      "query_type": "motion-general",
+      "query": "Bees sitting still on a weathered grey board",
+      "method": "rrf_weighted_noclip",
+      "ap": 1.0,
+      "ndcg": 0.7848
     }
   ]
 }
