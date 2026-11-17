@@ -1,0 +1,1037 @@
+sweep,label,varied,weight,query_type,query,ap,ndcg,unrated_in_top10
+reference,plain RRF,-,1.0,count,Landing board packed with bees,0.3896428571428571,0.3218277470384572,0
+reference,"plain RRF, no CLIP",-,1.0,count,Landing board packed with bees,1.0,0.8067716910269158,0
+reference,today's weights,-,1.0,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,clip,0.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+A,sweep A,clip,0.1,count,Landing board packed with bees,1.0,0.8507086675345288,0
+A,sweep A,clip,0.2,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,clip,0.3,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,clip,0.4,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,clip,0.5,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,clip,0.6,count,Landing board packed with bees,0.89,0.8028635387552869,0
+A,sweep A,clip,0.7,count,Landing board packed with bees,0.8788888888888889,0.7991850305735954,0
+A,sweep A,siglip2,0.55,count,Landing board packed with bees,1.0,0.8412199787094841,0
+A,sweep A,siglip2,0.65,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,siglip2,0.75,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,siglip2,0.85,count,Landing board packed with bees,0.89,0.8084474443189519,0
+A,sweep A,siglip2,0.95,count,Landing board packed with bees,0.8788888888888889,0.8047689361372602,0
+A,sweep A,siglip2,1.05,count,Landing board packed with bees,0.8521031746031748,0.7966631340130561,0
+A,sweep A,siglip2,1.15,count,Landing board packed with bees,0.7571031746031747,0.7545502410309505,1
+A,sweep A,siglip2,1.25,count,Landing board packed with bees,0.7071031746031746,0.6582215950808479,1
+A,sweep A,siglip2,1.35,count,Landing board packed with bees,0.7071031746031746,0.6008022215239686,1
+A,sweep A,siglip2,1.45,count,Landing board packed with bees,0.7071031746031746,0.5974383974361931,1
+A,sweep A,detector,0.8,count,Landing board packed with bees,0.5308730158730158,0.4700210619324858,1
+A,sweep A,detector,1.0,count,Landing board packed with bees,0.6171031746031745,0.5829298230277932,1
+A,sweep A,detector,1.2,count,Landing board packed with bees,0.866388888888889,0.796908279450736,0
+A,sweep A,detector,1.4,count,Landing board packed with bees,0.89,0.8028635387552869,0
+A,sweep A,detector,1.6,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,1.8,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,2.0,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,2.2,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,2.4,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,2.6,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,2.8,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,3.0,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,3.2,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,3.4,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,3.6,count,Landing board packed with bees,1.0,0.8468038842731489,0
+A,sweep A,detector,3.8,count,Landing board packed with bees,1.0,0.8507086675345288,0
+A,sweep A,detector,4.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,siglip2,0.25,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,siglip2,0.5,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,siglip2,0.75,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,siglip2,1.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,siglip2,1.25,count,Landing board packed with bees,1.0,0.8875405374917958,0
+B,sweep B,siglip2,1.5,count,Landing board packed with bees,1.0,0.8067716910269158,0
+B,sweep B,siglip2,1.75,count,Landing board packed with bees,0.8354365079365079,0.7339669633901504,0
+B,sweep B,siglip2,2.0,count,Landing board packed with bees,0.7268253968253968,0.6535755753000648,0
+B,sweep B,siglip2,2.25,count,Landing board packed with bees,0.6390476190476191,0.5739481698909984,0
+B,sweep B,siglip2,2.5,count,Landing board packed with bees,0.6390476190476191,0.5739481698909984,0
+B,sweep B,siglip2,2.75,count,Landing board packed with bees,0.6390476190476191,0.5739481698909984,0
+B,sweep B,siglip2,3.0,count,Landing board packed with bees,0.6390476190476191,0.5739481698909984,0
+B,sweep B,motion,0.25,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,0.5,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,0.75,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,1.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,1.25,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,1.5,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,1.75,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,2.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,2.25,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,2.5,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,2.75,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,motion,3.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,0.25,count,Landing board packed with bees,0.6390476190476191,0.5739481698909984,0
+B,sweep B,detector,0.5,count,Landing board packed with bees,0.6390476190476191,0.5739481698909984,0
+B,sweep B,detector,0.75,count,Landing board packed with bees,1.0,0.8067716910269158,0
+B,sweep B,detector,1.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,1.25,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,1.5,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,1.75,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,2.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,2.25,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,2.5,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,2.75,count,Landing board packed with bees,1.0,0.8507086675345288,0
+B,sweep B,detector,3.0,count,Landing board packed with bees,1.0,0.8507086675345288,0
+reference,plain RRF,-,1.0,count,Only a handful of bees on the board,0.8354365079365079,0.7445970359035005,0
+reference,"plain RRF, no CLIP",-,1.0,count,Only a handful of bees on the board,0.9,0.7026896525608617,1
+reference,today's weights,-,1.0,count,Only a handful of bees on the board,1.0,0.8162707399704857,0
+A,sweep A,clip,0.0,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+A,sweep A,clip,0.1,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+A,sweep A,clip,0.2,count,Only a handful of bees on the board,1.0,0.8924909353525192,1
+A,sweep A,clip,0.3,count,Only a handful of bees on the board,1.0,0.8929581428150792,1
+A,sweep A,clip,0.4,count,Only a handful of bees on the board,1.0,0.8137535665308281,0
+A,sweep A,clip,0.5,count,Only a handful of bees on the board,1.0,0.8162707399704857,0
+A,sweep A,clip,0.6,count,Only a handful of bees on the board,1.0,0.8162707399704857,0
+A,sweep A,clip,0.7,count,Only a handful of bees on the board,1.0,0.8137535665308281,0
+A,sweep A,siglip2,0.55,count,Only a handful of bees on the board,1.0,0.8162707399704857,0
+A,sweep A,siglip2,0.65,count,Only a handful of bees on the board,1.0,0.8162707399704857,0
+A,sweep A,siglip2,0.75,count,Only a handful of bees on the board,1.0,0.8162707399704857,0
+A,sweep A,siglip2,0.85,count,Only a handful of bees on the board,1.0,0.8137535665308281,0
+A,sweep A,siglip2,0.95,count,Only a handful of bees on the board,1.0,0.8117872164495367,0
+A,sweep A,siglip2,1.05,count,Only a handful of bees on the board,0.9,0.7418887870501993,0
+A,sweep A,siglip2,1.15,count,Only a handful of bees on the board,0.8788888888888889,0.7315948297914248,1
+A,sweep A,siglip2,1.25,count,Only a handful of bees on the board,0.8521031746031748,0.7271113062704756,1
+A,sweep A,siglip2,1.35,count,Only a handful of bees on the board,0.8354365079365079,0.6842997284497823,1
+A,sweep A,siglip2,1.45,count,Only a handful of bees on the board,0.8354365079365079,0.6842997284497823,1
+A,sweep A,detector,0.8,count,Only a handful of bees on the board,0.8521031746031748,0.7477870352439606,0
+A,sweep A,detector,1.0,count,Only a handful of bees on the board,0.8788888888888889,0.736466396741629,0
+A,sweep A,detector,1.2,count,Only a handful of bees on the board,1.0,0.8088819995806239,0
+A,sweep A,detector,1.4,count,Only a handful of bees on the board,1.0,0.8162707399704857,0
+A,sweep A,detector,1.6,count,Only a handful of bees on the board,1.0,0.8137535665308281,0
+A,sweep A,detector,1.8,count,Only a handful of bees on the board,1.0,0.894274860442798,1
+A,sweep A,detector,2.0,count,Only a handful of bees on the board,1.0,0.8958633596839922,1
+A,sweep A,detector,2.2,count,Only a handful of bees on the board,1.0,0.8958633596839922,0
+A,sweep A,detector,2.4,count,Only a handful of bees on the board,1.0,0.8958633596839922,1
+A,sweep A,detector,2.6,count,Only a handful of bees on the board,1.0,0.927673753783468,1
+A,sweep A,detector,2.8,count,Only a handful of bees on the board,1.0,0.9289904714111867,0
+A,sweep A,detector,3.0,count,Only a handful of bees on the board,1.0,0.9289904714111867,0
+A,sweep A,detector,3.2,count,Only a handful of bees on the board,1.0,0.9289904714111867,0
+A,sweep A,detector,3.4,count,Only a handful of bees on the board,1.0,0.9289904714111867,0
+A,sweep A,detector,3.6,count,Only a handful of bees on the board,1.0,0.9289904714111867,0
+A,sweep A,detector,3.8,count,Only a handful of bees on the board,1.0,0.9289904714111867,0
+A,sweep A,detector,4.0,count,Only a handful of bees on the board,1.0,0.9289904714111867,0
+B,sweep B,siglip2,0.25,count,Only a handful of bees on the board,1.0,0.9256180470797137,0
+B,sweep B,siglip2,0.5,count,Only a handful of bees on the board,1.0,0.9256180470797137,1
+B,sweep B,siglip2,0.75,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,siglip2,1.0,count,Only a handful of bees on the board,1.0,0.8210933633344506,2
+B,sweep B,siglip2,1.25,count,Only a handful of bees on the board,1.0,0.7711820077100175,1
+B,sweep B,siglip2,1.5,count,Only a handful of bees on the board,0.9,0.7026896525608617,1
+B,sweep B,siglip2,1.75,count,Only a handful of bees on the board,0.89,0.683031954408303,1
+B,sweep B,siglip2,2.0,count,Only a handful of bees on the board,0.89,0.6135912799987819,1
+B,sweep B,siglip2,2.25,count,Only a handful of bees on the board,0.89,0.5808420191116848,1
+B,sweep B,siglip2,2.5,count,Only a handful of bees on the board,0.8788888888888889,0.5776650206292965,1
+B,sweep B,siglip2,2.75,count,Only a handful of bees on the board,0.866388888888889,0.572415602838995,1
+B,sweep B,siglip2,3.0,count,Only a handful of bees on the board,0.7763888888888889,0.5087948146400433,0
+B,sweep B,motion,0.25,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,0.5,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,0.75,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,1.0,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,1.25,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,1.5,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,1.75,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,2.0,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,2.25,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,2.5,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,2.75,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,motion,3.0,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,detector,0.25,count,Only a handful of bees on the board,0.7675,0.5012004558119391,0
+B,sweep B,detector,0.5,count,Only a handful of bees on the board,0.89,0.5808420191116848,1
+B,sweep B,detector,0.75,count,Only a handful of bees on the board,0.9,0.7026896525608617,1
+B,sweep B,detector,1.0,count,Only a handful of bees on the board,1.0,0.8101987172083426,1
+B,sweep B,detector,1.25,count,Only a handful of bees on the board,1.0,0.8529037574339264,2
+B,sweep B,detector,1.5,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,detector,1.75,count,Only a handful of bees on the board,1.0,0.8924909353525192,2
+B,sweep B,detector,2.0,count,Only a handful of bees on the board,1.0,0.9256180470797137,2
+B,sweep B,detector,2.25,count,Only a handful of bees on the board,1.0,0.9256180470797137,1
+B,sweep B,detector,2.5,count,Only a handful of bees on the board,1.0,0.9256180470797137,1
+B,sweep B,detector,2.75,count,Only a handful of bees on the board,1.0,0.9256180470797137,1
+B,sweep B,detector,3.0,count,Only a handful of bees on the board,1.0,0.9256180470797137,1
+reference,plain RRF,-,1.0,position,Bees clustered on the right side of the board,0.5984920634920634,0.5538346033142721,0
+reference,"plain RRF, no CLIP",-,1.0,position,Bees clustered on the right side of the board,0.4216666666666667,0.4835265604612449,1
+reference,today's weights,-,1.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,clip,0.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,clip,0.1,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,clip,0.2,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,clip,0.3,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,clip,0.4,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,clip,0.5,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,clip,0.6,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,clip,0.7,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,siglip2,0.55,position,Bees clustered on the right side of the board,0.6171031746031745,0.6322113022685127,1
+A,sweep A,siglip2,0.65,position,Bees clustered on the right side of the board,0.7071031746031746,0.6640216963679886,0
+A,sweep A,siglip2,0.75,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,siglip2,0.85,position,Bees clustered on the right side of the board,0.7071031746031746,0.6534877201093312,0
+A,sweep A,siglip2,0.95,position,Bees clustered on the right side of the board,0.7071031746031746,0.6534877201093312,0
+A,sweep A,siglip2,1.05,position,Bees clustered on the right side of the board,0.7071031746031746,0.6534877201093312,1
+A,sweep A,siglip2,1.15,position,Bees clustered on the right side of the board,0.7071031746031746,0.6509705466696736,1
+A,sweep A,siglip2,1.25,position,Bees clustered on the right side of the board,0.7071031746031746,0.6475981223382008,3
+A,sweep A,siglip2,1.35,position,Bees clustered on the right side of the board,0.5282142857142856,0.51772311068486,2
+A,sweep A,siglip2,1.45,position,Bees clustered on the right side of the board,0.44071428571428567,0.4830074997164713,1
+A,sweep A,detector,0.8,position,Bees clustered on the right side of the board,0.5282142857142856,0.5524387216532486,2
+A,sweep A,detector,1.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.6509705466696736,1
+A,sweep A,detector,1.2,position,Bees clustered on the right side of the board,0.7071031746031746,0.6534877201093312,0
+A,sweep A,detector,1.4,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+A,sweep A,detector,1.6,position,Bees clustered on the right side of the board,0.7071031746031746,0.6640216963679886,0
+A,sweep A,detector,1.8,position,Bees clustered on the right side of the board,0.7071031746031746,0.6640216963679886,1
+A,sweep A,detector,2.0,position,Bees clustered on the right side of the board,0.6171031746031745,0.6322113022685127,1
+A,sweep A,detector,2.2,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,2.4,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,2.6,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,2.8,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,3.0,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,3.2,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,3.4,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,3.6,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,3.8,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+A,sweep A,detector,4.0,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+B,sweep B,siglip2,0.25,position,Bees clustered on the right side of the board,0.6171031746031745,0.6345167521928201,1
+B,sweep B,siglip2,0.5,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+B,sweep B,siglip2,0.75,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,siglip2,1.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.6534877201093312,1
+B,sweep B,siglip2,1.25,position,Bees clustered on the right side of the board,0.7071031746031746,0.6475981223382008,3
+B,sweep B,siglip2,1.5,position,Bees clustered on the right side of the board,0.4216666666666667,0.4835265604612449,1
+B,sweep B,siglip2,1.75,position,Bees clustered on the right side of the board,0.27166666666666667,0.33124530863843593,0
+B,sweep B,siglip2,2.0,position,Bees clustered on the right side of the board,0.27166666666666667,0.33124530863843593,0
+B,sweep B,siglip2,2.25,position,Bees clustered on the right side of the board,0.2861111111111111,0.3536112556442958,0
+B,sweep B,siglip2,2.5,position,Bees clustered on the right side of the board,0.20396825396825397,0.285968138912372,0
+B,sweep B,siglip2,2.75,position,Bees clustered on the right side of the board,0.18194444444444444,0.2651894207291058,0
+B,sweep B,siglip2,3.0,position,Bees clustered on the right side of the board,0.21051587301587302,0.30738576665786677,0
+B,sweep B,motion,0.25,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,0.5,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,0.75,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,1.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,1.25,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,1.5,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,1.75,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,2.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,2.25,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,2.5,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,2.75,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,motion,3.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,detector,0.25,position,Bees clustered on the right side of the board,0.34841269841269845,0.46684112565921293,0
+B,sweep B,detector,0.5,position,Bees clustered on the right side of the board,0.2861111111111111,0.3536112556442958,0
+B,sweep B,detector,0.75,position,Bees clustered on the right side of the board,0.4216666666666667,0.4835265604612449,1
+B,sweep B,detector,1.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.6509705466696736,1
+B,sweep B,detector,1.25,position,Bees clustered on the right side of the board,0.7071031746031746,0.6534877201093312,0
+B,sweep B,detector,1.5,position,Bees clustered on the right side of the board,0.7071031746031746,0.656392936978244,0
+B,sweep B,detector,1.75,position,Bees clustered on the right side of the board,0.7071031746031746,0.6640216963679886,0
+B,sweep B,detector,2.0,position,Bees clustered on the right side of the board,0.7071031746031746,0.6640216963679886,1
+B,sweep B,detector,2.25,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+B,sweep B,detector,2.5,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+B,sweep B,detector,2.75,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+B,sweep B,detector,3.0,position,Bees clustered on the right side of the board,0.6171031746031745,0.6296941288288552,1
+reference,plain RRF,-,1.0,position,Left side of the board empty,0.745436507936508,0.6630131180198061,0
+reference,"plain RRF, no CLIP",-,1.0,position,Left side of the board empty,0.8788888888888889,0.662064798759441,1
+reference,today's weights,-,1.0,position,Left side of the board empty,1.0,0.8493978516976802,0
+A,sweep A,clip,0.0,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+A,sweep A,clip,0.1,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+A,sweep A,clip,0.2,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+A,sweep A,clip,0.3,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+A,sweep A,clip,0.4,position,Left side of the board empty,0.89,0.7806264548036336,1
+A,sweep A,clip,0.5,position,Left side of the board empty,1.0,0.8493978516976802,0
+A,sweep A,clip,0.6,position,Left side of the board empty,1.0,0.8480811340699617,0
+A,sweep A,clip,0.7,position,Left side of the board empty,1.0,0.8493978516976802,0
+A,sweep A,siglip2,0.55,position,Left side of the board empty,1.0,0.8493978516976802,0
+A,sweep A,siglip2,0.65,position,Left side of the board empty,1.0,0.8493978516976802,0
+A,sweep A,siglip2,0.75,position,Left side of the board empty,1.0,0.8493978516976802,0
+A,sweep A,siglip2,0.85,position,Left side of the board empty,1.0,0.808641980580741,0
+A,sweep A,siglip2,0.95,position,Left side of the board empty,1.0,0.808641980580741,0
+A,sweep A,siglip2,1.05,position,Left side of the board empty,1.0,0.8061248071410834,0
+A,sweep A,siglip2,1.15,position,Left side of the board empty,1.0,0.8252566300241726,0
+A,sweep A,siglip2,1.25,position,Left side of the board empty,1.0,0.8232009233204183,1
+A,sweep A,siglip2,1.35,position,Left side of the board empty,1.0,0.8087926429581611,1
+A,sweep A,siglip2,1.45,position,Left side of the board empty,1.0,0.8058874260892482,1
+A,sweep A,detector,0.8,position,Left side of the board empty,1.0,0.8252566300241726,0
+A,sweep A,detector,1.0,position,Left side of the board empty,1.0,0.8339131444555137,0
+A,sweep A,detector,1.2,position,Left side of the board empty,1.0,0.8404523746802168,0
+A,sweep A,detector,1.4,position,Left side of the board empty,1.0,0.8480811340699617,0
+A,sweep A,detector,1.6,position,Left side of the board empty,1.0,0.8493978516976802,0
+A,sweep A,detector,1.8,position,Left side of the board empty,0.89,0.7806264548036336,0
+A,sweep A,detector,2.0,position,Left side of the board empty,0.8788888888888889,0.7838605789264043,0
+A,sweep A,detector,2.2,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,2.4,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,2.6,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,2.8,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,3.0,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,3.2,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,3.4,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,3.6,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,3.8,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+A,sweep A,detector,4.0,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,0
+B,sweep B,siglip2,0.25,position,Left side of the board empty,0.866388888888889,0.8117382728632975,1
+B,sweep B,siglip2,0.5,position,Left side of the board empty,0.866388888888889,0.8117382728632975,1
+B,sweep B,siglip2,0.75,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,siglip2,1.0,position,Left side of the board empty,0.89,0.778660104722342,1
+B,sweep B,siglip2,1.25,position,Left side of the board empty,1.0,0.7943749101231602,1
+B,sweep B,siglip2,1.5,position,Left side of the board empty,0.8788888888888889,0.662064798759441,1
+B,sweep B,siglip2,1.75,position,Left side of the board empty,0.815436507936508,0.5977357103000069,1
+B,sweep B,siglip2,2.0,position,Left side of the board empty,0.716547619047619,0.5092172586309388,1
+B,sweep B,siglip2,2.25,position,Left side of the board empty,0.671111111111111,0.48267705029608626,1
+B,sweep B,siglip2,2.5,position,Left side of the board empty,0.5792063492063492,0.40868314080505513,1
+B,sweep B,siglip2,2.75,position,Left side of the board empty,0.4864285714285714,0.33793520124055915,1
+B,sweep B,siglip2,3.0,position,Left side of the board empty,0.4864285714285714,0.33793520124055915,1
+B,sweep B,motion,0.25,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,0.5,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,0.75,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,1.0,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,1.25,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,1.5,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,1.75,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,2.0,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,2.25,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,2.5,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,2.75,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,motion,3.0,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,detector,0.25,position,Left side of the board empty,0.42642857142857143,0.3061248071410833,1
+B,sweep B,detector,0.5,position,Left side of the board empty,0.671111111111111,0.48267705029608626,1
+B,sweep B,detector,0.75,position,Left side of the board empty,0.8788888888888889,0.662064798759441,1
+B,sweep B,detector,1.0,position,Left side of the board empty,0.9,0.7689756386288433,1
+B,sweep B,detector,1.25,position,Left side of the board empty,0.89,0.7806264548036336,1
+B,sweep B,detector,1.5,position,Left side of the board empty,0.8788888888888889,0.7790379555624394,1
+B,sweep B,detector,1.75,position,Left side of the board empty,0.8788888888888889,0.7838605789264043,1
+B,sweep B,detector,2.0,position,Left side of the board empty,0.8788888888888889,0.8156709730258801,1
+B,sweep B,detector,2.25,position,Left side of the board empty,0.866388888888889,0.8117382728632975,1
+B,sweep B,detector,2.5,position,Left side of the board empty,0.866388888888889,0.8117382728632975,1
+B,sweep B,detector,2.75,position,Left side of the board empty,0.866388888888889,0.8117382728632975,1
+B,sweep B,detector,3.0,position,Left side of the board empty,0.866388888888889,0.8117382728632975,1
+reference,plain RRF,-,1.0,motion,Many bees flying in front of the hive,0.7071031746031746,0.6059523280198794,0
+reference,"plain RRF, no CLIP",-,1.0,motion,Many bees flying in front of the hive,0.7071031746031746,0.6882033310777198,1
+reference,today's weights,-,1.0,motion,Many bees flying in front of the hive,0.790436507936508,0.8568270051237655,0
+A,sweep A,clip,0.0,motion,Many bees flying in front of the hive,0.815436507936508,0.8720845239032549,0
+A,sweep A,clip,0.1,motion,Many bees flying in front of the hive,0.790436507936508,0.8568270051237655,0
+A,sweep A,clip,0.2,motion,Many bees flying in front of the hive,0.790436507936508,0.8568270051237655,0
+A,sweep A,clip,0.3,motion,Many bees flying in front of the hive,0.790436507936508,0.8568270051237655,0
+A,sweep A,clip,0.4,motion,Many bees flying in front of the hive,0.790436507936508,0.8552385058825714,0
+A,sweep A,clip,0.5,motion,Many bees flying in front of the hive,0.790436507936508,0.8568270051237655,0
+A,sweep A,clip,0.6,motion,Many bees flying in front of the hive,0.7571031746031747,0.8280104443992511,1
+A,sweep A,clip,0.7,motion,Many bees flying in front of the hive,0.7571031746031747,0.8280104443992511,1
+A,sweep A,siglip2,0.55,motion,Many bees flying in front of the hive,1.0,0.94497705842548,1
+A,sweep A,siglip2,0.65,motion,Many bees flying in front of the hive,0.790436507936508,0.88995411685096,1
+A,sweep A,siglip2,0.75,motion,Many bees flying in front of the hive,0.790436507936508,0.8568270051237655,0
+A,sweep A,siglip2,0.85,motion,Many bees flying in front of the hive,0.7571031746031747,0.8280104443992511,0
+A,sweep A,siglip2,0.95,motion,Many bees flying in front of the hive,0.7071031746031746,0.74322627265224,1
+A,sweep A,siglip2,1.05,motion,Many bees flying in front of the hive,0.7071031746031746,0.7373366748811095,1
+A,sweep A,siglip2,1.15,motion,Many bees flying in front of the hive,0.7071031746031746,0.7055262807816336,1
+A,sweep A,siglip2,1.25,motion,Many bees flying in front of the hive,0.7071031746031746,0.7055262807816336,1
+A,sweep A,siglip2,1.35,motion,Many bees flying in front of the hive,0.7071031746031746,0.7007036574176687,1
+A,sweep A,siglip2,1.45,motion,Many bees flying in front of the hive,0.7071031746031746,0.7007036574176687,1
+A,sweep A,detector,0.8,motion,Many bees flying in front of the hive,0.7071031746031746,0.693314917027807,0
+A,sweep A,detector,1.0,motion,Many bees flying in front of the hive,0.7071031746031746,0.7026210639127208,0
+A,sweep A,detector,1.2,motion,Many bees flying in front of the hive,0.7071031746031746,0.7088987051131064,1
+A,sweep A,detector,1.4,motion,Many bees flying in front of the hive,0.7571031746031747,0.8280104443992511,1
+A,sweep A,detector,1.6,motion,Many bees flying in front of the hive,0.790436507936508,0.88995411685096,0
+A,sweep A,detector,1.8,motion,Many bees flying in front of the hive,0.815436507936508,0.9052116356304495,1
+A,sweep A,detector,2.0,motion,Many bees flying in front of the hive,0.8788888888888889,0.9305687780632229,1
+A,sweep A,detector,2.2,motion,Many bees flying in front of the hive,0.9,0.9363792118010483,1
+A,sweep A,detector,2.4,motion,Many bees flying in front of the hive,1.0,1.0,1
+A,sweep A,detector,2.6,motion,Many bees flying in front of the hive,1.0,1.0,1
+A,sweep A,detector,2.8,motion,Many bees flying in front of the hive,1.0,1.0,1
+A,sweep A,detector,3.0,motion,Many bees flying in front of the hive,1.0,1.0,1
+A,sweep A,detector,3.2,motion,Many bees flying in front of the hive,1.0,1.0,1
+A,sweep A,detector,3.4,motion,Many bees flying in front of the hive,1.0,1.0,1
+A,sweep A,detector,3.6,motion,Many bees flying in front of the hive,1.0,1.0,1
+A,sweep A,detector,3.8,motion,Many bees flying in front of the hive,1.0,1.0,1
+A,sweep A,detector,4.0,motion,Many bees flying in front of the hive,1.0,1.0,1
+B,sweep B,siglip2,0.25,motion,Many bees flying in front of the hive,1.0,1.0,1
+B,sweep B,siglip2,0.5,motion,Many bees flying in front of the hive,0.89,0.9337457765456111,2
+B,sweep B,siglip2,0.75,motion,Many bees flying in front of the hive,0.815436507936508,0.8720845239032549,0
+B,sweep B,siglip2,1.0,motion,Many bees flying in front of the hive,0.790436507936508,0.8507549823616224,1
+B,sweep B,siglip2,1.25,motion,Many bees flying in front of the hive,0.7071031746031746,0.7373366748811095,1
+B,sweep B,siglip2,1.5,motion,Many bees flying in front of the hive,0.7071031746031746,0.7007036574176687,3
+B,sweep B,siglip2,1.75,motion,Many bees flying in front of the hive,0.7071031746031746,0.6882033310777198,3
+B,sweep B,siglip2,2.0,motion,Many bees flying in front of the hive,0.7071031746031746,0.6525590459108677,4
+B,sweep B,siglip2,2.25,motion,Many bees flying in front of the hive,0.7071031746031746,0.6491866215793949,4
+B,sweep B,siglip2,2.5,motion,Many bees flying in front of the hive,0.7071031746031746,0.6408091488929444,4
+B,sweep B,siglip2,2.75,motion,Many bees flying in front of the hive,0.7071031746031746,0.6408091488929444,3
+B,sweep B,siglip2,3.0,motion,Many bees flying in front of the hive,0.7071031746031746,0.6408091488929444,3
+B,sweep B,motion,0.25,motion,Many bees flying in front of the hive,1.0,1.0,1
+B,sweep B,motion,0.5,motion,Many bees flying in front of the hive,1.0,1.0,1
+B,sweep B,motion,0.75,motion,Many bees flying in front of the hive,0.8788888888888889,0.9305687780632229,1
+B,sweep B,motion,1.0,motion,Many bees flying in front of the hive,0.815436507936508,0.8720845239032549,0
+B,sweep B,motion,1.25,motion,Many bees flying in front of the hive,0.790436507936508,0.8142554463029551,1
+B,sweep B,motion,1.5,motion,Many bees flying in front of the hive,0.790436507936508,0.807844323697796,1
+B,sweep B,motion,1.75,motion,Many bees flying in front of the hive,0.790436507936508,0.8033608001768469,1
+B,sweep B,motion,2.0,motion,Many bees flying in front of the hive,0.790436507936508,0.7999883758453741,1
+B,sweep B,motion,2.25,motion,Many bees flying in front of the hive,0.7571031746031747,0.7711718151208596,0
+B,sweep B,motion,2.5,motion,Many bees flying in front of the hive,0.7571031746031747,0.75872043236715,0
+B,sweep B,motion,2.75,motion,Many bees flying in front of the hive,0.7571031746031747,0.75872043236715,0
+B,sweep B,motion,3.0,motion,Many bees flying in front of the hive,0.7571031746031747,0.75872043236715,0
+B,sweep B,detector,0.25,motion,Many bees flying in front of the hive,0.7071031746031746,0.5994130977951763,2
+B,sweep B,detector,0.5,motion,Many bees flying in front of the hive,0.7071031746031746,0.6347783412171376,2
+B,sweep B,detector,0.75,motion,Many bees flying in front of the hive,0.7071031746031746,0.6712778772758049,1
+B,sweep B,detector,1.0,motion,Many bees flying in front of the hive,0.7571031746031747,0.77706141289199,0
+B,sweep B,detector,1.25,motion,Many bees flying in front of the hive,0.790436507936508,0.8155721639306737,1
+B,sweep B,detector,1.5,motion,Many bees flying in front of the hive,0.815436507936508,0.8720845239032549,0
+B,sweep B,detector,1.75,motion,Many bees flying in front of the hive,0.8788888888888889,0.9305687780632229,0
+B,sweep B,detector,2.0,motion,Many bees flying in front of the hive,1.0,1.0,1
+B,sweep B,detector,2.25,motion,Many bees flying in front of the hive,1.0,1.0,1
+B,sweep B,detector,2.5,motion,Many bees flying in front of the hive,1.0,1.0,1
+B,sweep B,detector,2.75,motion,Many bees flying in front of the hive,1.0,1.0,1
+B,sweep B,detector,3.0,motion,Many bees flying in front of the hive,1.0,1.0,1
+reference,plain RRF,-,1.0,motion,Bees sitting still on the board,0.8354365079365079,0.7439474034499277,0
+reference,"plain RRF, no CLIP",-,1.0,motion,Bees sitting still on the board,0.788888888888889,0.7011011533196676,0
+reference,today's weights,-,1.0,motion,Bees sitting still on the board,0.8788888888888889,0.7707939642807625,0
+A,sweep A,clip,0.0,motion,Bees sitting still on the board,0.788888888888889,0.780354673190158,2
+A,sweep A,clip,0.1,motion,Bees sitting still on the board,0.78,0.7777212379347208,2
+A,sweep A,clip,0.2,motion,Bees sitting still on the board,0.78,0.7459108438352449,1
+A,sweep A,clip,0.3,motion,Bees sitting still on the board,0.78,0.7459108438352449,1
+A,sweep A,clip,0.4,motion,Bees sitting still on the board,0.788888888888889,0.7436727121404781,1
+A,sweep A,clip,0.5,motion,Bees sitting still on the board,0.8788888888888889,0.7707939642807625,0
+A,sweep A,clip,0.6,motion,Bees sitting still on the board,0.8788888888888889,0.7695935084688235,0
+A,sweep A,clip,0.7,motion,Bees sitting still on the board,0.8788888888888889,0.775483106239954,0
+A,sweep A,siglip2,0.55,motion,Bees sitting still on the board,0.866388888888889,0.8127158906480002,2
+A,sweep A,siglip2,0.65,motion,Bees sitting still on the board,0.8,0.7488160607041577,1
+A,sweep A,siglip2,0.75,motion,Bees sitting still on the board,0.8788888888888889,0.7707939642807625,0
+A,sweep A,siglip2,0.85,motion,Bees sitting still on the board,0.8521031746031748,0.7602384179976702,0
+A,sweep A,siglip2,0.95,motion,Bees sitting still on the board,0.7254365079365079,0.6900110813444749,1
+A,sweep A,siglip2,1.05,motion,Bees sitting still on the board,0.790436507936508,0.695851735529366,1
+A,sweep A,siglip2,1.15,motion,Bees sitting still on the board,0.790436507936508,0.6738146957773642,1
+A,sweep A,siglip2,1.25,motion,Bees sitting still on the board,0.790436507936508,0.6722261965361701,1
+A,sweep A,siglip2,1.35,motion,Bees sitting still on the board,0.6915476190476191,0.6011004061315769,1
+A,sweep A,siglip2,1.45,motion,Bees sitting still on the board,0.6915476190476191,0.6011004061315769,1
+A,sweep A,detector,0.8,motion,Bees sitting still on the board,0.8788888888888889,0.8108483496619153,0
+A,sweep A,detector,1.0,motion,Bees sitting still on the board,0.8788888888888889,0.8108483496619153,0
+A,sweep A,detector,1.2,motion,Bees sitting still on the board,1.0,0.8390247304056008,0
+A,sweep A,detector,1.4,motion,Bees sitting still on the board,0.8788888888888889,0.7707939642807625,0
+A,sweep A,detector,1.6,motion,Bees sitting still on the board,0.8788888888888889,0.7707939642807625,1
+A,sweep A,detector,1.8,motion,Bees sitting still on the board,0.8788888888888889,0.7707939642807625,1
+A,sweep A,detector,2.0,motion,Bees sitting still on the board,0.788888888888889,0.7071731760818107,1
+A,sweep A,detector,2.2,motion,Bees sitting still on the board,0.7763888888888889,0.7085792503319921,2
+A,sweep A,detector,2.4,motion,Bees sitting still on the board,0.7763888888888889,0.7085792503319921,2
+A,sweep A,detector,2.6,motion,Bees sitting still on the board,0.7763888888888889,0.7085792503319921,2
+A,sweep A,detector,2.8,motion,Bees sitting still on the board,0.7763888888888889,0.7085792503319921,2
+A,sweep A,detector,3.0,motion,Bees sitting still on the board,0.7763888888888889,0.7085792503319921,3
+A,sweep A,detector,3.2,motion,Bees sitting still on the board,0.866388888888889,0.7722000385309438,3
+A,sweep A,detector,3.4,motion,Bees sitting still on the board,0.866388888888889,0.7735167561586624,3
+A,sweep A,detector,3.6,motion,Bees sitting still on the board,0.866388888888889,0.7735167561586624,3
+A,sweep A,detector,3.8,motion,Bees sitting still on the board,0.866388888888889,0.7735167561586624,3
+A,sweep A,detector,4.0,motion,Bees sitting still on the board,0.866388888888889,0.7735167561586624,3
+B,sweep B,siglip2,0.25,motion,Bees sitting still on the board,0.8788888888888889,0.8561868251429364,4
+B,sweep B,siglip2,0.5,motion,Bees sitting still on the board,0.866388888888889,0.8461147839886702,3
+B,sweep B,siglip2,0.75,motion,Bees sitting still on the board,0.788888888888889,0.780354673190158,2
+B,sweep B,siglip2,1.0,motion,Bees sitting still on the board,0.7532142857142857,0.696889411412194,3
+B,sweep B,siglip2,1.25,motion,Bees sitting still on the board,0.7068253968253968,0.6403167215935612,1
+B,sweep B,siglip2,1.5,motion,Bees sitting still on the board,0.6080952380952381,0.5633686516473779,1
+B,sweep B,siglip2,1.75,motion,Bees sitting still on the board,0.6080952380952381,0.5633686516473779,1
+B,sweep B,siglip2,2.0,motion,Bees sitting still on the board,0.6080952380952381,0.5633686516473779,1
+B,sweep B,siglip2,2.25,motion,Bees sitting still on the board,0.5791666666666667,0.5139986669085673,1
+B,sweep B,siglip2,2.5,motion,Bees sitting still on the board,0.5497619047619049,0.4848931435979308,0
+B,sweep B,siglip2,2.75,motion,Bees sitting still on the board,0.5258333333333334,0.4679427723759454,0
+B,sweep B,siglip2,3.0,motion,Bees sitting still on the board,0.5258333333333334,0.47448200260064854,1
+B,sweep B,motion,0.25,motion,Bees sitting still on the board,0.4958730158730158,0.4106494908863465,3
+B,sweep B,motion,0.5,motion,Bees sitting still on the board,0.6818253968253968,0.6293155378723436,2
+B,sweep B,motion,0.75,motion,Bees sitting still on the board,0.7621031746031747,0.7001724791212041,3
+B,sweep B,motion,1.0,motion,Bees sitting still on the board,0.788888888888889,0.780354673190158,2
+B,sweep B,motion,1.25,motion,Bees sitting still on the board,0.866388888888889,0.844526284747476,2
+B,sweep B,motion,1.5,motion,Bees sitting still on the board,0.866388888888889,0.8474315016163888,2
+B,sweep B,motion,1.75,motion,Bees sitting still on the board,0.8788888888888889,0.8513642017789715,2
+B,sweep B,motion,2.0,motion,Bees sitting still on the board,0.8788888888888889,0.8513642017789715,1
+B,sweep B,motion,2.25,motion,Bees sitting still on the board,0.8788888888888889,0.8513642017789715,1
+B,sweep B,motion,2.5,motion,Bees sitting still on the board,0.8788888888888889,0.8513642017789715,1
+B,sweep B,motion,2.75,motion,Bees sitting still on the board,0.8788888888888889,0.8513642017789715,1
+B,sweep B,motion,3.0,motion,Bees sitting still on the board,0.8788888888888889,0.8513642017789715,1
+B,sweep B,detector,0.25,motion,Bees sitting still on the board,0.8521031746031748,0.787233003257877,1
+B,sweep B,detector,0.5,motion,Bees sitting still on the board,0.8521031746031748,0.8016412836201343,1
+B,sweep B,detector,0.75,motion,Bees sitting still on the board,0.8521031746031748,0.807681543768685,1
+B,sweep B,detector,1.0,motion,Bees sitting still on the board,0.866388888888889,0.8127158906480002,1
+B,sweep B,detector,1.25,motion,Bees sitting still on the board,0.788888888888889,0.7828718466298158,2
+B,sweep B,detector,1.5,motion,Bees sitting still on the board,0.788888888888889,0.780354673190158,2
+B,sweep B,detector,1.75,motion,Bees sitting still on the board,0.78,0.7777212379347208,2
+B,sweep B,detector,2.0,motion,Bees sitting still on the board,0.78,0.7507334671992097,4
+B,sweep B,detector,2.25,motion,Bees sitting still on the board,0.7675,0.746800767036627,4
+B,sweep B,detector,2.5,motion,Bees sitting still on the board,0.7577777777777778,0.7436237685542387,4
+B,sweep B,detector,2.75,motion,Bees sitting still on the board,0.7675,0.7438955501677142,4
+B,sweep B,detector,3.0,motion,Bees sitting still on the board,0.7675,0.7438955501677142,5
+reference,plain RRF,-,1.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+reference,"plain RRF, no CLIP",-,1.0,general,Hive with an orange front and a white toothed entrance,0.6,0.727329844310522,0
+reference,today's weights,-,1.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,clip,0.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,clip,0.1,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,clip,0.2,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,clip,0.3,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,clip,0.4,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,clip,0.5,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,clip,0.6,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,clip,0.7,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,siglip2,0.55,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,siglip2,0.65,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,siglip2,0.75,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,siglip2,0.85,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,siglip2,0.95,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,siglip2,1.05,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,siglip2,1.15,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,siglip2,1.25,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,siglip2,1.35,general,Hive with an orange front and a white toothed entrance,0.9,0.9363792118010483,0
+A,sweep A,siglip2,1.45,general,Hive with an orange front and a white toothed entrance,0.78,0.8643145546088339,0
+A,sweep A,detector,0.8,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,1.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,detector,1.2,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,detector,1.4,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,1.6,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,detector,1.8,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,detector,2.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,detector,2.2,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,detector,2.4,general,Hive with an orange front and a white toothed entrance,1.0,1.0,1
+A,sweep A,detector,2.6,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,2.8,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,3.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,3.2,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,3.4,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,3.6,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,3.8,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+A,sweep A,detector,4.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,siglip2,0.25,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,siglip2,0.5,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,siglip2,0.75,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,siglip2,1.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,siglip2,1.25,general,Hive with an orange front and a white toothed entrance,0.9,0.9363792118010483,0
+B,sweep B,siglip2,1.5,general,Hive with an orange front and a white toothed entrance,0.6,0.727329844310522,0
+B,sweep B,siglip2,1.75,general,Hive with an orange front and a white toothed entrance,0.3726984126984127,0.5837154733670049,0
+B,sweep B,siglip2,2.0,general,Hive with an orange front and a white toothed entrance,0.27749999999999997,0.4920062203073638,0
+B,sweep B,siglip2,2.25,general,Hive with an orange front and a white toothed entrance,0.16666666666666666,0.3647442587311446,0
+B,sweep B,siglip2,2.5,general,Hive with an orange front and a white toothed entrance,0.155,0.35314377643380923,0
+B,sweep B,siglip2,2.75,general,Hive with an orange front and a white toothed entrance,0.155,0.35314377643380923,0
+B,sweep B,siglip2,3.0,general,Hive with an orange front and a white toothed entrance,0.12222222222222223,0.2863459897524693,0
+B,sweep B,motion,0.25,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,0.5,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,0.75,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,1.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,1.25,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,1.5,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,1.75,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,2.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,2.25,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,2.5,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,2.75,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,motion,3.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,0.25,general,Hive with an orange front and a white toothed entrance,0.04722222222222222,0.16104258782393985,0
+B,sweep B,detector,0.5,general,Hive with an orange front and a white toothed entrance,0.16666666666666666,0.3647442587311446,0
+B,sweep B,detector,0.75,general,Hive with an orange front and a white toothed entrance,0.6,0.727329844310522,0
+B,sweep B,detector,1.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,1.25,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,1.5,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,1.75,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,2.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,2.25,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,2.5,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,2.75,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+B,sweep B,detector,3.0,general,Hive with an orange front and a white toothed entrance,1.0,1.0,0
+reference,plain RRF,-,1.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+reference,"plain RRF, no CLIP",-,1.0,general,Hive with a red stripe and a square mesh grid,0.14785714285714285,0.3169161923094836,0
+reference,today's weights,-,1.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,clip,0.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,clip,0.1,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,clip,0.2,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,clip,0.3,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,clip,0.4,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,clip,0.5,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,clip,0.6,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,clip,0.7,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,siglip2,0.55,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,siglip2,0.65,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,siglip2,0.75,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,siglip2,0.85,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,siglip2,0.95,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,siglip2,1.05,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,siglip2,1.15,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,siglip2,1.25,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,siglip2,1.35,general,Hive with a red stripe and a square mesh grid,0.0325,0.133052010135729,0
+A,sweep A,siglip2,1.45,general,Hive with a red stripe and a square mesh grid,0.11833333333333333,0.28444935123173903,0
+A,sweep A,detector,0.8,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,detector,1.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,detector,1.2,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,detector,1.4,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+A,sweep A,detector,1.6,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,1.8,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,2.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,2.2,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,2.4,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,2.6,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,2.8,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,3.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,3.2,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,3.4,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,3.6,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,3.8,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+A,sweep A,detector,4.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,1
+B,sweep B,siglip2,0.25,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,siglip2,0.5,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,siglip2,0.75,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,siglip2,1.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,siglip2,1.25,general,Hive with a red stripe and a square mesh grid,0.01111111111111111,0.06625422345438904,0
+B,sweep B,siglip2,1.5,general,Hive with a red stripe and a square mesh grid,0.14785714285714285,0.3169161923094836,0
+B,sweep B,siglip2,1.75,general,Hive with a red stripe and a square mesh grid,0.4833333333333333,0.6421867266689011,0
+B,sweep B,siglip2,2.0,general,Hive with a red stripe and a square mesh grid,0.6875,0.7967610662472993,0
+B,sweep B,siglip2,2.25,general,Hive with a red stripe and a square mesh grid,0.9,0.9363792118010483,0
+B,sweep B,siglip2,2.5,general,Hive with a red stripe and a square mesh grid,1.0,1.0,0
+B,sweep B,siglip2,2.75,general,Hive with a red stripe and a square mesh grid,1.0,1.0,0
+B,sweep B,siglip2,3.0,general,Hive with a red stripe and a square mesh grid,1.0,1.0,0
+B,sweep B,motion,0.25,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,0.5,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,0.75,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,1.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,1.25,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,1.5,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,1.75,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,2.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,2.25,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,2.5,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,2.75,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,motion,3.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,0.25,general,Hive with a red stripe and a square mesh grid,1.0,1.0,0
+B,sweep B,detector,0.5,general,Hive with a red stripe and a square mesh grid,0.9,0.9363792118010483,0
+B,sweep B,detector,0.75,general,Hive with a red stripe and a square mesh grid,0.14785714285714285,0.3169161923094836,0
+B,sweep B,detector,1.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,1.25,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,1.5,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,1.75,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,2.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,2.25,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,2.5,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,2.75,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+B,sweep B,detector,3.0,general,Hive with a red stripe and a square mesh grid,0.0,0.0,0
+reference,plain RRF,-,1.0,count-position,Many bees crowded on the left side of the board,0.46416666666666656,0.547178938825577,0
+reference,"plain RRF, no CLIP",-,1.0,count-position,Many bees crowded on the left side of the board,0.6582142857142856,0.6900000527536286,1
+reference,today's weights,-,1.0,count-position,Many bees crowded on the left side of the board,0.8,0.7726945194313866,0
+A,sweep A,clip,0.0,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+A,sweep A,clip,0.1,count-position,Many bees crowded on the left side of the board,1.0,0.8679299834074985,0
+A,sweep A,clip,0.2,count-position,Many bees crowded on the left side of the board,1.0,0.8679299834074985,0
+A,sweep A,clip,0.3,count-position,Many bees crowded on the left side of the board,1.0,0.8679299834074985,0
+A,sweep A,clip,0.4,count-position,Many bees crowded on the left side of the board,1.0,0.8595965027558758,0
+A,sweep A,clip,0.5,count-position,Many bees crowded on the left side of the board,0.8,0.7726945194313866,0
+A,sweep A,clip,0.6,count-position,Many bees crowded on the left side of the board,0.8,0.7726945194313866,0
+A,sweep A,clip,0.7,count-position,Many bees crowded on the left side of the board,0.7763888888888889,0.7674627768224336,0
+A,sweep A,siglip2,0.55,count-position,Many bees crowded on the left side of the board,0.8788888888888889,0.8354976327262806,0
+A,sweep A,siglip2,0.65,count-position,Many bees crowded on the left side of the board,0.89,0.8195105105242111,0
+A,sweep A,siglip2,0.75,count-position,Many bees crowded on the left side of the board,0.8,0.7726945194313866,0
+A,sweep A,siglip2,0.85,count-position,Many bees crowded on the left side of the board,0.8,0.7640266809905512,0
+A,sweep A,siglip2,0.95,count-position,Many bees crowded on the left side of the board,0.8,0.7490719493289953,0
+A,sweep A,siglip2,1.05,count-position,Many bees crowded on the left side of the board,0.8,0.7453673750014473,0
+A,sweep A,siglip2,1.15,count-position,Many bees crowded on the left side of the board,0.8,0.7453673750014473,0
+A,sweep A,siglip2,1.25,count-position,Many bees crowded on the left side of the board,0.8,0.7453673750014473,0
+A,sweep A,siglip2,1.35,count-position,Many bees crowded on the left side of the board,0.89,0.7921833660942719,1
+A,sweep A,siglip2,1.45,count-position,Many bees crowded on the left side of the board,0.89,0.7921833660942719,1
+A,sweep A,detector,0.8,count-position,Many bees crowded on the left side of the board,0.7763888888888889,0.7415023807222209,0
+A,sweep A,detector,1.0,count-position,Many bees crowded on the left side of the board,0.8,0.7519658659401269,0
+A,sweep A,detector,1.2,count-position,Many bees crowded on the left side of the board,0.8,0.7519658659401269,0
+A,sweep A,detector,1.4,count-position,Many bees crowded on the left side of the board,0.8,0.7726945194313866,0
+A,sweep A,detector,1.6,count-position,Many bees crowded on the left side of the board,0.89,0.8195105105242111,0
+A,sweep A,detector,1.8,count-position,Many bees crowded on the left side of the board,0.89,0.8307379077869654,0
+A,sweep A,detector,2.0,count-position,Many bees crowded on the left side of the board,1.0,0.8865892893966023,0
+A,sweep A,detector,2.2,count-position,Many bees crowded on the left side of the board,1.0,0.8865892893966023,0
+A,sweep A,detector,2.4,count-position,Many bees crowded on the left side of the board,1.0,0.8865892893966023,0
+A,sweep A,detector,2.6,count-position,Many bees crowded on the left side of the board,1.0,0.8865892893966023,0
+A,sweep A,detector,2.8,count-position,Many bees crowded on the left side of the board,1.0,0.8865892893966023,0
+A,sweep A,detector,3.0,count-position,Many bees crowded on the left side of the board,1.0,0.8865892893966023,0
+A,sweep A,detector,3.2,count-position,Many bees crowded on the left side of the board,1.0,0.8865892893966023,0
+A,sweep A,detector,3.4,count-position,Many bees crowded on the left side of the board,1.0,0.8865892893966023,0
+A,sweep A,detector,3.6,count-position,Many bees crowded on the left side of the board,1.0,0.8794917384594656,0
+A,sweep A,detector,3.8,count-position,Many bees crowded on the left side of the board,1.0,0.8794917384594656,0
+A,sweep A,detector,4.0,count-position,Many bees crowded on the left side of the board,1.0,0.8794917384594656,0
+B,sweep B,siglip2,0.25,count-position,Many bees crowded on the left side of the board,1.0,0.8794917384594656,0
+B,sweep B,siglip2,0.5,count-position,Many bees crowded on the left side of the board,1.0,0.8679299834074985,0
+B,sweep B,siglip2,0.75,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,siglip2,1.0,count-position,Many bees crowded on the left side of the board,0.9,0.7978257800014955,1
+B,sweep B,siglip2,1.25,count-position,Many bees crowded on the left side of the board,0.6671031746031746,0.6919378923333042,1
+B,sweep B,siglip2,1.5,count-position,Many bees crowded on the left side of the board,0.6582142857142856,0.6900000527536286,1
+B,sweep B,siglip2,1.75,count-position,Many bees crowded on the left side of the board,0.5684920634920634,0.638508409665161,1
+B,sweep B,siglip2,2.0,count-position,Many bees crowded on the left side of the board,0.5607142857142857,0.6346327305058099,1
+B,sweep B,siglip2,2.25,count-position,Many bees crowded on the left side of the board,0.5607142857142857,0.6346327305058099,1
+B,sweep B,siglip2,2.5,count-position,Many bees crowded on the left side of the board,0.55,0.5820289061907222,2
+B,sweep B,siglip2,2.75,count-position,Many bees crowded on the left side of the board,0.5416666666666667,0.5773532541950794,2
+B,sweep B,siglip2,3.0,count-position,Many bees crowded on the left side of the board,0.5416666666666667,0.5773532541950794,1
+B,sweep B,motion,0.25,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,0.5,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,0.75,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,1.0,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,1.25,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,1.5,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,1.75,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,2.0,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,2.25,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,2.5,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,2.75,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,motion,3.0,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,detector,0.25,count-position,Many bees crowded on the left side of the board,0.38749999999999996,0.4104482708740715,1
+B,sweep B,detector,0.5,count-position,Many bees crowded on the left side of the board,0.5607142857142857,0.6346327305058099,1
+B,sweep B,detector,0.75,count-position,Many bees crowded on the left side of the board,0.6582142857142856,0.6900000527536286,1
+B,sweep B,detector,1.0,count-position,Many bees crowded on the left side of the board,0.9,0.7941212056739475,1
+B,sweep B,detector,1.25,count-position,Many bees crowded on the left side of the board,0.9,0.7978257800014955,1
+B,sweep B,detector,1.5,count-position,Many bees crowded on the left side of the board,0.9,0.821113992314674,0
+B,sweep B,detector,1.75,count-position,Many bees crowded on the left side of the board,1.0,0.8679299834074985,0
+B,sweep B,detector,2.0,count-position,Many bees crowded on the left side of the board,1.0,0.8679299834074985,0
+B,sweep B,detector,2.25,count-position,Many bees crowded on the left side of the board,1.0,0.8679299834074985,0
+B,sweep B,detector,2.5,count-position,Many bees crowded on the left side of the board,1.0,0.8708239000186301,0
+B,sweep B,detector,2.75,count-position,Many bees crowded on the left side of the board,1.0,0.8708239000186301,0
+B,sweep B,detector,3.0,count-position,Many bees crowded on the left side of the board,1.0,0.8708239000186301,0
+reference,plain RRF,-,1.0,count-motion,Lots of bees flying in front of a busy entrance,0.5142063492063491,0.497718840401751,0
+reference,"plain RRF, no CLIP",-,1.0,count-motion,Lots of bees flying in front of a busy entrance,0.790436507936508,0.7541697397064611,2
+reference,today's weights,-,1.0,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.8788954169376445,0
+A,sweep A,clip,0.0,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8822863516151104,1
+A,sweep A,clip,0.1,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9155426862550418,1
+A,sweep A,clip,0.2,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9181425627919484,1
+A,sweep A,clip,0.3,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9201735183705949,1
+A,sweep A,clip,0.4,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9201735183705949,1
+A,sweep A,clip,0.5,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.8788954169376445,0
+A,sweep A,clip,0.6,count-motion,Lots of bees flying in front of a busy entrance,0.8521031746031748,0.8408401220302782,0
+A,sweep A,clip,0.7,count-motion,Lots of bees flying in front of a busy entrance,0.8354365079365079,0.8343562255268174,0
+A,sweep A,siglip2,0.55,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.8788954169376445,0
+A,sweep A,siglip2,0.65,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.8788954169376445,0
+A,sweep A,siglip2,0.75,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.8788954169376445,0
+A,sweep A,siglip2,0.85,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.8788954169376445,0
+A,sweep A,siglip2,0.95,count-motion,Lots of bees flying in front of a busy entrance,0.7577777777777778,0.8085429736827878,0
+A,sweep A,siglip2,1.05,count-motion,Lots of bees flying in front of a busy entrance,0.7068253968253968,0.7885378678146853,0
+A,sweep A,siglip2,1.15,count-motion,Lots of bees flying in front of a busy entrance,0.700436507936508,0.7392525366752797,0
+A,sweep A,siglip2,1.25,count-motion,Lots of bees flying in front of a busy entrance,0.700436507936508,0.7357693095151038,0
+A,sweep A,siglip2,1.35,count-motion,Lots of bees flying in front of a busy entrance,0.700436507936508,0.7307882362474566,2
+A,sweep A,siglip2,1.45,count-motion,Lots of bees flying in front of a busy entrance,0.6671031746031746,0.6642094943372799,2
+A,sweep A,detector,0.8,count-motion,Lots of bees flying in front of a busy entrance,0.5625396825396825,0.5789543647085171,0
+A,sweep A,detector,1.0,count-motion,Lots of bees flying in front of a busy entrance,0.671111111111111,0.7176425520497958,0
+A,sweep A,detector,1.2,count-motion,Lots of bees flying in front of a busy entrance,0.6915476190476191,0.7330999029717499,0
+A,sweep A,detector,1.4,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.8443991848596257,0
+A,sweep A,detector,1.6,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9218142086150607,0
+A,sweep A,detector,1.8,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9218142086150607,0
+A,sweep A,detector,2.0,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9201735183705949,0
+A,sweep A,detector,2.2,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9188135392717758,0
+A,sweep A,detector,2.4,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8859579974382228,1
+A,sweep A,detector,2.6,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8859579974382228,1
+A,sweep A,detector,2.8,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8859579974382228,1
+A,sweep A,detector,3.0,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8859579974382228,1
+A,sweep A,detector,3.2,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8809769241705757,1
+A,sweep A,detector,3.4,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8809769241705757,1
+A,sweep A,detector,3.6,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8809769241705757,1
+A,sweep A,detector,3.8,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8809769241705757,1
+A,sweep A,detector,4.0,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8809769241705757,1
+B,sweep B,siglip2,0.25,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8809263725162912,1
+B,sweep B,siglip2,0.5,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8809263725162912,1
+B,sweep B,siglip2,0.75,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8822863516151104,1
+B,sweep B,siglip2,1.0,count-motion,Lots of bees flying in front of a busy entrance,0.89,0.8471116443902974,1
+B,sweep B,siglip2,1.25,count-motion,Lots of bees flying in front of a busy entrance,0.815436507936508,0.8172392060082347,1
+B,sweep B,siglip2,1.5,count-motion,Lots of bees flying in front of a busy entrance,0.790436507936508,0.7231567347886184,2
+B,sweep B,siglip2,1.75,count-motion,Lots of bees flying in front of a busy entrance,0.6171031746031745,0.5247900158230321,2
+B,sweep B,siglip2,2.0,count-motion,Lots of bees flying in front of a busy entrance,0.6171031746031745,0.454718283713822,2
+B,sweep B,siglip2,2.25,count-motion,Lots of bees flying in front of a busy entrance,0.5984920634920634,0.4011255804058571,1
+B,sweep B,siglip2,2.5,count-motion,Lots of bees flying in front of a busy entrance,0.5984920634920634,0.366910059473485,1
+B,sweep B,siglip2,2.75,count-motion,Lots of bees flying in front of a busy entrance,0.5984920634920634,0.366910059473485,1
+B,sweep B,siglip2,3.0,count-motion,Lots of bees flying in front of a busy entrance,0.5984920634920634,0.366910059473485,1
+B,sweep B,motion,0.25,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.878945968591929,1
+B,sweep B,motion,0.5,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.878945968591929,1
+B,sweep B,motion,0.75,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8839270418595762,0
+B,sweep B,motion,1.0,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8822863516151104,1
+B,sweep B,motion,1.25,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9138324660041286,1
+B,sweep B,motion,1.5,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8680658928356316,2
+B,sweep B,motion,1.75,count-motion,Lots of bees flying in front of a busy entrance,0.89,0.8009948300697065,3
+B,sweep B,motion,2.0,count-motion,Lots of bees flying in front of a busy entrance,0.89,0.7983949535327999,3
+B,sweep B,motion,2.25,count-motion,Lots of bees flying in front of a busy entrance,0.89,0.7899306531049767,3
+B,sweep B,motion,2.5,count-motion,Lots of bees flying in front of a busy entrance,0.8788888888888889,0.7832583379385795,2
+B,sweep B,motion,2.75,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.7663457101394838,1
+B,sweep B,motion,3.0,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.7663457101394838,1
+B,sweep B,detector,0.25,count-motion,Lots of bees flying in front of a busy entrance,0.7571031746031747,0.5134271015734916,3
+B,sweep B,detector,0.5,count-motion,Lots of bees flying in front of a busy entrance,0.7571031746031747,0.6121048740979287,3
+B,sweep B,detector,0.75,count-motion,Lots of bees flying in front of a busy entrance,0.815436507936508,0.7608092486813862,2
+B,sweep B,detector,1.0,count-motion,Lots of bees flying in front of a busy entrance,0.866388888888889,0.797323184246594,2
+B,sweep B,detector,1.25,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.9138324660041286,1
+B,sweep B,detector,1.5,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8822863516151104,1
+B,sweep B,detector,1.75,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8839270418595762,1
+B,sweep B,detector,2.0,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8839270418595762,0
+B,sweep B,detector,2.25,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8839270418595762,0
+B,sweep B,detector,2.5,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.8839270418595762,0
+B,sweep B,detector,2.75,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.878945968591929,0
+B,sweep B,detector,3.0,count-motion,Lots of bees flying in front of a busy entrance,1.0,0.878945968591929,0
+reference,plain RRF,-,1.0,count-general,Many bees on an orange hive with a white toothed entrance,0.46499999999999997,0.5336844778623302,0
+reference,"plain RRF, no CLIP",-,1.0,count-general,Many bees on an orange hive with a white toothed entrance,0.7675,0.7309769599514445,0
+reference,today's weights,-,1.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,clip,0.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+A,sweep A,clip,0.1,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+A,sweep A,clip,0.2,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+A,sweep A,clip,0.3,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,clip,0.4,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,clip,0.5,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,clip,0.6,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,clip,0.7,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,siglip2,0.55,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,siglip2,0.65,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,siglip2,0.75,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,siglip2,0.85,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,siglip2,0.95,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,1
+A,sweep A,siglip2,1.05,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,1
+A,sweep A,siglip2,1.15,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7840017888310807,0
+A,sweep A,siglip2,1.25,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8252566300241726,0
+A,sweep A,siglip2,1.35,count-general,Many bees on an orange hive with a white toothed entrance,0.866388888888889,0.7503042086836182,0
+A,sweep A,siglip2,1.45,count-general,Many bees on an orange hive with a white toothed entrance,0.7621031746031747,0.6925437197314593,0
+A,sweep A,detector,0.8,count-general,Many bees on an orange hive with a white toothed entrance,0.616111111111111,0.6061621265726966,0
+A,sweep A,detector,1.0,count-general,Many bees on an orange hive with a white toothed entrance,0.89,0.7177475653766916,0
+A,sweep A,detector,1.2,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,1
+A,sweep A,detector,1.4,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,detector,1.6,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,detector,1.8,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,detector,2.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8158121829305566,0
+A,sweep A,detector,2.2,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8014039025682994,0
+A,sweep A,detector,2.4,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7937751431785546,0
+A,sweep A,detector,2.6,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7937751431785546,0
+A,sweep A,detector,2.8,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7531604819662918,0
+A,sweep A,detector,3.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.748337858602327,0
+A,sweep A,detector,3.2,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.748337858602327,0
+A,sweep A,detector,3.4,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.744965434270854,0
+A,sweep A,detector,3.6,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.744965434270854,0
+A,sweep A,detector,3.8,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.748337858602327,0
+A,sweep A,detector,4.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7364467516797272,0
+B,sweep B,siglip2,0.25,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7364467516797272,0
+B,sweep B,siglip2,0.5,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7982586666995036,0
+B,sweep B,siglip2,0.75,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,siglip2,1.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,1
+B,sweep B,siglip2,1.25,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8583837417513671,0
+B,sweep B,siglip2,1.5,count-general,Many bees on an orange hive with a white toothed entrance,0.7675,0.7309769599514445,0
+B,sweep B,siglip2,1.75,count-general,Many bees on an orange hive with a white toothed entrance,0.7434920634920635,0.7971475675100274,0
+B,sweep B,siglip2,2.0,count-general,Many bees on an orange hive with a white toothed entrance,0.7042063492063492,0.8033315016525092,0
+B,sweep B,siglip2,2.25,count-general,Many bees on an orange hive with a white toothed entrance,0.5975396825396825,0.7345387976574189,1
+B,sweep B,siglip2,2.5,count-general,Many bees on an orange hive with a white toothed entrance,0.5808730158730159,0.7192812788779297,2
+B,sweep B,siglip2,2.75,count-general,Many bees on an orange hive with a white toothed entrance,0.5008730158730159,0.6543437730512592,1
+B,sweep B,siglip2,3.0,count-general,Many bees on an orange hive with a white toothed entrance,0.5008730158730159,0.6543437730512592,1
+B,sweep B,motion,0.25,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,0.5,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,0.75,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,1.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,1.25,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,1.5,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,1.75,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,2.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,2.25,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,2.5,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,2.75,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,motion,3.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,detector,0.25,count-general,Many bees on an orange hive with a white toothed entrance,0.5008730158730159,0.6543437730512592,0
+B,sweep B,detector,0.5,count-general,Many bees on an orange hive with a white toothed entrance,0.5975396825396825,0.7345387976574189,1
+B,sweep B,detector,0.75,count-general,Many bees on an orange hive with a white toothed entrance,0.7675,0.7309769599514445,0
+B,sweep B,detector,1.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8550113174198941,0
+B,sweep B,detector,1.25,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,detector,1.5,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,detector,1.75,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8202957064515055,0
+B,sweep B,detector,2.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.8058874260892482,0
+B,sweep B,detector,2.25,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7982586666995036,0
+B,sweep B,detector,2.5,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7982586666995036,0
+B,sweep B,detector,2.75,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7576440054872409,0
+B,sweep B,detector,3.0,count-general,Many bees on an orange hive with a white toothed entrance,1.0,0.7528213821232759,0
+reference,plain RRF,-,1.0,position-motion,Bees walking on the left side of the board,0.7621031746031747,0.7112625510963966,0
+reference,"plain RRF, no CLIP",-,1.0,position-motion,Bees walking on the left side of the board,0.8788888888888889,0.7169465304292846,0
+reference,today's weights,-,1.0,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6653882795046745,0
+A,sweep A,clip,0.0,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7706115392897497,0
+A,sweep A,clip,0.1,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7754341626537147,0
+A,sweep A,clip,0.2,position-motion,Bees walking on the left side of the board,0.7763888888888889,0.6711987132425001,0
+A,sweep A,clip,0.3,position-motion,Bees walking on the left side of the board,0.7763888888888889,0.6711987132425001,0
+A,sweep A,clip,0.4,position-motion,Bees walking on the left side of the board,0.7675,0.6685652779870628,0
+A,sweep A,clip,0.5,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6653882795046745,0
+A,sweep A,clip,0.6,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6653882795046745,0
+A,sweep A,clip,0.7,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6653882795046745,0
+A,sweep A,siglip2,0.55,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.5959570575678972,0
+A,sweep A,siglip2,0.65,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.5959570575678972,0
+A,sweep A,siglip2,0.75,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6653882795046745,0
+A,sweep A,siglip2,0.85,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6653882795046745,0
+A,sweep A,siglip2,0.95,position-motion,Bees walking on the left side of the board,0.7675,0.6685652779870628,0
+A,sweep A,siglip2,1.05,position-motion,Bees walking on the left side of the board,0.7675,0.7091799391993255,0
+A,sweep A,siglip2,1.15,position-motion,Bees walking on the left side of the board,0.7675,0.7091799391993255,1
+A,sweep A,siglip2,1.25,position-motion,Bees walking on the left side of the board,0.7763888888888889,0.6786862627275684,1
+A,sweep A,siglip2,1.35,position-motion,Bees walking on the left side of the board,0.7621031746031747,0.6840250371403326,1
+A,sweep A,siglip2,1.45,position-motion,Bees walking on the left side of the board,0.8521031746031748,0.7476458253392844,1
+A,sweep A,detector,0.8,position-motion,Bees walking on the left side of the board,0.6732142857142858,0.5677117053800648,0
+A,sweep A,detector,1.0,position-motion,Bees walking on the left side of the board,0.78,0.6358160170999654,0
+A,sweep A,detector,1.2,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.63226116777748,0
+A,sweep A,detector,1.4,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6653882795046745,0
+A,sweep A,detector,1.6,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6653882795046745,0
+A,sweep A,detector,1.8,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.5959570575678972,0
+A,sweep A,detector,2.0,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.5959570575678972,0
+A,sweep A,detector,2.2,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.5959570575678972,0
+A,sweep A,detector,2.4,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.5877620098724595,0
+A,sweep A,detector,2.6,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.5877620098724595,0
+A,sweep A,detector,2.8,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6021702902347168,0
+A,sweep A,detector,3.0,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6021702902347168,0
+A,sweep A,detector,3.2,position-motion,Bees walking on the left side of the board,0.7577777777777778,0.6021702902347168,0
+A,sweep A,detector,3.4,position-motion,Bees walking on the left side of the board,0.7434920634920635,0.5971359433554014,0
+A,sweep A,detector,3.6,position-motion,Bees walking on the left side of the board,0.7434920634920635,0.5971359433554014,0
+A,sweep A,detector,3.8,position-motion,Bees walking on the left side of the board,0.7434920634920635,0.5971359433554014,0
+A,sweep A,detector,4.0,position-motion,Bees walking on the left side of the board,0.7327777777777778,0.5932032431928188,0
+B,sweep B,siglip2,0.25,position-motion,Bees walking on the left side of the board,0.788888888888889,0.615285848466598,0
+B,sweep B,siglip2,0.5,position-motion,Bees walking on the left side of the board,0.866388888888889,0.6605656561407096,0
+B,sweep B,siglip2,0.75,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7706115392897497,0
+B,sweep B,siglip2,1.0,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7706115392897497,0
+B,sweep B,siglip2,1.25,position-motion,Bees walking on the left side of the board,0.8788888888888889,0.7439343011647956,0
+B,sweep B,siglip2,1.5,position-motion,Bees walking on the left side of the board,0.8521031746031748,0.7417562275681537,0
+B,sweep B,siglip2,1.75,position-motion,Bees walking on the left side of the board,0.8521031746031748,0.7430729451958724,1
+B,sweep B,siglip2,2.0,position-motion,Bees walking on the left side of the board,0.866388888888889,0.6599572387734732,1
+B,sweep B,siglip2,2.25,position-motion,Bees walking on the left side of the board,0.89,0.6904998588314698,1
+B,sweep B,siglip2,2.5,position-motion,Bees walking on the left side of the board,0.9,0.688649770565958,1
+B,sweep B,siglip2,2.75,position-motion,Bees walking on the left side of the board,0.9,0.6934723939299229,1
+B,sweep B,siglip2,3.0,position-motion,Bees walking on the left side of the board,1.0,0.7239660704016802,2
+B,sweep B,motion,0.25,position-motion,Bees walking on the left side of the board,0.8521031746031748,0.7766130484412189,0
+B,sweep B,motion,0.5,position-motion,Bees walking on the left side of the board,0.8521031746031748,0.7766130484412189,0
+B,sweep B,motion,0.75,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7672391149582769,0
+B,sweep B,motion,1.0,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7706115392897497,0
+B,sweep B,motion,1.25,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7348195014414518,0
+B,sweep B,motion,1.5,position-motion,Bees walking on the left side of the board,0.866388888888889,0.6335778854051987,0
+B,sweep B,motion,1.75,position-motion,Bees walking on the left side of the board,0.8788888888888889,0.6326390186175771,0
+B,sweep B,motion,2.0,position-motion,Bees walking on the left side of the board,0.89,0.6011004061315768,0
+B,sweep B,motion,2.25,position-motion,Bees walking on the left side of the board,0.8,0.5518878982948823,1
+B,sweep B,motion,2.5,position-motion,Bees walking on the left side of the board,0.89,0.615508686493834,2
+B,sweep B,motion,2.75,position-motion,Bees walking on the left side of the board,0.89,0.615508686493834,2
+B,sweep B,motion,3.0,position-motion,Bees walking on the left side of the board,0.89,0.615508686493834,2
+B,sweep B,detector,0.25,position-motion,Bees walking on the left side of the board,0.7071031746031746,0.5317115850042695,0
+B,sweep B,detector,0.5,position-motion,Bees walking on the left side of the board,1.0,0.7442734010078114,1
+B,sweep B,detector,0.75,position-motion,Bees walking on the left side of the board,0.89,0.7140515061495296,0
+B,sweep B,detector,1.0,position-motion,Bees walking on the left side of the board,0.8788888888888889,0.7462397510891028,0
+B,sweep B,detector,1.25,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7754341626537147,0
+B,sweep B,detector,1.5,position-motion,Bees walking on the left side of the board,0.866388888888889,0.7706115392897497,0
+B,sweep B,detector,1.75,position-motion,Bees walking on the left side of the board,0.866388888888889,0.6571932318092368,0
+B,sweep B,detector,2.0,position-motion,Bees walking on the left side of the board,0.866388888888889,0.6716015121714941,0
+B,sweep B,detector,2.25,position-motion,Bees walking on the left side of the board,0.866388888888889,0.6716015121714941,0
+B,sweep B,detector,2.5,position-motion,Bees walking on the left side of the board,0.866388888888889,0.6716015121714941,0
+B,sweep B,detector,2.75,position-motion,Bees walking on the left side of the board,0.8521031746031748,0.6665671652921787,0
+B,sweep B,detector,3.0,position-motion,Bees walking on the left side of the board,0.8521031746031748,0.6665671652921787,0
+reference,plain RRF,-,1.0,position-general,Bees on the right side of a hive with a red stripe,0.5991666666666667,0.5858771106377124,0
+reference,"plain RRF, no CLIP",-,1.0,position-general,Bees on the right side of a hive with a red stripe,0.24285714285714288,0.43257416375902197,0
+reference,today's weights,-,1.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,clip,0.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+A,sweep A,clip,0.1,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+A,sweep A,clip,0.2,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+A,sweep A,clip,0.3,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,clip,0.4,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,clip,0.5,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,clip,0.6,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,clip,0.7,position-general,Bees on the right side of a hive with a red stripe,0.01111111111111111,0.038356439954197026,0
+A,sweep A,siglip2,0.55,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,siglip2,0.65,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,siglip2,0.75,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,siglip2,0.85,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,siglip2,0.95,position-general,Bees on the right side of a hive with a red stripe,0.01111111111111111,0.038356439954197026,0
+A,sweep A,siglip2,1.05,position-general,Bees on the right side of a hive with a red stripe,0.042222222222222223,0.12600463383834865,0
+A,sweep A,siglip2,1.15,position-general,Bees on the right side of a hive with a red stripe,0.09166666666666665,0.2223624807391628,0
+A,sweep A,siglip2,1.25,position-general,Bees on the right side of a hive with a red stripe,0.1261904761904762,0.25611021976303994,0
+A,sweep A,siglip2,1.35,position-general,Bees on the right side of a hive with a red stripe,0.19444444444444445,0.35762952832286793,0
+A,sweep A,siglip2,1.45,position-general,Bees on the right side of a hive with a red stripe,0.29166666666666663,0.444977378084739,0
+A,sweep A,detector,0.8,position-general,Bees on the right side of a hive with a red stripe,0.3821428571428571,0.5197281909641895,0
+A,sweep A,detector,1.0,position-general,Bees on the right side of a hive with a red stripe,0.12083333333333332,0.25155671751732084,0
+A,sweep A,detector,1.2,position-general,Bees on the right side of a hive with a red stripe,0.03666666666666667,0.11905071058310905,0
+A,sweep A,detector,1.4,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,1.6,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,1.8,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,2.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,2.2,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,2.4,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,2.6,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,2.8,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,3.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,3.2,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,3.4,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,3.6,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,3.8,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+A,sweep A,detector,4.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,0
+B,sweep B,siglip2,0.25,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,siglip2,0.5,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,siglip2,0.75,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,siglip2,1.0,position-general,Bees on the right side of a hive with a red stripe,0.01111111111111111,0.07671287990839405,0
+B,sweep B,siglip2,1.25,position-general,Bees on the right side of a hive with a red stripe,0.04722222222222222,0.14810775894143577,0
+B,sweep B,siglip2,1.5,position-general,Bees on the right side of a hive with a red stripe,0.24285714285714288,0.43257416375902197,0
+B,sweep B,siglip2,1.75,position-general,Bees on the right side of a hive with a red stripe,0.4774999999999999,0.6059084844983816,0
+B,sweep B,siglip2,2.0,position-general,Bees on the right side of a hive with a red stripe,0.656547619047619,0.7223238204317302,0
+B,sweep B,siglip2,2.25,position-general,Bees on the right side of a hive with a red stripe,0.78,0.7744332846581484,0
+B,sweep B,siglip2,2.5,position-general,Bees on the right side of a hive with a red stripe,0.8788888888888889,0.8127897246123454,0
+B,sweep B,siglip2,2.75,position-general,Bees on the right side of a hive with a red stripe,0.8788888888888889,0.8127897246123454,0
+B,sweep B,siglip2,3.0,position-general,Bees on the right side of a hive with a red stripe,0.8788888888888889,0.8127897246123454,0
+B,sweep B,motion,0.25,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,0.5,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,0.75,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,1.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,1.25,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,1.5,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,1.75,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,2.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,2.25,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,2.5,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,2.75,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,motion,3.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,detector,0.25,position-general,Bees on the right side of a hive with a red stripe,0.8788888888888889,0.8127897246123454,0
+B,sweep B,detector,0.5,position-general,Bees on the right side of a hive with a red stripe,0.78,0.7744332846581484,0
+B,sweep B,detector,0.75,position-general,Bees on the right side of a hive with a red stripe,0.24285714285714288,0.43257416375902197,0
+B,sweep B,detector,1.0,position-general,Bees on the right side of a hive with a red stripe,0.014285714285714285,0.08494489033580482,0
+B,sweep B,detector,1.25,position-general,Bees on the right side of a hive with a red stripe,0.01,0.07366373991453437,1
+B,sweep B,detector,1.5,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,detector,1.75,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,detector,2.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,detector,2.25,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,detector,2.5,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,detector,2.75,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+B,sweep B,detector,3.0,position-general,Bees on the right side of a hive with a red stripe,0.0,0.0,1
+reference,plain RRF,-,1.0,motion-general,Bees flying above green leafy plants,0.696111111111111,0.8000373194316134,0
+reference,"plain RRF, no CLIP",-,1.0,motion-general,Bees flying above green leafy plants,0.700436507936508,0.7445626353418602,0
+reference,today's weights,-,1.0,motion-general,Bees flying above green leafy plants,0.7577777777777778,0.6921360312403025,0
+A,sweep A,clip,0.0,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,0
+A,sweep A,clip,0.1,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,0
+A,sweep A,clip,0.2,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,0
+A,sweep A,clip,0.3,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,0
+A,sweep A,clip,0.4,motion-general,Bees flying above green leafy plants,0.7577777777777778,0.6777277508780453,0
+A,sweep A,clip,0.5,motion-general,Bees flying above green leafy plants,0.7577777777777778,0.6921360312403025,0
+A,sweep A,clip,0.6,motion-general,Bees flying above green leafy plants,0.7577777777777778,0.6921360312403025,0
+A,sweep A,clip,0.7,motion-general,Bees flying above green leafy plants,0.7675,0.7359276909349536,0
+A,sweep A,siglip2,0.55,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,1
+A,sweep A,siglip2,0.65,motion-general,Bees flying above green leafy plants,0.7577777777777778,0.6777277508780453,0
+A,sweep A,siglip2,0.75,motion-general,Bees flying above green leafy plants,0.7577777777777778,0.6921360312403025,0
+A,sweep A,siglip2,0.85,motion-general,Bees flying above green leafy plants,0.7532142857142857,0.6902786828433755,0
+A,sweep A,siglip2,0.95,motion-general,Bees flying above green leafy plants,0.7532142857142857,0.738522103445383,0
+A,sweep A,siglip2,1.05,motion-general,Bees flying above green leafy plants,0.7532142857142857,0.7577530071716051,0
+A,sweep A,siglip2,1.15,motion-general,Bees flying above green leafy plants,0.7532142857142857,0.7653817665613499,0
+A,sweep A,siglip2,1.25,motion-general,Bees flying above green leafy plants,0.736547619047619,0.7645265156695346,0
+A,sweep A,siglip2,1.35,motion-general,Bees flying above green leafy plants,0.716547619047619,0.7630763166370426,0
+A,sweep A,siglip2,1.45,motion-general,Bees flying above green leafy plants,0.736547619047619,0.7746879134462638,0
+A,sweep A,detector,0.8,motion-general,Bees flying above green leafy plants,0.7571031746031747,0.7897399841083769,1
+A,sweep A,detector,1.0,motion-general,Bees flying above green leafy plants,0.815436507936508,0.8259581157599588,1
+A,sweep A,detector,1.2,motion-general,Bees flying above green leafy plants,0.7621031746031747,0.7459781620647852,0
+A,sweep A,detector,1.4,motion-general,Bees flying above green leafy plants,0.7532142857142857,0.6902786828433755,0
+A,sweep A,detector,1.6,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,0
+A,sweep A,detector,1.8,motion-general,Bees flying above green leafy plants,0.5857142857142857,0.5428183923453893,1
+A,sweep A,detector,2.0,motion-general,Bees flying above green leafy plants,0.55,0.5289638450374727,0
+A,sweep A,detector,2.2,motion-general,Bees flying above green leafy plants,0.24333333333333332,0.3430184917061137,0
+A,sweep A,detector,2.4,motion-general,Bees flying above green leafy plants,0.22666666666666666,0.33405144466421566,0
+A,sweep A,detector,2.6,motion-general,Bees flying above green leafy plants,0.22111111111111112,0.3308744461818275,0
+A,sweep A,detector,2.8,motion-general,Bees flying above green leafy plants,0.22111111111111112,0.3308744461818275,0
+A,sweep A,detector,3.0,motion-general,Bees flying above green leafy plants,0.16,0.24936270394794907,0
+A,sweep A,detector,3.2,motion-general,Bees flying above green leafy plants,0.15,0.2426178552850034,0
+A,sweep A,detector,3.4,motion-general,Bees flying above green leafy plants,0.15,0.2426178552850034,0
+A,sweep A,detector,3.6,motion-general,Bees flying above green leafy plants,0.13999999999999999,0.2329726085570736,0
+A,sweep A,detector,3.8,motion-general,Bees flying above green leafy plants,0.13285714285714284,0.22793826167775832,0
+A,sweep A,detector,4.0,motion-general,Bees flying above green leafy plants,0.1261904761904762,0.22119341301481268,0
+B,sweep B,siglip2,0.25,motion-general,Bees flying above green leafy plants,0.5114285714285713,0.5116508161747901,1
+B,sweep B,siglip2,0.5,motion-general,Bees flying above green leafy plants,0.5857142857142857,0.5428183923453893,1
+B,sweep B,siglip2,0.75,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,0
+B,sweep B,siglip2,1.0,motion-general,Bees flying above green leafy plants,0.6634920634920636,0.6090726157997783,0
+B,sweep B,siglip2,1.25,motion-general,Bees flying above green leafy plants,0.7577777777777778,0.7327506924525655,0
+B,sweep B,siglip2,1.5,motion-general,Bees flying above green leafy plants,0.6818253968253968,0.7412693750436922,0
+B,sweep B,siglip2,1.75,motion-general,Bees flying above green leafy plants,0.6018253968253968,0.6810210111762133,0
+B,sweep B,siglip2,2.0,motion-general,Bees flying above green leafy plants,0.575,0.6822214669881522,0
+B,sweep B,siglip2,2.25,motion-general,Bees flying above green leafy plants,0.5714285714285714,0.6787756193500311,0
+B,sweep B,siglip2,2.5,motion-general,Bees flying above green leafy plants,0.5658730158730159,0.6733474883148042,1
+B,sweep B,siglip2,2.75,motion-general,Bees flying above green leafy plants,0.6308730158730158,0.7253566797045347,1
+B,sweep B,siglip2,3.0,motion-general,Bees flying above green leafy plants,0.6308730158730158,0.7253566797045347,1
+B,sweep B,motion,0.25,motion-general,Bees flying above green leafy plants,0.1261904761904762,0.2231752280434309,0
+B,sweep B,motion,0.5,motion-general,Bees flying above green leafy plants,0.20444444444444443,0.3156169274023381,0
+B,sweep B,motion,0.75,motion-general,Bees flying above green leafy plants,0.2980952380952381,0.4011248950259845,0
+B,sweep B,motion,1.0,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,0
+B,sweep B,motion,1.25,motion-general,Bees flying above green leafy plants,0.7675,0.6809047493604335,0
+B,sweep B,motion,1.5,motion-general,Bees flying above green leafy plants,0.745436507936508,0.67175898907361,0
+B,sweep B,motion,1.75,motion-general,Bees flying above green leafy plants,0.8354365079365079,0.7179776635353431,0
+B,sweep B,motion,2.0,motion-general,Bees flying above green leafy plants,0.8354365079365079,0.758592324747606,0
+B,sweep B,motion,2.25,motion-general,Bees flying above green leafy plants,0.815436507936508,0.7460418611507634,0
+B,sweep B,motion,2.5,motion-general,Bees flying above green leafy plants,0.815436507936508,0.7129147494235689,0
+B,sweep B,motion,2.75,motion-general,Bees flying above green leafy plants,0.790436507936508,0.7033196399525327,1
+B,sweep B,motion,3.0,motion-general,Bees flying above green leafy plants,0.790436507936508,0.7033196399525327,0
+B,sweep B,detector,0.25,motion-general,Bees flying above green leafy plants,0.7571031746031747,0.7536284914789647,1
+B,sweep B,detector,0.5,motion-general,Bees flying above green leafy plants,0.7571031746031747,0.7426849017666174,1
+B,sweep B,detector,0.75,motion-general,Bees flying above green leafy plants,0.7571031746031747,0.7446512518479087,0
+B,sweep B,detector,1.0,motion-general,Bees flying above green leafy plants,0.716547619047619,0.714503248664763,0
+B,sweep B,detector,1.25,motion-general,Bees flying above green leafy plants,0.7532142857142857,0.6758704024811183,0
+B,sweep B,detector,1.5,motion-general,Bees flying above green leafy plants,0.6777777777777778,0.6141069626790936,0
+B,sweep B,detector,1.75,motion-general,Bees flying above green leafy plants,0.549047619047619,0.5264282969545139,0
+B,sweep B,detector,2.0,motion-general,Bees flying above green leafy plants,0.21714285714285714,0.3227266260473091,0
+B,sweep B,detector,2.25,motion-general,Bees flying above green leafy plants,0.20444444444444443,0.3156169274023381,0
+B,sweep B,detector,2.5,motion-general,Bees flying above green leafy plants,0.15,0.2426178552850034,0
+B,sweep B,detector,2.75,motion-general,Bees flying above green leafy plants,0.15,0.2426178552850034,0
+B,sweep B,detector,3.0,motion-general,Bees flying above green leafy plants,0.13285714285714284,0.22793826167775832,0
