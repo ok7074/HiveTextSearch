@@ -2,43 +2,49 @@
   "clip": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 16.129,
-    "p99_ms": 18.779
+    "p50_ms": 19.572,
+    "p99_ms": 26.836
   },
   "siglip2": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 63.344,
-    "p99_ms": 80.155
+    "p50_ms": 63.112,
+    "p99_ms": 78.019
   },
   "motion": {
     "n": 200,
     "distinct_queries": 19,
-    "p50_ms": 0.129,
-    "p99_ms": 0.164
+    "p50_ms": 0.1,
+    "p99_ms": 0.222
   },
   "detector": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 0.089,
-    "p99_ms": 29.338
+    "p50_ms": 0.132,
+    "p99_ms": 46.058
   },
   "rrf": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 87.417,
-    "p99_ms": 165.983
+    "p50_ms": 86.566,
+    "p99_ms": 179.388
   },
-  "rrf_weighted": {
+  "rrf_tuned": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 88.4,
-    "p99_ms": 168.882
+    "p50_ms": 88.694,
+    "p99_ms": 149.695
   },
-  "rrf_weighted_noclip": {
+  "rrf_tuned_no_clip": {
     "n": 200,
     "distinct_queries": 58,
-    "p50_ms": 71.805,
-    "p99_ms": 157.03
+    "p50_ms": 67.719,
+    "p99_ms": 117.932
+  },
+  "rrf_siglip_boost": {
+    "n": 200,
+    "distinct_queries": 58,
+    "p50_ms": 68.743,
+    "p99_ms": 143.287
   }
 }
