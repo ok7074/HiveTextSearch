@@ -1729,3 +1729,16 @@ position-motion,Bees resting in the middle of the board,rec2123_seq08112,1
 position-general,Bees in the middle of the board next to a black pole,rec2123_seq08003,2
 position-general,Bees in the middle of the board next to a black pole,rec2123_seq07201,2
 motion-general,Bees sitting still on a weathered grey board,rec2123_seq08404,1
+count,A few scattered bees,rec2125_seq01607,2
+count,Very few bees at the entrance hole,rec2125_seq01512,2
+position,Bees evenly spread along the board,rec2125_seq00415,1
+position,More bees on the right than on the left,rec2123_seq06801,2
+motion,Bees taking off from the landing board,rec2123_seq02207,0
+motion,Bees taking off from the landing board,rec2123_seq05413,0
+motion,Busy traffic at the entrance,rec2123_seq04514,1
+motion,Busy traffic at the entrance,rec2123_seq05413,2
+motion,Bees walking across the board,rec2123_seq02510,2
+motion,A bee flying low over the grass,rec2125_seq01310,1
+count-position,A few bees on the right side of the board,rec2125_seq01214,1
+position-motion,Bees resting in the middle of the board,rec2123_seq06906,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04514,0

@@ -556,3 +556,9 @@ motion,Bees sitting still on the board,rec2123_seq06709,1
 motion,Bees sitting still on the board,rec2123_seq08404,1
 count-motion,Lots of bees flying in front of a busy entrance,rec2125_seq01402,1
 position-general,Bees on the right side of a hive with a red stripe,rec2123_seq06113,0
+position,Bees clustered on the right side of the board,rec2123_seq08207,1
+motion,Many bees flying in front of the hive,rec2123_seq05505,2
+motion,Bees sitting still on the board,rec2123_seq02406,2
+motion,Bees sitting still on the board,rec2125_seq00610,0
+count-position,Many bees crowded on the left side of the board,rec2125_seq00913,1
+count-general,Many bees on an orange hive with a white toothed entrance,rec2123_seq06109,2

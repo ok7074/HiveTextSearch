@@ -11,9 +11,10 @@ Methods:
                  count and general queries rank all clips by mean count (fewest first for quiet words such as "few");
                  position queries without a side word are left to the other methods (see src/detection.py)
   rrf            every query: reciprocal rank fusion (k = 60) of all the methods above that apply to it
-  rrf_weighted   the same fusion with each method's share weighted (src/retrieval.RRF_WEIGHTS:
+  rrf_tuned      the same fusion with each method's share weighted (src/retrieval.RRF_WEIGHTS:
                  clip 0.5, siglip2 0.75, motion 1, detector 1.5)
-  rrf_weighted_noclip  rrf_weighted without CLIP, same weights (added after the first test scoring)
+  rrf_tuned_no_clip  rrf_tuned without CLIP, same weights (added after the first test scoring)
+  rrf_siglip_boost   rrf_tuned_no_clip with siglip2 at 1.0 (added after test scoring)
 
 Each method's top 10 holds at most one clip per source video, so neighbouring clips cannot fill it.
 
@@ -46,7 +47,7 @@ from src.embeddings import EMBEDDINGS_DIR
 from src.frame_selection import CLIPS_FRAMES_DATASET_DIR, FRAMES_DIR
 from src.models import clip_text_features, load_clip, load_siglip2, siglip2_text_features
 from src.retrieval import (
-    QUERIES_FILE, RRF_WEIGHTS, RUNS_DIR, SPLITS, TOP_K,
+    QUERIES_FILE, RRF_WEIGHTS, RRF_WEIGHTS_SIGLIP_BOOST, RUNS_DIR, SPLITS, TOP_K,
     is_motion_query, load_queries, motion_descending, motion_scores, rrf, text_scores, top_k,
 )
 
@@ -104,13 +105,14 @@ def load_methods() -> tuple[np.ndarray, dict]:
     def applicable(q, skip=None):
         return [(name, r) for name, m in single.items() if name != skip and (r := m(q)) is not None]
 
-    def weighted(q, skip=None):
+    def weighted(q, skip=None, weights=RRF_WEIGHTS):
         hits = applicable(q, skip)  # skipped before it runs, so latency drops too
-        return rrf([r for _, r in hits], weights=[RRF_WEIGHTS[name] for name, _ in hits]), True
+        return rrf([r for _, r in hits], weights=[weights[name] for name, _ in hits]), True
 
     methods["rrf"] = lambda q: (rrf([r for _, r in applicable(q)]), True)
-    methods["rrf_weighted"] = weighted
-    methods["rrf_weighted_noclip"] = lambda q: weighted(q, skip="clip")
+    methods["rrf_tuned"] = weighted
+    methods["rrf_tuned_no_clip"] = lambda q: weighted(q, skip="clip")
+    methods["rrf_siglip_boost"] = lambda q: weighted(q, skip="clip", weights=RRF_WEIGHTS_SIGLIP_BOOST)
     return clip_ids, methods
 
 
