@@ -186,6 +186,8 @@ mAP@10 / nDCG@10 per single query type (8 test queries each; all 1,743 pooled cl
 
 Latency per query (p50 / p99, `results/latency.json`): CLIP 20 / 27 ms, SigLIP 2 63 / 78 ms, motion 0.1 / 0.2 ms, detector 0.1 / 46 ms (detections precomputed; the p99 is the spread rules looping over boxes), RRF 87 / 179 ms, tuned RRF 89 / 150 ms, tuned RRF without CLIP 68 / 118 ms, SigLIP-boosted RRF 69 / 143 ms.
 
+Where and why the methods fail, with per-query examples: [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md).
+
 ### Annotation rules
 
 Each clip is rated against the query text only, by watching the whole 2-second clip: **2** = clearly relevant,
