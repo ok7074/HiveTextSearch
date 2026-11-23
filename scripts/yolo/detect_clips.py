@@ -2,6 +2,7 @@
 
 Output: data/detections/, a dataset with one row per clip:
   clip_id, frame_counts (bees per frame), left, center, right (bees per vertical third, summed over the 4 frames),
+  box_x, box_y, box_cls (every box of the 4 frames: centre as a share of frame width / height, and class),
   count (mean bees per frame), flying (mean bee_flying boxes per frame), label (left/center/right = third with the most bees, overall on a tie, empty with none)
 scripts/retrieval/retrieval.py picks this up as the "detector" method. Runs on CPU.
 

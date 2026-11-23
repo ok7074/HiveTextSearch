@@ -139,14 +139,16 @@ Both models embed images and text into the same vector space. Cosine similarity 
 ### Bee detector
 YOLO26s (960 px) fine-tuned on the [Sledevič et al. (2025)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11856287/) public bee dataset plus hand-labelled frames from our own videos, with two classes (`bee`, `bee_flying`), split by hive so test hives are never seen in training (9 Optuna trials, then a final run, weights `final_s960`). Held-out public test hives: mAP50-95 0.560, mAP50 0.847, precision 0.927, recall 0.769. Own test frames: mAP50-95 0.438, mAP50 0.785, precision 0.858, recall 0.726.
 
-Per clip, the boxes in each vertical third (left / center / right) are summed over the 4 frames. The clip's label is the busiest third, `overall` on a tie, `empty` with no bees. At query time:
+Per clip, every box of the 4 frames is stored with its position and class, plus the boxes per vertical third (left / center / right). The clip's label is the busiest third, `overall` on a tie, `empty` with no bees. Each video gets an entrance height and a board middle from where its sitting bees crowd (they sit on the landing board just below the entrance). At query time:
 - a count or position query naming left, center (also "middle", "centre") or right keeps only clips with that label, ranked by the bees in that third
 - a quiet query naming a third ("left side empty") keeps clips with bees elsewhere, fewest in that third first
+- a position query naming up or down ("above the entrance", "lower edge of the board") ranks clips by the sitting bees above the entrance / on the lower part of the board
+- a position query about spread ranks "evenly spread" by how equal the bee counts are over 6 columns of the board, and "two separate groups" by two busy column runs with a near-empty gap between them
+- a position-motion query naming a place counts only that place: flying bees for busy words, sitting bees for quiet words ("resting in the middle")
 - count and general queries without a third rank all clips by mean bees per frame; quiet words ("few", "no", "empty", …) put the fewest first
 - motion queries rank all clips by mean `bee_flying` boxes per frame (fewest first for quiet words such as "still")
-- position queries without a third are not answered (a total count says nothing about where bees sit)
 
-Limitation: the detector was trained on landscape images, while the clips are portrait.
+Limitations: the detector was trained on landscape images, while the clips are portrait. It also mistakes the blurry mesh above some entrances for bees, the same spots in every clip of a hive, which inflates "above the entrance" counts (kept on purpose, so the ratings show it). In two videos (rec2125_seq016, rec2125_seq017) these mesh boxes push the estimated entrance off the top of the frame, so they never count as "above".
 
 ### Motion baseline
 Frame-difference score: mean pixel change between consecutive frames of a clip. Busiest first, or stillest first for quiet words ("calm", "still", …). Used as the baseline and fallback for motion queries.
@@ -167,18 +169,20 @@ Reciprocal rank fusion (Cormack et al., 2009): each clip scores the sum over met
 - **No model-made labels:** all relevance judgements are human-annotated
 
 ### Results (test split)
-mAP@10 / nDCG@10 per single query type (8 test queries each; all 1,628 pooled clips rated). Full numbers, including the six pairs (2 queries each, so noisy), in `results/test_metrics.json`.
+mAP@10 / nDCG@10 per single query type (8 test queries each; all 1,707 pooled clips rated). Full numbers, including the six pairs (2 queries each, so noisy), in `results/test_metrics.json`.
 
 | Method | Count | General | Motion | Position |
 |--------|-------|---------|--------|----------|
-| CLIP | 0.57 / 0.44 | 0.57 / 0.60 | 0.59 / 0.48 | 0.31 / 0.43 |
-| SigLIP 2 | 0.50 / 0.47 | **0.86 / 0.78** | 0.66 / 0.56 | 0.46 / 0.50 |
+| CLIP | 0.57 / 0.44 | 0.57 / 0.60 | 0.59 / 0.48 | 0.27 / 0.35 |
+| SigLIP 2 | 0.50 / 0.47 | **0.86 / 0.78** | 0.66 / 0.56 | 0.44 / 0.44 |
 | Motion | – | – | 0.59 / 0.54 | – |
-| Detector | **0.81 / 0.75** | 0.75 / 0.69 | 0.69 / 0.60 | 0.63 / 0.55 (3 queries) |
-| RRF | 0.67 / 0.64 | 0.70 / 0.72 | 0.64 / 0.55 | 0.36 / 0.42 |
-| Weighted RRF | 0.77 / 0.72 | 0.76 / 0.71 | **0.69 / 0.61** | 0.53 / 0.52 |
+| Detector | **0.81 / 0.75** | 0.75 / 0.69 | 0.69 / 0.60 | **0.70 / 0.64** |
+| RRF | 0.67 / 0.64 | 0.70 / 0.72 | 0.64 / 0.55 | 0.44 / 0.44 |
+| Weighted RRF | 0.77 / 0.72 | 0.76 / 0.71 | **0.69 / 0.61** | 0.67 / 0.63 |
 
-Latency per query (p50 / p99, `results/latency.json`): CLIP 19 / 35 ms, SigLIP 2 62 / 77 ms, motion 0.1 / 0.3 ms, detector 0.2 / 0.4 ms (detections precomputed), RRF 83 / 135 ms, weighted RRF 84 / 105 ms.
+**Note on position:** the detector's up/down, spread and position-motion rules were added *after* the first test scoring, which had covered only 3 position queries with the detector (detector 0.63 / 0.55; weighted RRF 0.53 / 0.52). The new clips they found were rated blind like all others, and the weighted RRF weights were not changed. The first scoring is kept in `results/test_metrics_frozen.json`. CLIP and SigLIP 2 position scores dropped although their top 10s did not change: the new clips added relevant ones to the pool, which raises the bar for every method.
+
+Latency per query (p50 / p99, `results/latency.json`): CLIP 17 / 22 ms, SigLIP 2 67 / 71 ms, motion 0.1 / 0.2 ms, detector 0.1 / 29 ms (detections precomputed; the p99 is the spread rules looping over boxes), RRF 90 / 180 ms, weighted RRF 92 / 173 ms.
 
 ### Annotation rules
 
