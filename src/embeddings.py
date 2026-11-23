@@ -2,7 +2,7 @@ import numpy as np
 from pathlib import Path
 from typing import Callable
 from datasets import Dataset
-from PIL import Image
+from PIL import Image, ImageOps
 
 from .frame_selection import DATA_DIR, N_FRAMES
 
@@ -14,10 +14,12 @@ def embed_frames(
     frames_dir: Path,
     image_features: Callable,
     batch_size: int = 32,
+    flip: bool = False,
 ) -> np.ndarray:
     """
     Embed every frame of every clip, keeping dataset order.
     batch_size counts clips, so each model call receives batch_size * N_FRAMES images.
+    flip=True mirrors every frame left to right first (for the left/right test in src/flip_test.py).
     Returns an array of shape (n_clips, N_FRAMES, embedding_dim).
     """
     # Paths come from frame_names because the stored frame_paths are absolute Windows paths.
@@ -29,6 +31,8 @@ def embed_frames(
         if any(len(names) != N_FRAMES for names in clips):
             raise ValueError(f"Expected {N_FRAMES} frames per clip in the batch at row {start}")
         images = [Image.open(frames_dir / f"{name}.jpg").convert("RGB") for names in clips for name in names]
+        if flip:
+            images = [ImageOps.mirror(image) for image in images]
         features = image_features(images).float().cpu().numpy()
         batches.append(features.reshape(len(clips), N_FRAMES, -1))
         print(f"{start + len(clips)}/{len(all_names)} clips", flush=True)

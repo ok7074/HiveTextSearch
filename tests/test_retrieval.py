@@ -4,7 +4,7 @@ import torch
 from datasets import Dataset
 from PIL import Image
 
-from src.retrieval import frame_difference, load_queries, motion_descending, motion_scores, rrf, text_scores, top_k
+from src.retrieval import frame_difference, hive_counts, hive_of, load_queries, motion_descending, motion_scores, rrf, text_scores, top_k
 
 QUERIES = """\
 Train:
@@ -97,3 +97,22 @@ def test_rrf_weights_let_the_heavier_method_win():
     assert np.isclose(*rrf([clip, detector]))  # unweighted: a tie
     weighted = rrf([clip, detector], weights=[0.5, 1.5])
     assert np.allclose(weighted, [0.5 / 61 + 1.5 / 62, 0.5 / 62 + 1.5 / 61]) and np.argmax(weighted) == 1
+
+
+def test_hive_of_maps_each_recording_and_rejects_unknown_ones():
+    assert hive_of("rec2123_seq01501") == "orange"
+    assert hive_of("rec2125_seq00001") == "red-stripe"
+    with pytest.raises(KeyError):
+        hive_of("rec9999_seq00001")
+
+
+def test_hive_counts_counts_each_hive_in_the_top_k():
+    import pandas as pd
+    clips = ["rec2123_a01", "rec2123_b01", "rec2125_c01", "rec2125_d01"]
+    runs = pd.DataFrame({
+        "split": "test", "query_type": "count", "query": "q",
+        "method": ["clip"] * 3 + ["detector"], "rank": [1, 2, 3, 1], "clip_id": clips,
+    })
+    counts = hive_counts(runs, k=2).set_index("method")
+    assert counts.loc["clip", ["orange", "red-stripe", "n"]].tolist() == [2, 0, 2]
+    assert counts.loc["detector", ["orange", "red-stripe", "n"]].tolist() == [0, 1, 1]
