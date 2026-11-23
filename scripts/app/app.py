@@ -243,7 +243,8 @@ def build() -> gr.Blocks:
 
         with gr.Tab("Rate (blind)"):
             gr.Markdown("0 = not relevant · 1 = partly · 2 = clearly. Saved after every click.")
-            rate_split = gr.Radio(list(SPLITS), value="train", label="Split")
+            # flip_<split> rates the left/right test sheet (scripts/flip_test/flip_test.py --pool), kept apart from the scores.
+            rate_split = gr.Radio([*SPLITS, "flip_train", "flip_test"], value="train", label="Sheet")
             prompt = gr.Markdown()
             clip_video = gr.Video(autoplay=True, loop=True, height=480)
             current, skipped, history = gr.State(None), gr.State([]), gr.State([])

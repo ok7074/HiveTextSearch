@@ -13,10 +13,15 @@ QUERIES_FILE = DATA_DIR.parent / "queries.txt"
 RUNS_DIR = DATA_DIR / "runs"
 SPLITS = ("train", "test")
 TOP_K = 10
+# Recording prefix of a clip ID -> the hive it films.
+HIVES = {"rec2123": "orange", "rec2125": "red-stripe"}
 # Standard RRF constant (Cormack et al., 2009); fixed, so nothing is tuned on the queries.
 RRF_K = 60
-# Weights for rrf_weighted, chosen on the train queries (detector strongest there, CLIP weakest); frozen before test.
+# Weights for rrf_tuned, chosen on the train queries (detector strongest there, CLIP weakest); frozen before test.
+# rrf_tuned_no_clip uses the same weights minus clip.
 RRF_WEIGHTS = {"clip": 0.5, "siglip2": 0.75, "motion": 1.0, "detector": 1.5}
+# rrf_siglip_boost: rrf_tuned_no_clip with SigLIP 2 raised to motion's weight; chosen after test scoring, not blind.
+RRF_WEIGHTS_SIGLIP_BOOST = {**RRF_WEIGHTS, "siglip2": 1.0}
 # shortcut: plain word match, so "not busy" still ranks the busiest clips first; switch to per-query rules if that matters.
 QUIET_WORDS = {
     "calm", "still", "quiet", "resting", "rest", "idle", "few", "handful", "couple", "empty", "slow", "inactive",
@@ -130,3 +135,20 @@ def top_k(scores: np.ndarray, clip_ids: np.ndarray, k: int = TOP_K, descending: 
 def video_of(clip_id: str) -> str:
     """rec2123_seq01501 -> rec2123_seq015: clip IDs are the video ID plus a two-digit clip number."""
     return clip_id[:-2]
+
+
+def hive_of(clip_id: str) -> str:
+    """rec2123_seq01501 -> "orange": each recording films one hive (confirmed by looking at the frames)."""
+    return HIVES[clip_id.split("_")[0]]
+
+
+def hive_counts(runs: pd.DataFrame, k: int = TOP_K) -> pd.DataFrame:
+    """
+    Per split, query and method: how many of the top k clips come from each hive, and n = the list length
+    (under k when a method leaves clips out). One column per hive in HIVES.
+    """
+    top = runs[runs["rank"] <= k].assign(hive=lambda d: d["clip_id"].map(hive_of))
+    keys = ["split", "query_type", "query", "method"]
+    counts = pd.crosstab([top[c] for c in keys], top["hive"]).reindex(columns=list(HIVES.values()), fill_value=0)
+    counts.columns.name = None
+    return counts.assign(n=counts.sum(axis=1)).reset_index()

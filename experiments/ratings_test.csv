@@ -1706,3 +1706,39 @@ position-motion,Bees resting in the middle of the board,rec2123_seq07010,2
 position-motion,Bees resting in the middle of the board,rec2123_seq05910,2
 position-motion,Bees resting in the middle of the board,rec2123_seq05202,1
 position-motion,Bees resting in the middle of the board,rec2123_seq07202,0
+count,Almost empty landing board,rec2125_seq01202,2
+count,A dense mass of bees covering the board,rec2123_seq05809,1
+count,A few scattered bees,rec2125_seq01008,1
+position,Bees sitting in the mesh grid above the entrance,rec2125_seq01409,2
+position,Bees at the lower edge of the board,rec2125_seq00713,2
+position,More bees on the right than on the left,rec2123_seq06514,2
+position,Two separate groups of bees on the board,rec2125_seq01608,2
+motion,Bees landing on the board,rec2123_seq05502,2
+motion,Bees landing on the board,rec2123_seq03703,0
+motion,Quiet entrance with little movement,rec2123_seq05114,2
+motion,Bees moving quickly in all directions,rec2123_seq05904,1
+motion,Bees moving quickly in all directions,rec2123_seq03801,1
+count-position,A few bees on the right side of the board,rec2125_seq01101,2
+count-position,A few bees on the right side of the board,rec2125_seq01911,2
+count-position,A few bees on the right side of the board,rec2125_seq00815,1
+count-position,A few bees on the right side of the board,rec2125_seq00911,1
+count-motion,A few bees walking slowly on the board,rec2125_seq01512,2
+count-motion,A few bees walking slowly on the board,rec2123_seq08404,1
+position-motion,Bees flying near the right side of the entrance,rec2123_seq01814,2
+position-motion,Bees resting in the middle of the board,rec2123_seq08112,1
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq08003,2
+position-general,Bees in the middle of the board next to a black pole,rec2123_seq07201,2
+motion-general,Bees sitting still on a weathered grey board,rec2123_seq08404,1
+count,A few scattered bees,rec2125_seq01607,2
+count,Very few bees at the entrance hole,rec2125_seq01512,2
+position,Bees evenly spread along the board,rec2125_seq00415,1
+position,More bees on the right than on the left,rec2123_seq06801,2
+motion,Bees taking off from the landing board,rec2123_seq02207,0
+motion,Bees taking off from the landing board,rec2123_seq05413,0
+motion,Busy traffic at the entrance,rec2123_seq04514,1
+motion,Busy traffic at the entrance,rec2123_seq05413,2
+motion,Bees walking across the board,rec2123_seq02510,2
+motion,A bee flying low over the grass,rec2125_seq01310,1
+count-position,A few bees on the right side of the board,rec2125_seq01214,1
+position-motion,Bees resting in the middle of the board,rec2123_seq06906,2
+motion-general,Busy traffic at the entrance in bright sunlight,rec2123_seq04514,0
