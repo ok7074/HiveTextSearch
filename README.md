@@ -20,6 +20,8 @@ Presentation deadline: **25 November 2026** — 15 minutes + Q&A, at most 3 slid
   | Detector | count, position, general, motion | YOLO26s @ 960 fine-tuned on bee data (classes bee, bee_flying); bee counts per vertical third, flying bees for motion | done |
   | Combined (RRF) | all | Reciprocal rank fusion (k = 60) of every method that applies to the query | done |
   | Combined (tuned RRF) | all | RRF with weights clip 0.5, SigLIP 2 0.75, motion 1, detector 1.5 (chosen on train queries) | done |
+  | Tuned RRF, no CLIP | all | Tuned RRF without CLIP, same weights (added after the weight sweep) | done |
+  | SigLIP-boosted RRF | all | Tuned RRF without CLIP, SigLIP 2 raised from 0.75 to 1 | done |
 - Evaluates with **mAP@10** and **nDCG@10** on hand-annotated relevance labels (0 / 1 / 2) across four query types (count, position, motion, general description) and the six pairs of them
 - Reports latency at p50 and p99 over 200 queries per method
 
@@ -39,23 +41,29 @@ HiveTextSearch/
 │   ├── video_format.py, clips_and_frames.py, frame_selection.py   # data preparation
 │   ├── embeddings.py          # embed the 4 frames per clip, average, save .npz
 │   ├── optuna_tuning.py       # Optuna search for YOLO hyperparameters
-│   ├── retrieval.py           # query file parsing, cosine scores, motion score, top k
+│   ├── retrieval.py           # query file parsing, cosine scores, motion score, RRF, top k, hive of a clip
 │   ├── detection.py           # YOLO counts per third, clip labels, detector ranking
 │   ├── evaluation.py          # blind pooling, rating file checks, mAP / nDCG
+│   ├── flip_test.py           # left/right test: mirror queries and detections, compare rankings
 │   └── models/                # clip_model.py, siglip2_model.py, yolo_model.py
 ├── scripts/
 │   ├── data_prep/             # videos -> 2 s clips -> 4 frames per clip
-│   ├── clip_siglip_embeddings/# CLIP and SigLIP 2 clip embeddings
+│   ├── clip_siglip_embeddings/# CLIP and SigLIP 2 clip embeddings (--flip: mirrored frames)
 │   ├── yolo/                  # split bee data by hive, train YOLO, detect bees in all clips
 │   ├── retrieval/             # run every method over the train or test queries
 │   ├── pooling/               # build the blind rating sheet
 │   ├── scoring/               # mAP@10 / nDCG@10 from the ratings
-│   └── latency/               # p50 / p99 per method
+│   ├── latency/               # p50 / p99 per method
+│   ├── app/                   # Gradio app: search, blind rating, failure analysis
+│   ├── rrf_sweep/             # experiment: RRF scores as one weight changes at a time
+│   ├── hive_counts/           # how many of each top 10 come from each hive
+│   └── flip_test/             # left/right test for CLIP, SigLIP 2 and the detector
 ├── tests/                     # pytest
 ├── queries.txt                # Train:/Test: then Count:/Position:/Motion:/General: headings
-├── experiments/               # YOLO runs, ratings_<split>.csv (git-ignored outputs)
-├── results/                   # metrics and latency JSON
+├── experiments/               # YOLO runs, ratings_<split>.csv, failures.csv
+├── results/                   # metrics, latency, rrf_sweep/ and flip_test JSON
 ├── data/                      # dataset, frames, embeddings, detections, runs (git-ignored)
+├── FAILURE_ANALYSIS.md        # where and why the methods fail
 └── README.md
 ```
 
@@ -99,6 +107,16 @@ python scripts/scoring/scoring.py --split train       # -> results/train_metrics
 # repeat retrieval, pooling and rating with --split test, then:
 python scripts/scoring/scoring.py --split test        # -> results/test_metrics.json
 python scripts/latency/latency.py                     # -> results/latency.json
+```
+
+Analysis:
+
+```bash
+python scripts/app/app.py                              # search, rate blind, browse failures
+python scripts/rrf_sweep/rrf_sweep.py                  # -> results/rrf_sweep/<split>/
+python scripts/hive_counts/hive_counts.py --out results/hive_counts.csv
+python scripts/clip_siglip_embeddings/create_embeddings.py --flip   # mirrored frames (GPU), once
+python scripts/flip_test/flip_test.py --split test     # -> results/flip_test_test.json
 ```
 
 Search from Python:
@@ -186,7 +204,22 @@ mAP@10 / nDCG@10 per single query type (8 test queries each; all 1,743 pooled cl
 
 Latency per query (p50 / p99, `results/latency.json`): CLIP 20 / 27 ms, SigLIP 2 63 / 78 ms, motion 0.1 / 0.2 ms, detector 0.1 / 46 ms (detections precomputed; the p99 is the spread rules looping over boxes), RRF 87 / 179 ms, tuned RRF 89 / 150 ms, tuned RRF without CLIP 68 / 118 ms, SigLIP-boosted RRF 69 / 143 ms.
 
-Where and why the methods fail, with per-query examples: [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md).
+### Key findings
+
+Details and per-query examples in [FAILURE_ANALYSIS.md](FAILURE_ANALYSIS.md).
+
+- **Each method has its own strength.** The detector leads on count, position and motion; SigLIP 2 leads on scene queries (general 0.86) and gets the pure sunlight queries right (1.00), where the detector knows nothing about the scene.
+- **No single set of fusion weights serves both kinds of query.** The weight sweep (`results/rrf_sweep/`) shows the trade: weighting SigLIP 2 up fixes scene queries and breaks count queries, and the reverse; the best single setting gains only +0.025 test mAP. Removing CLIP helps slightly, hence `rrf_tuned_no_clip`. Weights chosen per query are the next step.
+- **CLIP and SigLIP 2 cannot tell left from right.** With "left" and "right" swapped in the query, they keep 7–9 of their 10 clips; the detector keeps 0. Mirroring the frames reshuffles their lists even on queries about the middle, so they react to the mirror itself, not to sides (`results/flip_test_<split>.json`).
+
+  | Method | Clips shared when left/right are swapped (train / test) | Clips kept on middle queries after mirroring |
+  |---|---|---|
+  | CLIP | 8.2 / 8.6 of 10 | 2.0 of 10 |
+  | SigLIP 2 | 7.4 / 9.2 of 10 | 2.2 of 10 |
+  | Detector | 0 / 0 of 10 | 10 of 10 |
+
+- **The hive shortcut is measurable.** The clips split 78% / 22% between the two hives, but the detector takes 99% of each test top 10 from one hive (all 10 on 43 of 44 queries): its bee counts mostly tell the hives apart. The tuned fusions follow it (about 96%), CLIP and SigLIP 2 sit at 88%, plain RRF mixes most (81%).
+- **No method understands the kind of motion.** Taking off, landing and flying past look the same; no method scores above 0.56 on the three take-off / landing test queries.
 
 ### Annotation rules
 
